@@ -1,0 +1,4 @@
+classExample.html
+Class Examples
+
+<a href="http://gibson.hampshire.edu/~manic/?course=2" target='_blank'>Class images from the computer are here</a>

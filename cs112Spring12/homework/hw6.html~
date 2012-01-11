@@ -1,0 +1,51 @@
+<html>
+<head>
+<link rel="stylesheet" href="../../../format.css" type="text/css">
+<link rel="stylesheet" href="../../../pinmenu.css" type="text/css">
+<link rel="stylesheet" href="../../../higraphics.css" type="text/css">
+<title>CS112: Homework 5</title>
+</head>
+<div class="pinmenu">
+<p class="center"><span class"navbarHeading">Return Links</span></p>
+<p>·&nbsp;<a href="../../../index.html">Instructor Home&nbsp;Page</a></p>
+<p>·&nbsp;<a href="../../../classes.html">Classes</a></p>
+<p>&nbsp;</p><p class="center"><span class="navbarHeading">CS112: Course Links</span></p>
+<p>·&nbsp;<a href="../index.html">Course Page</a></p>
+<p>·&nbsp;<a href="../syllabus.html">Syllabus</a></p>
+<p>·&nbsp;<a href="../classExample.html">Class Examples</a></p>
+<p>·&nbsp;<a href="../homework.html">Homework Assignments</a></p>
+<p>·&nbsp;<a href="../basicUnix.html">Basic Unix/Emacs</a></p>
+<p>·&nbsp;<a href="../software.html">Software Installation</a></p>
+</div>
+<div class="page">
+<a name="Title"><h1 class="center">CS112: Homework 5</h1></a>
+Start this assignment early! (There is a decent chance that pygame
+isn't installed correctly on your personal computer, if you start this
+early you'll have a chance to correct this and still get the
+assignment in on time)
+<p>
+This assignment is all about drawing pictures. Create 3 separate
+programs that each create an interesting image. As long as the images
+you create with pygame and draw are interesting you've done the
+assignment. Please feel free to play with more of pygame if you want,
+simple drawings are the minimal.
+<p>
+Turning it in:<br>
+<ol>
+<li>Create a zipped archive of all the files associated with this
+assignment and name it with your name and the homework assignment (for
+example paulDicksonHW5.zip).</li> 
+<li>Place a copy of this zipped archive in the handin folder for the
+  class on urza.</li>
+<li>Send an e-mail saying you've turned it in with the following format:<br>
+To: pedcs-at-hampshire.edu
+<br>Subject: 112-HW5: Your name</li>
+</ol>
+
+<div class="center">
+Page last updated:<script language="JavaScript">document.write("Last Modified: "+window.document.lastModified);
+</script>
+</div>
+
+</body>
+</html>

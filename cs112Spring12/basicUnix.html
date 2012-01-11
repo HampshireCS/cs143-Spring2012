@@ -1,0 +1,181 @@
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+<link rel="stylesheet" href="../../format.css" type="text/css">
+<link rel="stylesheet" href="../../pinmenu.css" type="text/css">
+<link rel="stylesheet" href="../../higraphics.css" type="text/css">
+<title>CS112: Basic Unix/Emacs</title>
+</head>
+<div class="pinmenu">
+<p class="center"><span class="navbarHeading">Return Links</span></p>
+<p>·&nbsp;<a href="../../index.html">Instructor Home&nbsp;Page</a></p>
+<p>·&nbsp;<a href="../../classes.html">Classes</a></p>
+<p>&nbsp;</p><p class="center"><span class="navbarHeading">CS112: Course Links</span></p>
+<p>·&nbsp;<a href="index.html">Course Page</a></p>
+<p>·&nbsp;<a href="syllabus.html">Syllabus</a></p>
+<p>·&nbsp;<a href="classExample.html">Class Examples</a></p>
+<p>·&nbsp;<a href="homework.html">Homework Assignments</a></p>
+<p>·&nbsp;<span class="navbarTop">Basic Unix/Emacs</span></p>
+<p>·&nbsp;<a href="software.html">Software Installation</a></p>
+<p>&nbsp;</p><p class="center"><span class="navbarHeading">Page Navigation</span></p>
+<p>-&nbsp;<a href="#l0">UNIX</a></p>
+<p>-&nbsp;<a href="#l1">emacs</a></p>
+</div>
+<div class="page">
+<a name="Title"><h1 class="center">CS112: Basic Unix/Emacs</h1></a>
+<hr>
+
+<a name="l0"><h3>UNIX</h3></a>
+<table width="100%" cellpadding="3" border="5"><tr><td>
+<table width="100%" cellpadding="10" border="1">
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h1>Command</h1></td>
+<td><h1>Description</h1></td>
+</tr>
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h2>cd</h2></td>
+<td bgcolor="#ffffff"><b>moves between directory</b><br><br>
+<b>cd public_html </b> <i>-to move to your public_html directory from your home
+directory</i><br>
+<b>cd ..</b>  <i>-moves to the directory above the one you are in</i></td>
+</tr>
+<tr><td bgcolor="#ffffff"><h2>chmod</h2></td>
+<td bgcolor="#ffffff"><b>changes file permissions</b><br><br>
+<b>chmod 755 *</b>  <i>-makes a directory public, viewable through a browser,
+only run on public_html</i><br>
+<b>chmod 755 file</b>  <i>-changes permission on file</i><br>
+<b>chmod 755 . </b> <i>-changes permission on current folder</i>
+</td>
+</tr>
+<tr><td bgcolor="#ffffff"><h2>ls</h2></td>
+<td bgcolor="#ffffff"><b>lists files in directory</b><br><br>
+<b>ls </b> <i>-lists files in directory</i><br>
+<b>ls -l</b>  <i>-lists files and file permission</i>
+</td>
+</tr>
+<tr><td bgcolor="#ffffff"><h2>mv</h2></td>
+<td bgcolor="#ffffff"><b>moves files between directories</b><br><br>
+<b>mv foo ..</b>  <i>-moves file foo to directory above current one</i>
+</td>
+</tr>
+<tr><td bgcolor="#ffffff"><h2>cp</h2></td>
+<td bgcolor="#ffffff"><b>copies a file</b><br><br>
+<b>cp foo foo2</b>  <i>-copies file foo to foo2, foo2 is created by command</i>
+</td>
+</tr>
+<tr><td bgcolor="#ffffff"><h2>rm</h2></td>
+<td bgcolor="#ffffff"><b>deletes a file perminantly (use with care)</b><br><br>
+<b>rm foo</b>  <i>-file foo is deleted</i>
+</td>
+</tr>
+<tr><td bgcolor="#ffffff"><h2>mkdir</h2></td>
+<td bgcolor="#ffffff"><b>makes a directory</b><br><br>
+<b>mkdir bob</b>  <i>-directory bob is created</i>
+</td>
+</tr>
+</table></table>
+
+<a name="l1"><h3>emacs</h3></a>
+<table width="100%" cellpadding="3" border="5"><tr><td>
+<table width="100%" cellpadding="10" border="1">
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h1>Action</h1></td>
+<td><h1>Command String</h1><br>
+<i>C-</i> means hold control while hitting whatever key listed<br>
+<i>M-</i> means hold meta (typically alt)  while hitting whatever key listed<br>
+</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h2>C-x C-f  </h2></td>
+ <td bgcolor="#ffffff">
+Open file<br>
+Create new file<br>
+</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h2>C-x C-c  </h2></td>
+<td bgcolor="#ffffff">
+Close file<br>
+</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h2>C-x C-w  </h2></td>
+<td bgcolor="#ffffff">
+Rename file<br>
+</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h2>C-x C-s  </h2></td>
+<td bgcolor="#ffffff">
+Save file<br>
+</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h2>C-s  </h2></td>
+<td bgcolor="#ffffff">
+Search file<br>
+<i>after typing search material continue hitting C-s so continue searching</i><br>
+</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h2>C-k  </h2></td>
+<td bgcolor="#ffffff">
+delete everything on the line after the curser (and copy it at the
+same time)<br>
+</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h2>C-y  </h2></td>
+<td bgcolor="#ffffff">
+paste<br>
+</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h2>M-%  </h2></td>
+<td bgcolor="#ffffff">
+Search and replace<br>
+</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h2>C-x 2 </h2></td>
+<td bgcolor="#ffffff">
+Split window into upper and lower half<br>
+</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h2>C-x 1  </h2></td>
+<td bgcolor="#ffffff">
+Return emacs to a single window<br>
+</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h2>M-x doctor  </h2></td>
+<td bgcolor="#ffffff">
+Loads emacs therapist<br>
+<i>you must hit return twice after every statement so that emacs knows
+it should respond</i><br>
+</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h2>M-x tetris  </h2></td>
+<td bgcolor="#ffffff">
+Play tetris in emacs<br>
+<i>use arrow keys to move, space bar to bring block down fast</i><br>
+</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td bgcolor="#ffffff"><h2>M-x yow  </h2></td>
+<td bgcolor="#ffffff">
+Get Zippy the pinhead quotes<br>
+</td>
+</tr>
+</table></table>
+<hr>
+<div class="center">
+Page last updated:<script language="JavaScript">document.write(window.document.lastModified);
+</script>
+</div>
+
+</body>
+</html>

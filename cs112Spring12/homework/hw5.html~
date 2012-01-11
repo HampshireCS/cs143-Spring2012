@@ -1,0 +1,54 @@
+<html>
+<head>
+<link rel="stylesheet" href="../../../format.css" type="text/css">
+<link rel="stylesheet" href="../../../pinmenu.css" type="text/css">
+<link rel="stylesheet" href="../../../higraphics.css" type="text/css">
+<title>CS112: Homework 4</title>
+</head>
+<div class="pinmenu">
+<p class="center"><span class"navbarHeading">Return Links</span></p>
+<p>·&nbsp;<a href="../../../index.html">Instructor Home&nbsp;Page</a></p>
+<p>·&nbsp;<a href="../../../classes.html">Classes</a></p>
+<p>&nbsp;</p><p class="center"><span class="navbarHeading">CS112: Course Links</span></p>
+<p>·&nbsp;<a href="../index.html">Course Page</a></p>
+<p>·&nbsp;<a href="../syllabus.html">Syllabus</a></p>
+<p>·&nbsp;<a href="../classExample.html">Class Examples</a></p>
+<p>·&nbsp;<a href="../homework.html">Homework Assignments</a></p>
+<p>·&nbsp;<a href="../basicUnix.html">Basic Unix/Emacs</a></p>
+<p>·&nbsp;<a href="../software.html">Software Installation</a></p>
+</div>
+<div class="page">
+<a name="Title"><h1 class="center">CS112: Homework 4</h1></a>
+For this assignment I want you to create a program that prompts the
+user to enter a number the number 99 and keeps badgering the user
+until they do enter 99 (this will require the use of a while
+loop). Please have the badgering (insulting) vary depending on whether
+the user enters a number that is larger or smaller then 99 (this will
+require an if statement). 
+<p>
+Once the user enters 99 have your program print all the lyrics for the
+some 99 bottles of beer on the wall (again, this will use a while
+loop).
+<p>
+To make your lives easier I would recommend writing a function to do
+each of the above. Good luck.
+<p>
+Turning it in:<br>
+<ol>
+<li>Create a zipped archive of all the files associated with this
+assignment and name it with your name and the homework assignment (for
+example paulDicksonHW4.zip).</li> 
+<li>Place a copy of this zipped archive in the handin folder for the
+  class on urza.</li>
+<li>Send an e-mail saying you've turned it in with the following format:<br>
+To: pedcs-at-hampshire.edu
+<br>Subject: 112-HW4: Your name</li>
+</ol>
+
+<div class="center">
+Page last updated:<script language="JavaScript">document.write("Last Modified: "+window.document.lastModified);
+</script>
+</div>
+
+</body>
+</html>

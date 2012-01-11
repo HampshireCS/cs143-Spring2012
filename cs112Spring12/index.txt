@@ -1,0 +1,74 @@
+index.html 
+Course Page
+
+//course number
+CS112
+
+//course title
+Programming Games: Introduction to Programming using Python and Pygame
+
+LINK:
+Course Description
+This is an introductory programming course that will motivate programming
+through the creation of videogames using the Pygame libraries for Python.
+Students will learn the basics of programming in Python and then quickly  
+move to creating games. New programming concepts will be introduced as a  
+means to further game creation. Basic concepts in videogame design will   
+also be introduced. By the end of the course, students will have learned  
+how to program and will have written multiple games. No previous 
+programming experience is required.
+<p>
+
+LINK:
+Meeting Time
+Monday, Wednesday: <br>
+10:30am-11:50am<br>
+<a href="http://www.hampshire.edu/map/" target="_blank">Adele Simmons Hall</a><br>
+Room: 126<br>
+January 25, 2012-May 2, 2012<p>
+
+LINK:
+Instructor
+
+<a href="../../index.html">Paul Dickson</a><br>
+Phone:  x5861, off campus (413) 559-5861<br>
+E-Mail: <a href="mailto:pedcs@hampshire.edu">pedcs-at-hampshire.edu</a><br>
+Office: room 204 <a href="http://www.hampshire.edu/map/"
+		    target="_blank">Adele Simmons Hall</a><p>
+Office Hours: <br>
+Monday, 1:00 PM-3:00 PM<br>
+Thursday 1:30 PM-3:30 PM <br>
+by appointment<p>
+
+TAs: <br>
+Alec Goebel <a href="mailto:acg10@hampshire.edu">acg10-at-hampshire.edu</a><br>
+Jonah Kellman <a href="mailto:jdk09@hampshire.edu">jdk09-at-hampshire.edu</a><br>
+Jack Laxson <a href="mailto:jrl11@hampshire.edu">jrl11-at-hampshire.edu</a><br>
+Lab Hours: <br>
+TBA: 7:00-8:00 PM<br>
+hours will be extended if students are still there at the end of the
+time listed.<p>
+
+LINK:
+Textbook
+<i>Text:</i><br>
+<b><a
+href="http://greenteapress.com/thinkpython/thinkpython.pdf">Think
+Python: How to Think Like a Computer Scientist</a></b><br>
+by Allen Downey<br>
+<p>
+
+LINK:
+Evaluation
+Course evaluation will be based on students ability to learn course
+material and write working code. Evaluation of comprehension cannot be
+made without homework assignments being turned
+in on time. To receive an evaluation you must earn at least as many
+points as there are assignments given over the
+course of the semester. For example if 11 assignments are given you
+must get 11 points for an evaluation. For every assignment turned in on time you
+receive a point. For every assignment turned in a day early you
+receive 2 points and for every assignment not turned in you lose 2
+points. Late assignments earn 0 points. As with all Hampshire College
+courses academic honesty is expected, make sure your are familiar
+with the Hampshire's <a href="https://intranet.hampshire.edu/cms/index.php?id=7357">official statement on plagiarism</a>.<p>

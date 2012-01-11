@@ -1,0 +1,3 @@
+#!/bin/tcsh
+~/Documents/webpage/classPageAutoGenerator/generate index.txt syllabus.txt classExamples.txt homework.txt basicUnix.txt software.txt
+scp -r ../cs110Spring10/ pedcs@helios.hampshire.edu:~/public_html/classes/

@@ -1,0 +1,98 @@
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+<link rel="stylesheet" href="../../format.css" type="text/css">
+<link rel="stylesheet" href="../../pinmenu.css" type="text/css">
+<link rel="stylesheet" href="../../higraphics.css" type="text/css">
+<title>CS112: Software Installation</title>
+</head>
+<div class="pinmenu">
+<p class="center"><span class="navbarHeading">Return Links</span></p>
+<p>·&nbsp;<a href="../../index.html">Instructor Home&nbsp;Page</a></p>
+<p>·&nbsp;<a href="../../classes.html">Classes</a></p>
+<p>&nbsp;</p><p class="center"><span class="navbarHeading">CS112: Course Links</span></p>
+<p>·&nbsp;<a href="index.html">Course Page</a></p>
+<p>·&nbsp;<a href="syllabus.html">Syllabus</a></p>
+<p>·&nbsp;<a href="classExample.html">Class Examples</a></p>
+<p>·&nbsp;<a href="homework.html">Homework Assignments</a></p>
+<p>·&nbsp;<a href="basicUnix.html">Basic Unix/Emacs</a></p>
+<p>·&nbsp;<span class="navbarTop">Software Installation</span></p>
+<p>&nbsp;</p><p class="center"><span class="navbarHeading">Page Navigation</span></p>
+<p>-&nbsp;<a href="#l0">Mac OS X</a></p>
+<p>-&nbsp;<a href="#l1">Windows XP, Vista</a></p>
+<p>-&nbsp;<a href="#l2">Linux/Unix</a></p>
+</div>
+<div class="page">
+<a name="Title"><h1 class="center">CS112: Software Installation</h1></a>
+<hr>
+
+<a name="l0"><h3>Mac OS X</h3></a>
+Terminal and Python come installed on all OS X machines so you need to do is
+to get and install the following programs: emacs and Pygame<p>
+<p>
+emacs:
+<ol>
+<li>install fink <a
+href="http://www.finkproject.org/download/">http://www.finkproject.org/download/</a></li>
+<li>type <i>fink apropos emacs</i> then return in a terminal window</li>
+<li>type <i>fink install emacs22-carbon</i> then return in a terminal window</li>
+<li>type <i>fink install xemacs-sumo-pkg</i> then return in a terminal window</li>
+</ol>
+<p>
+
+<a name="l1"><h3>Windows XP, Vista</h3></a>
+Basically you want to install a Unix emulator under windows that will give
+you a command line interface to windows. One of the best (only and it works
+decently well) emulators that is free is cygwin. With cygwin using an
+X-windows package you'll have the unix interface and the ability to open
+emacs (which is a native unix program) from the command line by typing emacs
+at the prompt. The instructions to get this working follow:
+<ol>
+<li>go to <a href="http://x.cygwin.com/">http://x.cygwin.com/</a> and
+  download the installer (found on the right hand side of the page saying <i>Install X/Cygwin now</i>)</li>
+<li>run the installer, setup.exe</li>
+<li>choose install for Internet and hit next</li>
+<li>leave the defaults, install for all users and default text type Unix then
+hit next</li>
+<li>leave its default local package directory and hit next</li>
+<li>leave the default of the direct connection and hit next</li>
+<li>choose any mirror (which one doesn't matter, your just choosing the site
+to download information from, though continental US is probably best. most
+recently I've used www.gtlib.gatech.edu) and hit next</li>
+<li>you will see this huge list of packages, you will want to select a
+number of different packages. Each package is selected by clicking the
+word skip that is next to the package name so that it switches to
+install. Click to install the entire X11 package then search an
+install anything related to the following packages:
+<ol>
+<li>gcc</li>
+<li>make</li>
+<li>emacs</li>
+<li>imagemagick</li>
+<li>openssh</li>
+</ol>
+</li>
+<li>click next</li>
+<li>let it install</li>
+<li>once it has installed go under the start menu and select cygwin-X
+under programs and select "x11 windows server" or whatever option has
+those words (I don't actually have a system to test it on right
+now.)</li>
+<li>next go back under the start menu and cygwin-X and select
+xterm</li>
+<li>in your cygwin window type emacs to open emacs</li>
+<li>scream loudly as something has gone wrong somewhere...</li>
+</ol>
+
+<a name="l2"><h3>Linux/Unix</h3></a>
+You are pretty much on your own, get emacs, xv, and gcc. Make sure
+that they run...
+<hr>
+<div class="center">
+Page last updated:<script language="JavaScript">document.write(window.document.lastModified);
+</script>
+</div>
+
+</body>
+</html>
