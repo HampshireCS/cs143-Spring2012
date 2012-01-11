@@ -4574,11 +4574,13 @@ else:
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 NOTE: might want another example
 \end_layout
 
 \begin_layout Subsection
-string chapter 8 p.
+string Chapter 8 p.
  71
 \end_layout
 
