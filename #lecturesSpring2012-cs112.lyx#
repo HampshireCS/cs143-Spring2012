@@ -4502,15 +4502,85 @@ copy=eng2sp.copy()
 
 \end_deeper
 \begin_layout Standard
-Dictionary example of insulting TAS from dictionary
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/usr/bin/env python
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+people = {'Jonah' : "stupid",
+\end_layout
+
+\begin_layout Plain Layout
+
+       'Alec' : "ugly",
+\end_layout
+
+\begin_layout Plain Layout
+
+       'Jack' : "smelly",
+\end_layout
+
+\begin_layout Plain Layout
+
+       'Paul' : "awesome"}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+name = raw_input("Your Name: ")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if name in people:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print "%s is %s!" % (name, people[name])
+\end_layout
+
+\begin_layout Plain Layout
+
+else:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print "I don't know %s." % name
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 NOTE: might want another example
 \end_layout
 
 \begin_layout Subsection
-string chapter 8 p.
+string Chapter 8 p.
  71
 \end_layout
 
@@ -5717,26 +5787,302 @@ SKIPPED A LOT, LOOK AT IF NEED TO KNOW INHERITANCE
 \end_layout
 
 \begin_layout Section
-Software Design: 
-\end_layout
-
-\begin_layout Standard
-algorithm
-\end_layout
-
-\begin_layout Section
 Software Design
 \end_layout
 
-\begin_layout Standard
-software
+\begin_layout Subsection
+Data design
 \end_layout
 
 \begin_layout Itemize
-remember we're buildling games
+walk them through a large design example
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+modeling Hampshire
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+have them give what they think would make Hampshire
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+people
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+staff
+\end_layout
+
+\begin_layout Itemize
+students
+\end_layout
+
+\begin_layout Itemize
+faculty
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+rooms
+\end_layout
+
+\begin_layout Itemize
+dorms
+\end_layout
+
+\begin_layout Itemize
+meds
+\end_layout
+
+\begin_layout Itemize
+building
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+once they list everything lead them through grouping 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+staff students under people, etc.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+give them a little example of then starting to lay out what makes up one
+ of the classes
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+attributes and methods of people
+\end_layout
+
+\begin_layout Itemize
+what inherits from what
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+now based on what they create give them a piece to design (not program)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+break into groups to work on it
+\end_layout
+
+\begin_layout Itemize
+have each group discuss their solution
+\end_layout
+
+\begin_layout Itemize
+from their solutions build more of the Hampshire solution on the board
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Now how to build it
+\end_layout
+
+\begin_layout Itemize
+now lets assume that we need the above because we're building a game, what
+ do we need
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+have them make suggests
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+network based
+\end_layout
+
+\begin_layout Itemize
+web based
+\end_layout
+
+\begin_layout Itemize
+gui based
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+how will we build it?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+based on their suggests, show them how to find libraries
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+look up on the google
+\end_layout
+
+\begin_layout Itemize
+find as many examples as possible
+\end_layout
+
+\begin_layout Itemize
+look at code examples
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+see how ugly it is
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+look at feature lists
+\end_layout
+
+\begin_layout Itemize
+look at about page to see what it's trying to fill
+\end_layout
+
+\begin_layout Itemize
+look at forums to see what people think
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+google 
+\begin_inset Quotes eld
+\end_inset
+
+should I use INSERT NAME HERE
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+when last updated
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Pair programing
+\end_layout
+
+\begin_layout Itemize
+explain
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+one types
+\end_layout
+
+\begin_layout Itemize
+one looks over shoulder
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+checks for typos
+\end_layout
+
+\begin_layout Itemize
+looks up documentation
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+Algorithm Design
+\end_layout
+
+\begin_layout Subsection
+Pseudo code
+\end_layout
+
+\begin_layout Itemize
+explain what it is
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+general structure of code
+\end_layout
+
+\begin_layout Itemize
+defining arguments
+\end_layout
+
+\begin_layout Itemize
+figure out input and output
+\end_layout
+
+\begin_layout Itemize
+has full comments
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Solve a maze
+\end_layout
+
+\begin_layout Itemize
+give them a maze and have them work in pairs to write code to solve mazes
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Itemize
+once they have it solved bring them back together to have a complete set
+ up pseudo code
+\end_layout
+
+\begin_layout Itemize
+have them convert the psuedo code to actual code
+\end_layout
+
+\begin_layout Itemize
+have them try their code using our maze generation code
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+maze code
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+remember we're buildling games
+\end_layout
+
 \begin_layout Itemize
 have them them define what a game is
 \end_layout
@@ -5746,7 +6092,6 @@ have them them define what a game is
 they are wrong
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 a game is fun, interactive, and has rewards
 \end_layout
@@ -5762,7 +6107,7 @@ they need to think about this when designing their games
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
+\begin_layout Section
 Game Pitch Day 
 \end_layout
 
@@ -6030,7 +6375,7 @@ attendance is mandetory
 \end_layout
 
 \begin_layout Section
-Recursion Data Structures 
+Recursion Data Structures chapter 5
 \end_layout
 
 \begin_layout Itemize

@@ -123,10 +123,15 @@ Building a Real Game
 
 SUBJECT:
 Software Design
+-data design
+-pair programming
 HOMEWORK:
 
 SUBJECT:
-Software Design
+Algorithm Design
+-pseudo code
+-solveing a maze
+Game preperation
 HOMEWORK:
 
 SUBJECT:
