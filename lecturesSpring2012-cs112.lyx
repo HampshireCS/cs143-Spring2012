@@ -2512,7 +2512,7 @@ pygame.key.set_repeat(100,100)
 \end_layout
 
 \begin_layout Section
-Code formatting
+Code formatting NEEDS EXAMPLES
 \end_layout
 
 \begin_layout Itemize
@@ -4174,7 +4174,7 @@ print "ByeBye"
 \end_layout
 
 \begin_layout Section
-Functions with return
+Functions with return NEEDS EXAMPLES
 \end_layout
 
 \begin_layout Subsection
@@ -4285,7 +4285,7 @@ examples
 \end_layout
 
 \begin_layout Section
-Advanced data structures
+Advanced data structures NEEDS EXAMPLES
 \end_layout
 
 \begin_layout Subsection
@@ -4658,7 +4658,7 @@ examples
 \end_layout
 
 \begin_layout Section
-Using Objects
+Using Objects NEEDS WORK
 \end_layout
 
 \begin_layout Itemize
@@ -4760,7 +4760,7 @@ examples
 \end_layout
 
 \begin_layout Section
-create our own objects
+create our own objects NEEDS WORK
 \end_layout
 
 \begin_layout Enumerate
@@ -5626,6 +5626,10 @@ can overide == and the like with _cmp_ p.
  191
 \end_layout
 
+\begin_layout Section
+Object Inheritance NEEDS WORK
+\end_layout
+
 \begin_layout Section*
 Chapter 16 inheritance
 \end_layout
@@ -6010,7 +6014,7 @@ looks up documentation
 \end_deeper
 \end_deeper
 \begin_layout Section
-Algorithm Design
+Algorithm Design NEEDS EXAMPLES
 \end_layout
 
 \begin_layout Subsection
@@ -6113,16 +6117,29 @@ they need to think about this when designing their games
 Game Pitch Day 
 \end_layout
 
-\begin_layout Section
-Project Managment/Exceptions and Files Chapter 14
+\begin_layout Itemize
+have everyone present their pitch (about 2 minutes per)
 \end_layout
 
+\begin_layout Itemize
+then go around having them gloming into pairs
+\end_layout
+
+\begin_layout Itemize
+get it all orgainized
+\end_layout
+
+\begin_layout Section
+Project Managment/Exceptions and Files Chapter 14 NEEDS EXAMPLES
+\end_layout
+
+\begin_layout Itemize
+talk about how you plan a project
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 goals 
-\end_layout
-
-\begin_layout Itemize
-virtical slices 
 \end_layout
 
 \begin_layout Itemize
@@ -6130,11 +6147,44 @@ timelines
 \end_layout
 
 \begin_layout Itemize
-more github 
+estimating times
 \end_layout
 
 \begin_layout Itemize
-we require
+give them CPM talk
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+run through example of game
+\end_layout
+
+\begin_layout Itemize
+show how to fudge-exact sticking to cpm not necessary
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+they need to plan to meet and work together
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+github
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+will make it easier for them to work together
+\end_layout
+
+\begin_layout Itemize
+explain details of github
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+dates to know
 \end_layout
 
 \begin_deeper
@@ -6272,11 +6322,6 @@ returns a list of strings
 
 \end_deeper
 \begin_layout Itemize
-break statement introduced p.
- 147
-\end_layout
-
-\begin_layout Itemize
 formatting strings
 \end_layout
 
@@ -6303,7 +6348,9 @@ typical C style formatting
 
 \end_deeper
 \begin_layout Itemize
-pickling
+pickling 
+\series bold
+needed?
 \end_layout
 
 \begin_deeper
@@ -6368,16 +6415,28 @@ except IOError:
 
 \end_layout
 
+\begin_layout Subsection
+examples
+\end_layout
+
 \begin_layout Section
 Plan Review/Work Day 
 \end_layout
 
 \begin_layout Itemize
-attendance is mandetory 
+attendance is mandetory
+\end_layout
+
+\begin_layout Itemize
+during class review groups project plan
+\end_layout
+
+\begin_layout Itemize
+everyone not being spoken to at that instant should be working
 \end_layout
 
 \begin_layout Section
-Recursion Data Structures chapter 5
+Recursion Data Structures chapter 5 NEEDS WORK
 \end_layout
 
 \begin_layout Itemize
@@ -6393,7 +6452,7 @@ talk about mazes
 \end_layout
 
 \begin_layout Section
-Data Structures 
+Data Structures NEEDS WORK
 \end_layout
 
 \begin_layout Itemize
@@ -6405,7 +6464,7 @@ graphs
 \end_layout
 
 \begin_layout Section
-State Machines 
+State Machines NEEDS WORK
 \end_layout
 
 \begin_layout Itemize
@@ -6421,11 +6480,11 @@ use Pac-man to explain state machines
 \end_layout
 
 \begin_layout Section
-Animation and Sound
+Animation and Sound NEEDS WORK
 \end_layout
 
 \begin_layout Section
-Real World Python 
+Real World Python NEEDS WORK
 \end_layout
 
 \begin_layout Itemize
@@ -6455,7 +6514,7 @@ show them how they can build real stand along programs
 
 \end_deeper
 \begin_layout Section
-Real World Python 
+Real World Python NEEDS WORK
 \end_layout
 
 \begin_layout Itemize
@@ -6474,12 +6533,32 @@ life hacking
 Play Final Games Course Wrap-Up 
 \end_layout
 
+\begin_layout Itemize
+start with course wrap-up
+\end_layout
+
+\begin_layout Itemize
+get pluses and minuses for improvement next time
+\end_layout
+
+\begin_layout Subsection
+play games
+\end_layout
+
+\begin_layout Itemize
+have each group put their game up on a computer
+\end_layout
+
+\begin_layout Itemize
+have everyone try out games for the rest of class time
+\end_layout
+
 \begin_layout Section
 Present Final Games
 \end_layout
 
-\begin_layout Section*
-not yet in notes
+\begin_layout Itemize
+have each group give their final game presentation
 \end_layout
 
 \end_body

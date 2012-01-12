@@ -130,8 +130,8 @@ HOMEWORK:
 SUBJECT:
 Algorithm Design
 -pseudo code
--solveing a maze
-Game preperation
+-solving a maze
+Game preparation
 HOMEWORK:
 
 SUBJECT:
@@ -140,13 +140,10 @@ HOMEWORK:
 
 SUBJECT:
 Project Management
--goals
 -vertical slices
--timelines
+-<a href="CriticalPathMethodNotes.pdf">CPM</a>
 -more github
 Exceptions and Files 
--read/write files
--handling exceptions
 <b>Text: Chapter 14 </b> 
 HOMEWORK:
 
