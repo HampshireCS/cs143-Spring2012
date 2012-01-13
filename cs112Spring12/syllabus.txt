@@ -156,21 +156,24 @@ SUBJECT:
 Recursion
 Data Structures
 -linked lists
+-trees
 <b>Text: Chapter 5</b> 
 HOMEWORK:
 
 SUBJECT:
-Data Structures
--trees
+State Machines
 -graphs
 HOMEWORK:
 
 SUBJECT:
-State Machines
+Animation and Sound
+-animation
+-sprite sheets
 HOMEWORK:
 
 SUBJECT:
-Animation and Sound
+Menus
+-pgu
 HOMEWORK:
 
 SUBJECT:
