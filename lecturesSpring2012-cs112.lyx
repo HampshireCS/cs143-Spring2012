@@ -540,6 +540,7 @@ Program 2
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Python"
 inline false
 status open
 
@@ -554,7 +555,7 @@ status open
 
 \begin_layout Plain Layout
 
-""" d1ex1.py
+""" ex1_hello.py
 \end_layout
 
 \begin_layout Plain Layout
@@ -600,7 +601,12 @@ print "2 * 8 =", 2*8
 
 \begin_layout Plain Layout
 
-print "..." print "I guess I'll get going" print "goodbye"
+print "..." 
+\end_layout
+
+\begin_layout Plain Layout
+
+print "I guess I'll get going" print "goodbye"
 \end_layout
 
 \end_inset
@@ -609,7 +615,7 @@ print "..." print "I guess I'll get going" print "goodbye"
 \end_layout
 
 \begin_layout Subsection
-Commenting
+Commenting NEEDS WORK
 \end_layout
 
 \begin_layout Itemize
@@ -626,14 +632,16 @@ or between
 \end_inset
 
 
-\begin_inset Quotes erd
-\end_inset
-
-
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+this is a half truth, I'll test it further but quotes should only be docstrings
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
-Hit github again
+Hit github again NEEDS WORK
 \end_layout
 
 \begin_layout Subsection
@@ -854,7 +862,7 @@ underscores
 
 \end_deeper
 \begin_layout Itemize
-data types
+basic data types
 \end_layout
 
 \begin_deeper
@@ -887,6 +895,7 @@ display using print
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Python"
 inline false
 status open
 
@@ -1164,22 +1173,18 @@ name = raw_input ("What...is your name? ")
 \end_layout
 
 \begin_layout Itemize
-input() //can be used to grab just an integer
-\end_layout
-
-\begin_layout Itemize
 \begin_inset listings
 inline false
 status open
 
 \begin_layout Plain Layout
 
-f=input("type a number")
+inp = raw_input("type a number")
 \end_layout
 
 \begin_layout Plain Layout
 
-c=ftoc(f) 
+num = float(inp) 
 \end_layout
 
 \end_inset
@@ -1189,7 +1194,7 @@ c=ftoc(f)
 
 \end_deeper
 \begin_layout Itemize
-example 1
+example 1 (ex1_sayhi.py)
 \end_layout
 
 \begin_layout Standard
@@ -1227,7 +1232,7 @@ print "Hello, %s!" % name
 \end_layout
 
 \begin_layout Itemize
-example 2
+example 2 (ex2_math.py)
 \end_layout
 
 \begin_layout Standard
@@ -1285,7 +1290,7 @@ print "%d/%d=%f" % (n,m,n/float(m))
 \end_layout
 
 \begin_layout Itemize
-example 3
+example 3 (ex3_diamond.py)
 \end_layout
 
 \begin_layout Standard
@@ -1309,7 +1314,7 @@ s = " "
 
 \begin_layout Plain Layout
 
-c = raw_input("What are the dyamind blocks?  ")
+c = raw_input("What character is a diamond block?  ")
 \end_layout
 
 \begin_layout Plain Layout
@@ -1446,6 +1451,11 @@ status open
 \begin_layout Plain Layout
 
 #!/usr/bin/env python
+\end_layout
+
+\begin_layout Plain Layout
+
+"ex1_countdown.py"
 \end_layout
 
 \begin_layout Plain Layout

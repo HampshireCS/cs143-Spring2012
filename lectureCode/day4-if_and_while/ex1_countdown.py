@@ -1,7 +1,10 @@
 #!/usr/bin/env python
+"ex1_countdown.py"
 
-c = raw_input("Countdown from?  ")
-c = int(c)
+c = 0
+while c <= 0:
+    c = raw_input("Countdown from?  ")
+    c = int(c)
 
 while c > 0:
     print "%d..." % c

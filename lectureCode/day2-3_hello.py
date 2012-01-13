@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-d1ex1.py
+ex1_helloworld.py
 
 A simple hello world program
 """
