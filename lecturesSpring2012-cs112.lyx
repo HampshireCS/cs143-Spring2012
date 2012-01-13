@@ -1567,6 +1567,11 @@ status open
 
 \begin_layout Plain Layout
 
+"ex2_gameloop"
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1666,6 +1671,11 @@ status open
 
 \begin_layout Plain Layout
 
+"ex3_insult"
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1723,9 +1733,9 @@ status open
 
 \begin_layout Plain Layout
 
-#!/usr/bin/env python                                                  
-                                                                       
-                      
+#!/usr/bin/env python                                                 "ex4_quitt
+ablegame"                                                              
+                                
 \end_layout
 
 \begin_layout Plain Layout
@@ -2799,7 +2809,7 @@ bad 2
 \end_layout
 
 \begin_layout Section
-Debugging
+Debugging NEEDS EXAMPLES
 \end_layout
 
 \begin_layout Itemize
