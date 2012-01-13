@@ -6300,16 +6300,6 @@ text=f.read()
 \end_layout
 
 \end_deeper
-\begin_layout Itemize
-set number of characters
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-text=f.read(5)
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Itemize
 read a line
@@ -6338,6 +6328,32 @@ f.readlines()
 
 \begin_layout Itemize
 returns a list of strings
+\end_layout
+
+\begin_layout Itemize
+done better with
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+text=f.read().strip().split('
+\backslash
+n')
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+there are libraries for importing most interesting types of images
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+pygame: images
+\end_layout
+
+\begin_layout Itemize
+jason: csv config files
 \end_layout
 
 \end_deeper
@@ -6394,6 +6410,12 @@ pickle.dump(12.3, f)
 x = pickle.load(f)
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+reloads
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Itemize
 throwing exceptions p.
@@ -6463,28 +6485,368 @@ Recursion Data Structures chapter 5 NEEDS WORK
 VIRTICAL SLICE DUE
 \end_layout
 
+\begin_layout Subsection
+recursion
+\end_layout
+
 \begin_layout Itemize
+show factorial example
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def factorial(n):
+\end_layout
+
+\begin_layout Plain Layout
+
+	if n<=1:
+\end_layout
+
+\begin_layout Plain Layout
+
+		return 1
+\end_layout
+
+\begin_layout Plain Layout
+
+	else:
+\end_layout
+
+\begin_layout Plain Layout
+
+		return n*factorial(n)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+use this to explain recursion
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+recursion works by calling a function on itself (with minor changes) until
+ some base case is reached
+\end_layout
+
+\begin_layout Itemize
+kind of like proof by induction
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+show a bottles of beer example
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/usr/bin/env/ python
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def beer(amount):
+\end_layout
+
+\begin_layout Plain Layout
+
+    if amount <=0:
+\end_layout
+
+\begin_layout Plain Layout
+
+        print "no bottle of beer on the wall, no bottles of beer, cry a
+ lot"
+\end_layout
+
+\begin_layout Plain Layout
+
+    else:
+\end_layout
+
+\begin_layout Plain Layout
+
+        beer(amount-1)
+\end_layout
+
+\begin_layout Plain Layout
+
+        print amount," bottles of beer on the wall ",amount,
+\end_layout
+
+\begin_layout Plain Layout
+
+			" bottles of beer, you take one down, pass it around ",(amount-1),
+\end_layout
+
+\begin_layout Plain Layout
+
+			" bottles of beer on the wall"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+beer(99) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+have them try Fibinacci (give them only 5-10 minutes, just enough to show
+ holes in understanding)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/usr/bin/env/ python
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def fib(n):
+\end_layout
+
+\begin_layout Plain Layout
+
+	#print "fib(",n,")"
+\end_layout
+
+\begin_layout Plain Layout
+
+	if n==0 or n==1:
+\end_layout
+
+\begin_layout Plain Layout
+
+		return n
+\end_layout
+
+\begin_layout Plain Layout
+
+	else:
+\end_layout
+
+\begin_layout Plain Layout
+
+		return fib(n-1)+fib(n-2)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fib(100) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+explain fibinacci then show them how it works by adding a print statement
+\end_layout
+
+\begin_layout Subsection
+data structures
+\end_layout
+
+\begin_layout Subsubsection
 linked lists 
 \end_layout
 
 \begin_layout Itemize
-talk about mazes
+diagram them and explain them
 \end_layout
 
-\begin_layout Section
-Data Structures NEEDS WORK
+\begin_deeper
+\begin_layout Itemize
+we don't need them anymore
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+they were really useful before mutible arrays (lists)
 \end_layout
 
 \begin_layout Itemize
-trees 
+they weren't mutable in C and earlier langauges
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsubsection
+trees
 \end_layout
 
 \begin_layout Itemize
-graphs 
+explain what a tree is
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+file system on a computer
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+you can go down into folders
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+create a maze without loops
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+diagram the maze as a tree
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+label each box as a letter
+\end_layout
+
+\begin_layout Itemize
+show the letters in the tree
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+use to explain
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+depth first search
+\end_layout
+
+\begin_layout Itemize
+breadth first search
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+now lets try a real example
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+PUT IN REAL TREE EXAMPLES
+\end_layout
+
+\end_deeper
 \begin_layout Section
 State Machines NEEDS WORK
+\end_layout
+
+\begin_layout Subsection
+graphs
+\end_layout
+
+\begin_layout Itemize
+create a maze again
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+this one can have loops
+\end_layout
+
+\begin_layout Itemize
+build into a graph
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\series bold
+ADD FIGURES-MAZE and GRAPH (on phone)
+\end_layout
+
+\begin_layout Subsection
+state machines
+\end_layout
+
+\begin_layout Itemize
+show Pacman example
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+insert pacman state machine picture (also on phone)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+add details of pacman example
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+build pacman
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Animation and Sound NEEDS WORK
 \end_layout
 
 \begin_layout Itemize
@@ -6495,12 +6857,12 @@ animation
 sprite sheets
 \end_layout
 
-\begin_layout Itemize
-use Pac-man to explain state machines
+\begin_layout Section
+Menus NEEDS WORK
 \end_layout
 
-\begin_layout Section
-Animation and Sound NEEDS WORK
+\begin_layout Itemize
+pgu libraries
 \end_layout
 
 \begin_layout Section
