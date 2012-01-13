@@ -7,11 +7,9 @@ from pygame.locals import *
 ties = []
 pygame.init()
 screen = pygame.display.set_mode((800,600))
-xloc, yloc = (400,300)
-dx = 5
-dy = 5
+x,y = 400,300
 
-def draw_tie(surf, pos, color=(randrange(100,256), randrange(100,256), randrange(100,256)), size=40):
+def draw_tie(surf, pos, color=(255,0,0), size=40):
     "Draws a tie fighter"
     x,y = pos
     
@@ -24,17 +22,8 @@ def draw_tie(surf, pos, color=(randrange(100,256), randrange(100,256), randrange
     draw.rect(surf, color, (x0, y-(wall/2), size, wall))
     draw.circle(surf, color, (x, y), size/4)
 
-def move(x, y, dx, dy, bound_w, bound_h):
-    if x < 0 or x > bound_w:
-        dx *= -1
-        x += 2*dx
-    if y < 0 or y > bound_h:
-        dy *= -1
-        y += 2*dy
-    x = x + dx
-    y = y + dy
-    draw_tie(screen, [x,y])
-    return x, y, dx, dy
+def move(x, y):
+    return x, y
 
 done = False
 while not done:
@@ -43,10 +32,13 @@ while not done:
             done = True
         elif event.type == KEYDOWN and event.key == K_ESCAPE:
             done = True
+
+    x,y = move(x,y)
+
     screen.fill((0,0,0))
-    xloc, yloc, dx, dy = move(xloc,yloc, dx, dy, 800, 600)
+    draw_tie(screen, [x, y])
     
     pygame.display.flip()
     pygame.time.wait(50)
     
-print "well isn't that nice."
+print "ByeBye"
