@@ -39,6 +39,24 @@ print "Question 3: _______"
 
 Section 2:  What Should This Code Do?
 
+TODO: Towers of hanoi bitwise.
 
 
 Section 3:  Fix This Code
+"This should print EXCELLENT! and the value when a number is larger than 7."
+
+t = int(raw_input("Number: "))
+for x in t:
+    x +=1
+    if x == 6:
+        print "excellent!", x
+
+"Make me a sandwitch: bread, cheese, tomato, bacon, bread."
+
+ingredients = ['bread', 'cheese', 'tomato', 'bacon']
+for y,x in enumerate(ingredients):
+    if y == 0:
+        print x
+    if y == 3:
+        print ingredients[1]
+    print x
