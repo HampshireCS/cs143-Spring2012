@@ -350,7 +350,7 @@ on hw's @ for _at_
 \end_layout
 
 \begin_layout Itemize
-show github...
+show Github...
 \end_layout
 
 \begin_layout Section
@@ -393,7 +393,7 @@ basic unix
 
 \begin_deeper
 \begin_layout Itemize
-show correspondance between unix view and point and click
+show correspondence between unix view and point and click
 \end_layout
 
 \begin_layout Itemize
@@ -424,7 +424,7 @@ calls a unix program
 \end_layout
 
 \begin_layout Itemize
-no spaces or special charaters
+no spaces or special characters
 \end_layout
 
 \begin_layout Itemize
@@ -645,7 +645,7 @@ this is a half truth, I'll test it further but quotes should only be docstrings
 
 \end_deeper
 \begin_layout Subsection
-Hit github again NEEDS WORK
+Hit Github again NEEDS WORK
 \end_layout
 
 \begin_layout Subsection
@@ -806,7 +806,7 @@ single and double quotes do the same thing in python
 
 \begin_deeper
 \begin_layout Itemize
-except when you want to inclose an apostrophy...
+except when you want to inclose an apostrophe...
 \end_layout
 
 \end_deeper
@@ -986,7 +986,7 @@ print type(answer)
 \end_layout
 
 \begin_layout Subsection
-Arithmatic
+Arithmetic
 \end_layout
 
 \begin_layout Itemize
@@ -1023,7 +1023,7 @@ string operations
 
 \begin_deeper
 \begin_layout Itemize
-+ concatinates
++ concatenates
 \end_layout
 
 \begin_layout Itemize
@@ -1417,7 +1417,7 @@ boolean expressions p.
 
 \end_deeper
 \begin_layout Itemize
-logical experessions p.66
+logical expressions p.66
 \end_layout
 
 \begin_deeper
@@ -1856,7 +1856,7 @@ mutable arrays
 \end_layout
 
 \begin_layout Itemize
-can store multiple peices of data
+can store multiple pieces of data
 \end_layout
 
 \begin_layout Itemize
@@ -1892,7 +1892,7 @@ bob=['fred', 'jim']
 
 \end_deeper
 \begin_layout Itemize
-+ concatinates lists together
++ concatenates lists together
 \end_layout
 
 \begin_layout Itemize
@@ -3082,7 +3082,7 @@ float()
 
 \begin_deeper
 \begin_layout Itemize
-equivelant to int() but for floats
+equivalent to int() but for floats
 \end_layout
 
 \end_deeper
@@ -4791,7 +4791,7 @@ we've been using them since pygame has them
 
 \end_deeper
 \begin_layout Itemize
-we've been useing existing objects
+we've been using existing objects
 \end_layout
 
 \begin_deeper
@@ -5460,7 +5460,7 @@ class Time:
 \end_layout
 
 \begin_layout Itemize
-to overide an esiting method for a class use the __ methods
+to override an existing method for a class use the __ methods
 \end_layout
 
 \begin_layout Itemize
@@ -5523,7 +5523,7 @@ str(p)
 \end_layout
 
 \begin_layout Itemize
-overiding operators again use __
+overriding operators again use __
 \end_layout
 
 \begin_layout Itemize
@@ -5697,7 +5697,7 @@ threeOfClubs = Card(3, 1)
 \end_layout
 
 \begin_layout Itemize
-can overide == and the like with _cmp_ p.
+can override == and the like with _cmp_ p.
  191
 \end_layout
 
@@ -6138,7 +6138,7 @@ once they have it solved bring them back together to have a complete set
 \end_layout
 
 \begin_layout Itemize
-have them convert the psuedo code to actual code
+have them convert the pseudo code to actual code
 \end_layout
 
 \begin_layout Itemize
@@ -6161,7 +6161,7 @@ maze code
 \end_layout
 
 \begin_layout Subsection
-remember we're buildling games
+remember we're building games
 \end_layout
 
 \begin_layout Itemize
@@ -6179,7 +6179,7 @@ a game is fun, interactive, and has rewards
 
 \begin_deeper
 \begin_layout Itemize
-this is fundemental
+this is fundamental
 \end_layout
 
 \begin_layout Itemize
@@ -6197,15 +6197,15 @@ have everyone present their pitch (about 2 minutes per)
 \end_layout
 
 \begin_layout Itemize
-then go around having them gloming into pairs
+then go around having them glomming into pairs
 \end_layout
 
 \begin_layout Itemize
-get it all orgainized
+get it all organized
 \end_layout
 
 \begin_layout Section
-Project Managment/Exceptions and Files Chapter 14 NEEDS EXAMPLES
+Project Management/Exceptions and Files Chapter 14 NEEDS EXAMPLES
 \end_layout
 
 \begin_layout Itemize
@@ -6245,7 +6245,7 @@ they need to plan to meet and work together
 
 \end_deeper
 \begin_layout Itemize
-github
+Github
 \end_layout
 
 \begin_deeper
@@ -6521,7 +6521,7 @@ Plan Review/Work Day
 \end_layout
 
 \begin_layout Itemize
-attendance is mandetory
+attendance is mandatory
 \end_layout
 
 \begin_layout Itemize
@@ -6735,7 +6735,7 @@ fib(100)
 \end_layout
 
 \begin_layout Itemize
-explain fibinacci then show them how it works by adding a print statement
+explain fibonacci then show them how it works by adding a print statement
 \end_layout
 
 \begin_layout Subsection
@@ -6757,11 +6757,11 @@ we don't need them anymore
 
 \begin_deeper
 \begin_layout Itemize
-they were really useful before mutible arrays (lists)
+they were really useful before mutable arrays (lists)
 \end_layout
 
 \begin_layout Itemize
-they weren't mutable in C and earlier langauges
+they weren't mutable in C and earlier languages
 \end_layout
 
 \end_deeper
