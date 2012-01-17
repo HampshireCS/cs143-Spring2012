@@ -44,3 +44,7 @@ pip-log.txt
 auto-save-list
 tramp
 .\#*
+
+.*.sw[a-z]
+*.un~
+Session.vim
