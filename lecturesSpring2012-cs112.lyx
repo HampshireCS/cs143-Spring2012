@@ -2977,7 +2977,7 @@ manually run through what they expect the code to be doing at each step
 
 \begin_deeper
 \begin_layout Itemize
-act out the interpreter.
+act out the interpreter
 \end_layout
 
 \end_deeper
@@ -3082,7 +3082,7 @@ float()
 
 \begin_deeper
 \begin_layout Itemize
-equivalent to int() but for floats
+equivelant to int() but for floats
 \end_layout
 
 \end_deeper
@@ -4544,6 +4544,16 @@ eng2sp.items()
 \begin_layout Itemize
 dictionaries alias p.
  138
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Copy is hardly used correctly.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4996,7 +5006,17 @@ box.corner.y = 0.0
 \end_layout
 
 \begin_layout Itemize
-copy module that allows you to copy anything
+copy module that allows you to copy anything 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This is more appropriate placement deepcopy is better.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -5091,7 +5111,7 @@ introduce sprite group
 \end_layout
 
 \end_deeper
-\begin_layout Section*
+\begin_layout Subsection*
 Chapter 13 classes and functions
 \end_layout
 
@@ -5121,7 +5141,7 @@ change the inputs to a function
 
 \end_deeper
 \end_deeper
-\begin_layout Section*
+\begin_layout Subsection*
 Chapter 14 classes and methods
 \end_layout
 
@@ -5595,7 +5615,7 @@ substitutions
 \end_layout
 
 \end_deeper
-\begin_layout Section*
+\begin_layout Subsection*
 Chapter 15 sets of objects
 \end_layout
 
@@ -5685,7 +5705,7 @@ can overide == and the like with _cmp_ p.
 Object Inheritance NEEDS WORK
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsection*
 Chapter 16 inheritance
 \end_layout
 
