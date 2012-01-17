@@ -332,12 +332,16 @@ Before they leave
 \end_layout
 
 \begin_layout Itemize
-explain hw1-installation
+explain Proj0 (or whatever)
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 have them start it
+\end_layout
+
+\begin_layout Itemize
+prove they have git installed.
 \end_layout
 
 \end_deeper
@@ -1733,9 +1737,18 @@ status open
 
 \begin_layout Plain Layout
 
-#!/usr/bin/env python                                                 "ex4_quitt
-ablegame"                                                              
-                                
+#!/usr/bin/env python                                                 
+\end_layout
+
+\begin_layout Plain Layout
+
+"ex4_quittablegame"     
+\end_layout
+
+\begin_layout Plain Layout
+
+                                                                       
+                 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1954,6 +1967,17 @@ aliasing
 
  p.
  120
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Not sure should be taught here...
+ donno if anyone needs it.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1977,7 +2001,7 @@ returns last element in list
 
 \end_deeper
 \begin_layout Itemize
-to clone instead of alias a list
+to copy instead of alias a list
 \end_layout
 
 \begin_deeper
@@ -2711,7 +2735,18 @@ just create a multiline string
 \begin_inset Quotes erd
 \end_inset
 
- or ''' at start and end of comment
+ or ''' at start and end of comment 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+These are not comments, just unrefrenced strings.
+ Unless a docstring.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -2884,7 +2919,7 @@ it should be near by
 
 \end_deeper
 \begin_layout Itemize
-the biggest thing is figureing out exactly where the error is
+the biggest thing is figuring out exactly where the error is
 \end_layout
 
 \begin_layout Itemize
@@ -2942,7 +2977,7 @@ manually run through what they expect the code to be doing at each step
 
 \begin_deeper
 \begin_layout Itemize
-act out the compiler
+act out the interpreter.
 \end_layout
 
 \end_deeper
