@@ -42,3 +42,12 @@ Section 2:  What Should This Code Do?
 
 
 Section 3:  Fix This Code
+"This should print EXCELLENT! and the value when a number is larger than 7."
+
+t = int(raw_input("Number: "))
+for x in t:
+    x +=1
+    if x == 6:
+        print "excellent!", x
+
+
