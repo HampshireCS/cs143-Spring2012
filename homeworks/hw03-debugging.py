@@ -39,6 +39,7 @@ print "Question 3: _______"
 
 Section 2:  What Should This Code Do?
 
+TODO: Towers of hanoi bitwise.
 
 
 Section 3:  Fix This Code
@@ -50,4 +51,12 @@ for x in t:
     if x == 6:
         print "excellent!", x
 
+"Make me a sandwitch: bread, cheese, tomato, bacon, bread."
 
+ingredients = ['bread', 'cheese', 'tomato', 'bacon']
+for y,x in enumerate(ingredients):
+    if y == 0:
+        print x
+    if y == 3:
+        print ingredients[1]
+    print x
