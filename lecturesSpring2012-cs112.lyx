@@ -3082,7 +3082,7 @@ float()
 
 \begin_deeper
 \begin_layout Itemize
-equivelant to int() but for floats
+equivalent to int() but for floats
 \end_layout
 
 \end_deeper
