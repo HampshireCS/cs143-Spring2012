@@ -17,7 +17,7 @@ BG_COLOR = 20,20,20
 
 # enemies
 class Enemy:
-    all = []
+    group = []
     spawn_max = 1000
     spawn_rate = 120
     spawn_step = 0
@@ -30,7 +30,7 @@ class Enemy:
         self.image = pygame.Surface(self.size)
         self.rect = self.image.get_rect()
 
-        Enemy.all.append(self)
+        Enemy.group.append(self)
 
         self.vel = randint(-4,4), randint(-4,4)
 
@@ -57,11 +57,11 @@ class Enemy:
     def spawn(cls):
         cls.spawn_step += 1
         if (cls.spawn_step % cls.spawn_rate) == 0:
-            if len(cls.all) >= cls.spawn_max:
+            if len(cls.group) >= cls.spawn_max:
                 # do nothing
                 pass
-            elif len(cls.all) > 0:
-                for enemy in [ e for e in cls.all ]:
+            elif len(cls.group) > 0:
+                for enemy in [ e for e in cls.group ]:
                     Enemy( enemy.rect.center )
             else:
                 pos = randint(100,700), randint(100,500)
@@ -107,7 +107,7 @@ while not done:
     Enemy.spawn()
 
     player.update()
-    for enemy in Enemy.all:
+    for enemy in Enemy.group:
         enemy.update()
         if enemy.rect.colliderect(player.rect):
             player.alive = False
@@ -116,7 +116,7 @@ while not done:
     # draw
     screen.fill(BG_COLOR)
 
-    for enemy in Enemy.all:
+    for enemy in Enemy.group:
         screen.blit(enemy.image, enemy.rect)
 
     if player.alive:
