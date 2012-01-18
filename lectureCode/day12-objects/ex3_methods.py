@@ -1,11 +1,11 @@
 class Student(object):
     def __init__(self, name="Tim"):
-        self.classes = ["CS 112", "Underwater Basket Weaving", "Fort Building 101", "Act like a penguin."]
+        self.courses = ["CS 112", "Underwater Basket Weaving", "Fort Building 101", "Act like a penguin."]
         self.name = name
-    def classes(self):
-        print "%s takes these classes:" % self.name
-        for i in self.classes:
+    def print_courses(self):
+        print "%s takes these courses:" % self.name
+        for i in self.courses:
             print i
 
 student = Student()
-student.classes()
+student.print_courses()
