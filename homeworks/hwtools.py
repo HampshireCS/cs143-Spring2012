@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-def input_nums():
-    inp = raw_input("Enter some numbers, separated by ',':  ").strip()
+def input_nums(msg="Enter some numbers, seperated by ',':  "):
+    inp = raw_input(msg).strip()
     return [ int(c.strip()) for c in inp.split(",") ]
 
