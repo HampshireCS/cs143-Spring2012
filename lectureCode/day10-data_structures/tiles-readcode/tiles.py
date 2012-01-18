@@ -3,7 +3,7 @@ import pygame
 from pygame.locals import *
 
 ## consts
-SCREEN = W,H = 800,600
+SCREEN = W,H = 900,600
 
 SIZE = 10
 
@@ -36,7 +36,7 @@ while not done:
             for j in reversed(range(height)):
                 x = 11 * (i + j)
                 y = 6 * (i - j)
-                x += 50 
+                x += 10 
                 y += 50 + 6 * height
                 y -= tilemap[i][j] * 2
                 screen.blit(tile, (x,y))
