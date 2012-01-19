@@ -4,12 +4,12 @@ Syllabus
 //first day of classes format(mm/dd/yyyy)
 01/25/2012
 //last day of classes format(mm/dd/yyyy)
-05/05/2012
+05/02/2012
 //days of class, indicate with Y or N
 M:Y
 T:N
 W:Y
-Th:N
+Th:Y
 F:N
 
 <center><b>This syllabus is subject to change based on the speed of the class.</b></center>
@@ -28,6 +28,8 @@ First program
 <b>Text: Chapter 1 </b> 
 
 SUBJECT:
+
+SUBJECT:
 Beginning Python and Basic Unix
 -revisit first program
 -terminal
@@ -36,6 +38,7 @@ Beginning Python and Basic Unix
 -Python interpreter
 How computers work
 <b>Text: Chapter 1 </b> 
+HOMEWORK:
 
 SUBJECT:
 Data-types and Variables
@@ -45,6 +48,8 @@ Arithmetic operations
 -operations
 -assignment operations
 <b>Text: Chapter 2 </b> 
+
+SUBJECT:
 HOMEWORK:
 
 SECTION:
@@ -62,6 +67,8 @@ SUBJECT:
 For and Lists
 -all about games
 <b>Text: Chapter 5 & 10 </b> 
+
+SUBJECT:
 HOMEWORK:
 
 SUBJECT:
@@ -75,6 +82,8 @@ SUBJECT:
 Debugging
 -programming errors
 -algorithmic errors
+
+SUBJECT:
 HOMEWORK:
 
 SUBJECT:
@@ -89,6 +98,8 @@ Functions
 -return values
 -tie fighters
 <b>Text: Chapter 3 & 6</b> 
+
+SUBJECT:
 HOMEWORK:
 
 SUBJECT:
@@ -104,6 +115,8 @@ SUBJECT:
 Objects
 -existing 
 <b>Text: Chapters 15 & 16</b> 
+
+SUBJECT:
 HOMEWORK:
 
 SUBJECT:
@@ -116,6 +129,8 @@ SUBJECT:
 Objects
 -inheritance
 <b>Text: Chapters 16, 17, & 18</b> 
+
+SUBJECT:
 HOMEWORK:
 
 SECTION:
@@ -132,6 +147,8 @@ Algorithm Design
 -pseudo code
 -solving a maze
 Game preparation
+
+SUBJECT:
 HOMEWORK:
 
 SUBJECT:
@@ -145,12 +162,16 @@ Project Management
 -more github
 Exceptions and Files 
 <b>Text: Chapter 14 </b> 
+
+SUBJECT:
 HOMEWORK:
 
 SUBJECT:
 Plan Review/Work Day
 -attendance is mandatory
 HOMEWORK:
+
+SUBJECT:
 
 SUBJECT:
 Recursion
@@ -163,6 +184,8 @@ HOMEWORK:
 SUBJECT:
 State Machines
 -graphs
+
+SUBJECT:
 HOMEWORK:
 
 SUBJECT:
@@ -174,6 +197,8 @@ HOMEWORK:
 SUBJECT:
 Menus
 -pgu
+
+SUBJECT:
 HOMEWORK:
 
 SUBJECT:
@@ -182,6 +207,8 @@ HOMEWORK:
 
 SUBJECT:
 Real World Python
+
+SUBJECT:
 HOMEWORK:
 
 SUBJECT:

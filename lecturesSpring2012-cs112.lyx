@@ -349,8 +349,8 @@ prove they have git installed.
 on hw's @ for _at_
 \end_layout
 
-\begin_layout Itemize
-show Github...
+\begin_layout Subsection
+show Github FIX ME
 \end_layout
 
 \begin_layout Section
@@ -619,7 +619,7 @@ print "I guess I'll get going" print "goodbye"
 \end_layout
 
 \begin_layout Subsection
-Commenting NEEDS WORK
+Commenting 
 \end_layout
 
 \begin_layout Itemize
@@ -1961,7 +1961,7 @@ python has
 \begin_inset Quotes eld
 \end_inset
 
-aliasing
+referencing
 \begin_inset Quotes erd
 \end_inset
 
@@ -1986,7 +1986,7 @@ sorta like pointers
 \end_layout
 
 \begin_layout Itemize
-doesn't alias everything...
+doesn't reference everything...
 \end_layout
 
 \end_deeper
@@ -2001,7 +2001,7 @@ returns last element in list
 
 \end_deeper
 \begin_layout Itemize
-to copy instead of alias a list
+to copy instead of refernce a list
 \end_layout
 
 \begin_deeper
