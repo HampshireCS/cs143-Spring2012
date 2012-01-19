@@ -332,16 +332,12 @@ Before they leave
 \end_layout
 
 \begin_layout Itemize
-explain Proj0 (or whatever)
+explain hw1-installation
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 have them start it
-\end_layout
-
-\begin_layout Itemize
-prove they have git installed.
 \end_layout
 
 \end_deeper
@@ -350,7 +346,7 @@ on hw's @ for _at_
 \end_layout
 
 \begin_layout Itemize
-show Github...
+show github...
 \end_layout
 
 \begin_layout Section
@@ -393,7 +389,7 @@ basic unix
 
 \begin_deeper
 \begin_layout Itemize
-show correspondence between unix view and point and click
+show correspondance between unix view and point and click
 \end_layout
 
 \begin_layout Itemize
@@ -424,7 +420,7 @@ calls a unix program
 \end_layout
 
 \begin_layout Itemize
-no spaces or special characters
+no spaces or special charaters
 \end_layout
 
 \begin_layout Itemize
@@ -645,7 +641,7 @@ this is a half truth, I'll test it further but quotes should only be docstrings
 
 \end_deeper
 \begin_layout Subsection
-Hit Github again NEEDS WORK
+Hit github again NEEDS WORK
 \end_layout
 
 \begin_layout Subsection
@@ -806,7 +802,7 @@ single and double quotes do the same thing in python
 
 \begin_deeper
 \begin_layout Itemize
-except when you want to inclose an apostrophe...
+except when you want to inclose an apostrophy...
 \end_layout
 
 \end_deeper
@@ -986,7 +982,7 @@ print type(answer)
 \end_layout
 
 \begin_layout Subsection
-Arithmetic
+Arithmatic
 \end_layout
 
 \begin_layout Itemize
@@ -1023,7 +1019,7 @@ string operations
 
 \begin_deeper
 \begin_layout Itemize
-+ concatenates
++ concatinates
 \end_layout
 
 \begin_layout Itemize
@@ -1417,7 +1413,7 @@ boolean expressions p.
 
 \end_deeper
 \begin_layout Itemize
-logical expressions p.66
+logical experessions p.66
 \end_layout
 
 \begin_deeper
@@ -1737,18 +1733,9 @@ status open
 
 \begin_layout Plain Layout
 
-#!/usr/bin/env python                                                 
-\end_layout
-
-\begin_layout Plain Layout
-
-"ex4_quittablegame"     
-\end_layout
-
-\begin_layout Plain Layout
-
-                                                                       
-                 
+#!/usr/bin/env python                                                 "ex4_quitt
+ablegame"                                                              
+                                
 \end_layout
 
 \begin_layout Plain Layout
@@ -1856,7 +1843,7 @@ mutable arrays
 \end_layout
 
 \begin_layout Itemize
-can store multiple pieces of data
+can store multiple peices of data
 \end_layout
 
 \begin_layout Itemize
@@ -1892,7 +1879,7 @@ bob=['fred', 'jim']
 
 \end_deeper
 \begin_layout Itemize
-+ concatenates lists together
++ concatinates lists together
 \end_layout
 
 \begin_layout Itemize
@@ -1967,17 +1954,6 @@ aliasing
 
  p.
  120
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Not sure should be taught here...
- donno if anyone needs it.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2001,7 +1977,7 @@ returns last element in list
 
 \end_deeper
 \begin_layout Itemize
-to copy instead of alias a list
+to clone instead of alias a list
 \end_layout
 
 \begin_deeper
@@ -2559,21 +2535,18 @@ pygame.key.set_repeat(100,100)
 Code formatting NEEDS EXAMPLES
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Subsection
 documentation
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 help()
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 returns comment string at top
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 dir()
 \end_layout
@@ -2584,12 +2557,10 @@ returns all of the functions from inside the file
 \end_layout
 
 \end_deeper
-\end_deeper
-\begin_layout Itemize
+\begin_layout Subsection
 web searches
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 pygame doc
 \end_layout
@@ -2598,12 +2569,10 @@ pygame doc
 python doc
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
+\begin_layout Subsection
 filtering examples:
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 do a web search for a specific thing we want to do
 \end_layout
@@ -2616,22 +2585,18 @@ filter the examples for what's good and bad
 always look at more then 1 example
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
+\begin_layout Subsection
 talk about good formatting of code
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 comment block at top
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 this is what help returns
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 variable naming
 \end_layout
@@ -2663,12 +2628,10 @@ long names
 camelCaps
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 use this
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 under_Score
 \end_layout
@@ -2721,7 +2684,6 @@ commenting
 multiline comments 
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 just create a multiline string 
 \begin_inset Quotes eld
@@ -2735,25 +2697,13 @@ just create a multiline string
 \begin_inset Quotes erd
 \end_inset
 
- or ''' at start and end of comment 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-These are not comments, just unrefrenced strings.
- Unless a docstring.
-\end_layout
-
-\end_inset
-
-
+ or ''' at start and end of comment
 \end_layout
 
 \begin_layout Itemize
 more conventional to use # at start of first line
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 should put a comment around everything that is not obvious
 \end_layout
@@ -2780,7 +2730,6 @@ spacing
 use spaces to separate different ideas
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Subsection
 examples
@@ -2919,7 +2868,7 @@ it should be near by
 
 \end_deeper
 \begin_layout Itemize
-the biggest thing is figuring out exactly where the error is
+the biggest thing is figureing out exactly where the error is
 \end_layout
 
 \begin_layout Itemize
@@ -2977,7 +2926,7 @@ manually run through what they expect the code to be doing at each step
 
 \begin_deeper
 \begin_layout Itemize
-act out the interpreter
+act out the compiler
 \end_layout
 
 \end_deeper
@@ -3082,7 +3031,7 @@ float()
 
 \begin_deeper
 \begin_layout Itemize
-equivalent to int() but for floats
+equivelant to int() but for floats
 \end_layout
 
 \end_deeper
@@ -4544,16 +4493,6 @@ eng2sp.items()
 \begin_layout Itemize
 dictionaries alias p.
  138
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Copy is hardly used correctly.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4791,7 +4730,7 @@ we've been using them since pygame has them
 
 \end_deeper
 \begin_layout Itemize
-we've been using existing objects
+we've been useing existing objects
 \end_layout
 
 \begin_deeper
@@ -5006,17 +4945,7 @@ box.corner.y = 0.0
 \end_layout
 
 \begin_layout Itemize
-copy module that allows you to copy anything 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-This is more appropriate placement deepcopy is better.
-\end_layout
-
-\end_inset
-
-
+copy module that allows you to copy anything
 \end_layout
 
 \begin_layout Itemize
@@ -5111,7 +5040,7 @@ introduce sprite group
 \end_layout
 
 \end_deeper
-\begin_layout Subsection*
+\begin_layout Section*
 Chapter 13 classes and functions
 \end_layout
 
@@ -5141,7 +5070,7 @@ change the inputs to a function
 
 \end_deeper
 \end_deeper
-\begin_layout Subsection*
+\begin_layout Section*
 Chapter 14 classes and methods
 \end_layout
 
@@ -5460,7 +5389,7 @@ class Time:
 \end_layout
 
 \begin_layout Itemize
-to override an existing method for a class use the __ methods
+to overide an esiting method for a class use the __ methods
 \end_layout
 
 \begin_layout Itemize
@@ -5523,7 +5452,7 @@ str(p)
 \end_layout
 
 \begin_layout Itemize
-overriding operators again use __
+overiding operators again use __
 \end_layout
 
 \begin_layout Itemize
@@ -5615,7 +5544,7 @@ substitutions
 \end_layout
 
 \end_deeper
-\begin_layout Subsection*
+\begin_layout Section*
 Chapter 15 sets of objects
 \end_layout
 
@@ -5697,7 +5626,7 @@ threeOfClubs = Card(3, 1)
 \end_layout
 
 \begin_layout Itemize
-can override == and the like with _cmp_ p.
+can overide == and the like with _cmp_ p.
  191
 \end_layout
 
@@ -5705,7 +5634,7 @@ can override == and the like with _cmp_ p.
 Object Inheritance NEEDS WORK
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 Chapter 16 inheritance
 \end_layout
 
@@ -6138,7 +6067,7 @@ once they have it solved bring them back together to have a complete set
 \end_layout
 
 \begin_layout Itemize
-have them convert the pseudo code to actual code
+have them convert the psuedo code to actual code
 \end_layout
 
 \begin_layout Itemize
@@ -6161,7 +6090,7 @@ maze code
 \end_layout
 
 \begin_layout Subsection
-remember we're building games
+remember we're buildling games
 \end_layout
 
 \begin_layout Itemize
@@ -6179,7 +6108,7 @@ a game is fun, interactive, and has rewards
 
 \begin_deeper
 \begin_layout Itemize
-this is fundamental
+this is fundemental
 \end_layout
 
 \begin_layout Itemize
@@ -6197,15 +6126,15 @@ have everyone present their pitch (about 2 minutes per)
 \end_layout
 
 \begin_layout Itemize
-then go around having them glomming into pairs
+then go around having them gloming into pairs
 \end_layout
 
 \begin_layout Itemize
-get it all organized
+get it all orgainized
 \end_layout
 
 \begin_layout Section
-Project Management/Exceptions and Files Chapter 14 NEEDS EXAMPLES
+Project Managment/Exceptions and Files Chapter 14 NEEDS EXAMPLES
 \end_layout
 
 \begin_layout Itemize
@@ -6245,7 +6174,7 @@ they need to plan to meet and work together
 
 \end_deeper
 \begin_layout Itemize
-Github
+github
 \end_layout
 
 \begin_deeper
@@ -6521,7 +6450,7 @@ Plan Review/Work Day
 \end_layout
 
 \begin_layout Itemize
-attendance is mandatory
+attendance is mandetory
 \end_layout
 
 \begin_layout Itemize
@@ -6735,7 +6664,7 @@ fib(100)
 \end_layout
 
 \begin_layout Itemize
-explain fibonacci then show them how it works by adding a print statement
+explain fibinacci then show them how it works by adding a print statement
 \end_layout
 
 \begin_layout Subsection
@@ -6757,11 +6686,11 @@ we don't need them anymore
 
 \begin_deeper
 \begin_layout Itemize
-they were really useful before mutable arrays (lists)
+they were really useful before mutible arrays (lists)
 \end_layout
 
 \begin_layout Itemize
-they weren't mutable in C and earlier languages
+they weren't mutable in C and earlier langauges
 \end_layout
 
 \end_deeper
