@@ -151,14 +151,10 @@ Structure of course
 \end_layout
 
 \begin_layout Itemize
-discuss point policy on assignments (1 point needed for every assignment)
+discuss point policy on assignments 
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-+2 early
-\end_layout
-
 \begin_layout Itemize
 +1 on time 
 \end_layout
@@ -168,9 +164,19 @@ discuss point policy on assignments (1 point needed for every assignment)
 \end_layout
 
 \begin_layout Itemize
--2 not turned in at all
+-1 skipped
 \end_layout
 
+\begin_layout Itemize
+they must get at least 2 fewer points then total number of assignments 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(20 assignments-18 points needed)
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Itemize
 why point policy
