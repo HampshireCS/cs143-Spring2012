@@ -19,7 +19,7 @@ from hwtools import *
 # Section 2:  Loops
 # ==============================
 
-# 1)  Get a multiple of three (n) from the input
+# 1)  Keep getting a number from the input, until it is a multiple of 3.
 # 2)  Print a countdown from n to 0 by threes 
 #      ex:  
 #         9...
@@ -38,8 +38,8 @@ nums = input_nums()
 
 # 1)  How many numbers were entered?
 # 2)  Append 3 and 5 to nums then print it.
-# 3)  Remove the last element from nums
-# 4)  
+# 3)  Remove the last element from nums.
+# 4)  Set the 3rd element to 7 and print nums.
 
 
 # Section 4:  For Loops
@@ -49,8 +49,7 @@ nums = input_nums()
 # 2) Print every even number in nums
 # 3) Print the phrase "only even numbers" if nums only 
 #    contains even numbers, otherwise print "some odd numbers".
-# 4) 
-
+# 4) Generate a list of odd numbers less than 100. [Hint use range()]
 
 # ADVANCED:
 # =====================================
