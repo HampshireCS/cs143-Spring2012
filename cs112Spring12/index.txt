@@ -63,12 +63,12 @@ Evaluation
 Course evaluation will be based on students ability to learn course
 material and write working code. Evaluation of comprehension cannot be
 made without homework assignments being turned
-in on time. To receive an evaluation you must earn at least as many
-points as there are assignments given over the
-course of the semester. For example if 11 assignments are given you
-must get 11 points for an evaluation. For every assignment turned in on time you
-receive a point. For every assignment turned in a day early you
-receive 2 points and for every assignment not turned in you lose 2
-points. Late assignments earn 0 points. As with all Hampshire College
+in on time. To receive an evaluation you must earn at least 2 fewer
+points then the number of assignments in the course. So if the course
+has 20 assignments you will need at least 18 points for an evaluation.
+You get 1 point for an assignment turned in on time, 0 point for a late
+assignment and -1 point for a skipped assignment. Assignments must be
+complet for points.
+As with all Hampshire College
 courses academic honesty is expected, make sure your are familiar
 with the Hampshire's <a href="https://intranet.hampshire.edu/cms/index.php?id=7357">official statement on plagiarism</a>.<p>

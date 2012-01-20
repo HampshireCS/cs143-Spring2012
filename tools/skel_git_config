@@ -1,0 +1,2 @@
+[alias]
+	turnin = "!bash -c 'git add .; git commit -m "$0"; git tag $0 ; git push; git push --tags'"
