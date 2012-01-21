@@ -1,16 +1,15 @@
 #!/usr/bin/env python
-
-from random import randrange
+"ex2_gameloop"
 
 import pygame
 
+screen_size = 640,480
+background = 255,0,255
+
 # initialize pygame
 pygame.init()
-
-# make a screen
-screen_size = 640,480
-
-pygame.display.set_mode(size)
+pygame.display.set_mode(screen_size)
 
 while True:
-    pass
+    screen.fill(background)
+    pygame.display.flip()

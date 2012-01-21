@@ -565,7 +565,16 @@ status open
 
 \begin_layout Plain Layout
 
-""" ex1_hello.py
+""" 
+\end_layout
+
+\begin_layout Plain Layout
+
+ex1_hello.py
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -616,7 +625,12 @@ print "..."
 
 \begin_layout Plain Layout
 
-print "I guess I'll get going" print "goodbye"
+print "I guess I'll get going" 
+\end_layout
+
+\begin_layout Plain Layout
+
+print "goodbye"
 \end_layout
 
 \end_inset
@@ -1595,6 +1609,20 @@ import pygame
 
 \begin_layout Plain Layout
 
+screen_size = 640,480
+\end_layout
+
+\begin_layout Plain Layout
+
+background = 255,0,255
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
 #init pygame
 \end_layout
 
@@ -1605,16 +1633,7 @@ pygame.init()
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-#make a screen
-\end_layout
-
-\begin_layout Plain Layout
-
-screen = pygame.display.set_mode((640, 480))
+screen = pygame.display.set_mode(screen_size)
 \end_layout
 
 \begin_layout Plain Layout
@@ -1628,12 +1647,12 @@ while True:
 
 \begin_layout Plain Layout
 
-    color=255,255,255
+    screen.fill(background)
 \end_layout
 
 \begin_layout Plain Layout
 
-    screen.fill(color)
+	pygame.display.flip()
 \end_layout
 
 \end_inset
@@ -1690,7 +1709,7 @@ status open
 
 \begin_layout Plain Layout
 
-input = raw_input("> ")
+inp = raw_input("Enter your name:  ")
 \end_layout
 
 \begin_layout Plain Layout
@@ -1699,7 +1718,7 @@ input = raw_input("> ")
 
 \begin_layout Plain Layout
 
-if input=="Paul":
+if inp=="Paul":
 \end_layout
 
 \begin_layout Plain Layout
@@ -1709,7 +1728,7 @@ if input=="Paul":
 
 \begin_layout Plain Layout
 
-elif input=="Alec" or input=="Jonah" or input=="Jack":
+elif inp=="Alec" or inp=="Jonah" or inp=="Jack":
 \end_layout
 
 \begin_layout Plain Layout
@@ -1753,8 +1772,6 @@ status open
 
 \begin_layout Plain Layout
 
-                                                                       
-                 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1769,40 +1786,51 @@ from pygame.locals import *
 
 \begin_layout Plain Layout
 
-# initialize pygame                                                    
-                                                                       
-                       
 \end_layout
 
 \begin_layout Plain Layout
 
-pygame.init()
+screen_size = 640,480
 \end_layout
 
 \begin_layout Plain Layout
 
-# make a screen                                                        
-                                                                       
-                       
+background = 255,0,255
 \end_layout
 
 \begin_layout Plain Layout
 
-screen = pygame.display.set_mode((640,480)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+# initialize pygame
+\end_layout
+
+\begin_layout Plain Layout
+
+pygmae.init()
+\end_layout
+
+\begin_layout Plain Layout
+
+screen = pygame.display.set_mode(screen_size)                            
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# loop                                                                 
+       
 \end_layout
 
 \begin_layout Plain Layout
 
 done = False
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# while running                       
 \end_layout
 
 \begin_layout Plain Layout
@@ -1813,6 +1841,10 @@ while not done:
 \begin_layout Plain Layout
 
 	event = pygame.event.poll()     
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1837,11 +1869,35 @@ while not done:
 
 \begin_layout Plain Layout
 
+	elif event.type == MOUSEBUTTONDOWN:
 \end_layout
 
 \begin_layout Plain Layout
 
-print "quitting"
+		print "Mouse %d, %d" % pygame.mouse.get_pos()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	screen.fill(background)
+\end_layout
+
+\begin_layout Plain Layout
+
+	pygame.display.flip()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print "ByeBye"
 \end_layout
 
 \end_inset
@@ -1973,17 +2029,6 @@ referencing
 
  p.
  120
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Not sure should be taught here...
- donno if anyone needs it.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2117,11 +2162,12 @@ status open
 
 \begin_layout Plain Layout
 
-input = raw_input("type name> ")
+inp = raw_input("Enter your name:  ")
 \end_layout
 
 \begin_layout Plain Layout
 
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -2135,7 +2181,7 @@ TAs=["Alec","Jack","Jonah"]
 
 \begin_layout Plain Layout
 
-if input=="Paul":
+if inp=="Paul":
 \end_layout
 
 \begin_layout Plain Layout
@@ -2145,7 +2191,7 @@ if input=="Paul":
 
 \begin_layout Plain Layout
 
-elif input in TAs:
+elif inp in TAs:
 \end_layout
 
 \begin_layout Plain Layout
@@ -2178,7 +2224,17 @@ can create a range p.
 \end_layout
 
 \begin_layout Itemize
-bob=range(1,5) 
+range(10)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[0,1,2,3,4,5,6,7,8,9]
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+range(1,5) 
 \end_layout
 
 \begin_deeper
@@ -2186,19 +2242,21 @@ bob=range(1,5)
 [1,2,3,4]
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 range(1, 10, 2) 
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 [1, 3, 5, 7, 9]
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 empty=[]
 \end_layout
 
-\end_deeper
 \begin_layout Subsection
 for again
 \end_layout
@@ -2210,7 +2268,7 @@ status open
 
 \begin_layout Plain Layout
 
-for i in range(0,100):
+for i in range(100):
 \end_layout
 
 \begin_layout Plain Layout
@@ -2260,27 +2318,17 @@ status open
 
 \begin_layout Plain Layout
 
-#!/usr/bin/env python
+#!/usr/bin/env python 
 \end_layout
 
 \begin_layout Plain Layout
 
-"""
+""" 
 \end_layout
 
 \begin_layout Plain Layout
 
-draw1.py
-\end_layout
-
-\begin_layout Plain Layout
-
-drawlines
-\end_layout
-
-\begin_layout Plain Layout
-
-"""
+drawlines.py
 \end_layout
 
 \begin_layout Plain Layout
@@ -2289,7 +2337,21 @@ drawlines
 
 \begin_layout Plain Layout
 
-import pygame
+Draw a bunch of lines to the screen 
+\end_layout
+
+\begin_layout Plain Layout
+
+""" 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import pygame 
 \end_layout
 
 \begin_layout Plain Layout
@@ -2303,12 +2365,41 @@ from pygame.locals import *
 
 \begin_layout Plain Layout
 
-pygame.init()
+## Settings 
 \end_layout
 
 \begin_layout Plain Layout
 
-screen = pygame.display.set_mode((400,400))
+BLACK = 0,0,0 
+\end_layout
+
+\begin_layout Plain Layout
+
+RED = 255,0,0
+\end_layout
+
+\begin_layout Plain Layout
+
+size = 400,400
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+## Initialize 
+\end_layout
+
+\begin_layout Plain Layout
+
+pygame.init() 
+\end_layout
+
+\begin_layout Plain Layout
+
+screen = pygame.display.set_mode(size) 
 \end_layout
 
 \begin_layout Plain Layout
@@ -2322,21 +2413,12 @@ done = False
 
 \begin_layout Plain Layout
 
-bg = (0,0,0)
-\end_layout
-
-\begin_layout Plain Layout
-
-fg = (255,0,0)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
 while not done:
+\end_layout
+
+\begin_layout Plain Layout
+
+    ## Input
 \end_layout
 
 \begin_layout Plain Layout
@@ -2356,7 +2438,7 @@ while not done:
 
 \begin_layout Plain Layout
 
-        elif event.type == KEYDOWN and event.key == K_ESCAPE:
+       elif event.type == KEYDOWN and event.key == K_ESCAPE:
 \end_layout
 
 \begin_layout Plain Layout
@@ -2370,22 +2452,22 @@ while not done:
 
 \begin_layout Plain Layout
 
-       # draw
+    ## Draw
 \end_layout
 
 \begin_layout Plain Layout
 
-        screen.fill(bg)
+    screen.fill(BLACK)
 \end_layout
 
 \begin_layout Plain Layout
 
-        for i in range(400):
+    for i in range(400):
 \end_layout
 
 \begin_layout Plain Layout
 
-            pygame.draw.line(screen, fg, (0,i), (i,399))
+        pygame.draw.line(screen, RED, (0,i), (i,399))
 \end_layout
 
 \begin_layout Plain Layout
@@ -2394,22 +2476,21 @@ while not done:
 
 \begin_layout Plain Layout
 
-       # refresh
+    ## Refresh
 \end_layout
 
 \begin_layout Plain Layout
 
-        pygame.display.flip()
+    pygame.display.flip()
 \end_layout
 
 \begin_layout Plain Layout
 
-        
 \end_layout
 
 \begin_layout Plain Layout
 
-print "ByeBye" 
+print "ByeBye"
 \end_layout
 
 \end_inset
@@ -2421,6 +2502,12 @@ print "ByeBye"
 explain flip
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+double buffering term, means redraw screen
+\end_layout
+
+\end_deeper
 \begin_layout Subsubsection
 now separate lines
 \end_layout
@@ -2451,22 +2538,50 @@ status open
 
 \begin_layout Plain Layout
 
-pygame.draw.line(screen, fg, (0,i), (i,399))             
+BLUE = 0,255,255
 \end_layout
 
 \begin_layout Plain Layout
 
-pygame.draw.line(screen, fg, (0,i), (399-i,0))             
+YELLOW = 255,255,0
 \end_layout
 
 \begin_layout Plain Layout
 
-pygame.draw.line(screen, fg, (i,0), (399,i))             
+GREEN = 0,255,0
 \end_layout
 
 \begin_layout Plain Layout
 
-pygame.draw.line(screen, fg, (i,399), (399,399-i))
+\end_layout
+
+\begin_layout Plain Layout
+
+# <snip>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pygame.draw.line(screen, RED, (0,i), (i,399))             
+\end_layout
+
+\begin_layout Plain Layout
+
+pygame.draw.line(screen, BLUE, (0,i), (399-i,0))             
+\end_layout
+
+\begin_layout Plain Layout
+
+pygame.draw.line(screen, GREEN, (i,0), (399,i))             
+\end_layout
+
+\begin_layout Plain Layout
+
+pygame.draw.line(screen, YELLOW, (i,399), (399,399-i))
 \end_layout
 
 \end_inset
@@ -2490,12 +2605,21 @@ status open
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
 minstep = 1 
 \end_layout
 
 \begin_layout Plain Layout
 
 maxstep = 200
+\end_layout
+
+\begin_layout Plain Layout
+
+step = 10
 \end_layout
 
 \begin_layout Plain Layout
@@ -4652,6 +4776,10 @@ upper and lower
 \end_layout
 
 \begin_layout Itemize
+title and capitalize 
+\end_layout
+
+\begin_layout Itemize
 be sure to show them where to find stuff
 \end_layout
 
@@ -4812,6 +4940,578 @@ collision
 \end_deeper
 \begin_layout Subsection
 examples
+\end_layout
+
+\begin_layout Standard
+drawing a rectangle
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+#!/usr/bin/env python
+\end_layout
+
+\begin_layout Plain Layout
+
+import pygame
+\end_layout
+
+\begin_layout Plain Layout
+
+from pygame.locals import *
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# globals
+\end_layout
+
+\begin_layout Plain Layout
+
+BACKGROUND = 80, 80, 80
+\end_layout
+
+\begin_layout Plain Layout
+
+SCREEN_SIZE = SCREEN_WIDTH, SCREEN_HEIGHT = 800,600
+\end_layout
+
+\begin_layout Plain Layout
+
+FPS = 30
+\end_layout
+
+\begin_layout Plain Layout
+
+RECT_SIZE = 120,80
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pygame.init()
+\end_layout
+
+\begin_layout Plain Layout
+
+screen = pygame.display.set_mode(SCREEN_SIZE)
+\end_layout
+
+\begin_layout Plain Layout
+
+clock = pygame.time.Clock()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+bounds = screen.get_rect()
+\end_layout
+
+\begin_layout Plain Layout
+
+rect = pygame.Rect((0,0), RECT_SIZE)
+\end_layout
+
+\begin_layout Plain Layout
+
+rect.center = bounds.center
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+done = False
+\end_layout
+
+\begin_layout Plain Layout
+
+while not done:
+\end_layout
+
+\begin_layout Plain Layout
+
+    for evt in pygame.event.get():
+\end_layout
+
+\begin_layout Plain Layout
+
+        if evt.type == QUIT:
+\end_layout
+
+\begin_layout Plain Layout
+
+            done = True
+\end_layout
+
+\begin_layout Plain Layout
+
+        elif evt.type == KEYDOWN and evt.key == K_ESCAPE:
+\end_layout
+
+\begin_layout Plain Layout
+
+            done = True
+\end_layout
+
+\begin_layout Plain Layout
+
+    # draw
+\end_layout
+
+\begin_layout Plain Layout
+
+    screen.fill(BACKGROUND)
+\end_layout
+
+\begin_layout Plain Layout
+
+	pygame.draw.rect(screen, (255,0,0), rect)
+\end_layout
+
+\begin_layout Plain Layout
+
+	pygame.draw.rect(screen, (0,0,0), rect, 5)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # refresh
+\end_layout
+
+\begin_layout Plain Layout
+
+    pygame.display.flip()
+\end_layout
+
+\begin_layout Plain Layout
+
+    clock.tick(FPS)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print "ByeBye"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+move with mouse
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+# before loop
+\end_layout
+
+\begin_layout Plain Layout
+
+grabbed = False
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# in event
+\end_layout
+
+\begin_layout Plain Layout
+
+elif evt.type == MOUSEBUTTONDOWN:
+\end_layout
+
+\begin_layout Plain Layout
+
+    grabbed = True
+\end_layout
+
+\begin_layout Plain Layout
+
+elif evt.type == MOUSEBUTTONUP:
+\end_layout
+
+\begin_layout Plain Layout
+
+    grabbed = False
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# update
+\end_layout
+
+\begin_layout Plain Layout
+
+if grabbed:
+\end_layout
+
+\begin_layout Plain Layout
+
+    rect.center = pygame.mouse.get_pos()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+clamp to window
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+if grabbed:
+\end_layout
+
+\begin_layout Plain Layout
+
+	rect.center = pygame.mouse.get_pos()
+\end_layout
+
+\begin_layout Plain Layout
+
+	rect.clamp_ip(bounds)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+only grab if actually clicked
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+elif evt.type == MOUSEBUTTONDOWN and :
+\end_layout
+
+\begin_layout Plain Layout
+
+	if rect.collidepoint(pygame.mouse.get_pos()):
+\end_layout
+
+\begin_layout Plain Layout
+
+		grabbed = True
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+multiple
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+rects = [ pygame.Rect((0,0), RECT_SIZE),
+\end_layout
+
+\begin_layout Plain Layout
+
+		  pygame.Rect((0,0), RECT_SIZE),
+\end_layout
+
+\begin_layout Plain Layout
+
+		  pygame.Rect((0,0), RECT_SIZE),
+\end_layout
+
+\begin_layout Plain Layout
+
+		  pygame.Rect((0,0), RECT_SIZE) ]
+\end_layout
+
+\begin_layout Plain Layout
+
+rects[0].topleft = bounds.topleft
+\end_layout
+
+\begin_layout Plain Layout
+
+rects[1].topright = bounds.topright
+\end_layout
+
+\begin_layout Plain Layout
+
+rects[2].bottomleft = bounds.bottomleft
+\end_layout
+
+\begin_layout Plain Layout
+
+rects[3].bottomright = bounds.bottomright
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+...snip...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# input
+\end_layout
+
+\begin_layout Plain Layout
+
+elif evt.type == MOUSEBUTTONDOWN:
+\end_layout
+
+\begin_layout Plain Layout
+
+	pt = pygame.mouse.get_pos()
+\end_layout
+
+\begin_layout Plain Layout
+
+	for rect in rects:
+\end_layout
+
+\begin_layout Plain Layout
+
+		if rect.collidepoint(pt):
+\end_layout
+
+\begin_layout Plain Layout
+
+			grabbed = rect
+\end_layout
+
+\begin_layout Plain Layout
+
+elif evt.type == MOUSEBUTTONUP:
+\end_layout
+
+\begin_layout Plain Layout
+
+	grabbed = None
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# update
+\end_layout
+
+\begin_layout Plain Layout
+
+if grabbed:
+\end_layout
+
+\begin_layout Plain Layout
+
+	grabbed.center = pygame.mouse.get_pos()
+\end_layout
+
+\begin_layout Plain Layout
+
+	grabbed.clamp_ip(bounds)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# draw
+\end_layout
+
+\begin_layout Plain Layout
+
+for rect in rects:
+\end_layout
+
+\begin_layout Plain Layout
+
+	if rect == grabbed:
+\end_layout
+
+\begin_layout Plain Layout
+
+		color = 255,255,255
+\end_layout
+
+\begin_layout Plain Layout
+
+	else:
+\end_layout
+
+\begin_layout Plain Layout
+
+		color = 255,0,0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	pygame.draw.rect(screen, color, rect)
+\end_layout
+
+\begin_layout Plain Layout
+
+	pygame.draw.rect(screen, (0,0,0), rect, 5)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+intersecting (breaks)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+# draw
+\end_layout
+
+\begin_layout Plain Layout
+
+if rect == grabbed:
+\end_layout
+
+\begin_layout Plain Layout
+
+	color = 255,255,255
+\end_layout
+
+\begin_layout Plain Layout
+
+elif rect.collidelist(rects) != -1:
+\end_layout
+
+\begin_layout Plain Layout
+
+	color = 0,255,0
+\end_layout
+
+\begin_layout Plain Layout
+
+else:
+\end_layout
+
+\begin_layout Plain Layout
+
+	color = 255,0,0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+intersecting (works)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+others = rects[:]
+\end_layout
+
+\begin_layout Plain Layout
+
+others.remove(rect)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+elif rect.collidelist(others) != -1:
+\end_layout
+
+\begin_layout Plain Layout
+
+	color = 0,255,0
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -5691,6 +6391,120 @@ can override == and the like with _cmp_ p.
  191
 \end_layout
 
+\begin_layout Subsection
+Examples
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+class Student(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, name):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.name = name
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.courses = []
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Course(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, name):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.name = name
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.enrolled = []
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def enroll(student, course):
+\end_layout
+
+\begin_layout Plain Layout
+
+	student.courses.append(course)
+\end_layout
+
+\begin_layout Plain Layout
+
+	course.enrolled.append(student)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rob = Student("Rob")
+\end_layout
+
+\begin_layout Plain Layout
+
+ella = Student("Ella")
+\end_layout
+
+\begin_layout Plain Layout
+
+sam = Student("Sam")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+cs112 = Course("CS112")
+\end_layout
+
+\begin_layout Plain Layout
+
+fort = Course("Fort Building 101")
+\end_layout
+
+\begin_layout Plain Layout
+
+scuba = Course("Underwater Basket Weaving")
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Object Inheritance NEEDS WORK
 \end_layout
@@ -5851,8 +6665,449 @@ n" + Deck.__str__(self)
 
 \end_layout
 
+\begin_layout Subsection*
+13.1 Inheritence Examples
+\end_layout
+
 \begin_layout Itemize
-SKIPPED A LOT, LOOK AT IF NEED TO KNOW INHERITANCE
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+import math
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Shape(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+    x = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+    y = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+    def area(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        "Generic shaps don't really have an area function"
+\end_layout
+
+\begin_layout Plain Layout
+
+        return None
+\end_layout
+
+\begin_layout Plain Layout
+
+    def move(self, x, y):
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.x = x
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.y = y
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Circle(Shape):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def __init__(self, radius):
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.radius = radius
+\end_layout
+
+\begin_layout Plain Layout
+
+    def area(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        return self.radius * self.radius * math.pi
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Rectangle(Shape):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def __init__(self, width, height):
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.width = width
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.height = height
+\end_layout
+
+\begin_layout Plain Layout
+
+    def area(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        return self.width * self.height
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Square(Rectangle):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def __init__(self, size):
+\end_layout
+
+\begin_layout Plain Layout
+
+        Rectangle.__init__(self, size, size)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+r1 = Rectangle(4,5)
+\end_layout
+
+\begin_layout Plain Layout
+
+r2 = Rectangle(5,10)
+\end_layout
+
+\begin_layout Plain Layout
+
+print "r1 area: %d,  r2 area: %d" % (r1.area(), r2.area())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+class Animal(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+    says = "<undefinable>"
+\end_layout
+
+\begin_layout Plain Layout
+
+    def get_name(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        return self.__class__.__name__
+\end_layout
+
+\begin_layout Plain Layout
+
+    def get_phrase(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        word = self.says.capitalize()
+\end_layout
+
+\begin_layout Plain Layout
+
+        return "%s, %s!" % (word, word)
+\end_layout
+
+\begin_layout Plain Layout
+
+    def speak(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        print '"%s", says the %s' % (self.get_phrase(), self.get_name())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Dog(Animal):
+\end_layout
+
+\begin_layout Plain Layout
+
+    says = "woof"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Cat(Animal):
+\end_layout
+
+\begin_layout Plain Layout
+
+    says = "meow"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Animal().speak()
+\end_layout
+
+\begin_layout Plain Layout
+
+Dog().speak()
+\end_layout
+
+\begin_layout Plain Layout
+
+Cat().speak()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+class Pet(Animal):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def __init__(self, name):
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.name = name
+\end_layout
+
+\begin_layout Plain Layout
+
+    def get_name(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        return self.name
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class PetDog(Pet, Dog):
+\end_layout
+
+\begin_layout Plain Layout
+
+    pass
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class PetCat(Pet, Cat):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def get_phrase(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        return "..."
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+PetDog("Bandit").speak()
+\end_layout
+
+\begin_layout Plain Layout
+
+PetCat("Mrs.
+ Pretty").speak()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+class Abra(Animal):
+\end_layout
+
+\begin_layout Plain Layout
+
+    says = "abra"
+\end_layout
+
+\begin_layout Plain Layout
+
+    def capture(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        print "%s uses teleport" % self.get_name()
+\end_layout
+
+\begin_layout Plain Layout
+
+class Kadabra(Abra):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def get_phrase(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        return "Kaaadaaabraaaa!"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+abra = Abra()
+\end_layout
+
+\begin_layout Plain Layout
+
+abra.speak()
+\end_layout
+
+\begin_layout Plain Layout
+
+abra.capture()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+kada = Kadabra()
+\end_layout
+
+\begin_layout Plain Layout
+
+kada.speak()
+\end_layout
+
+\begin_layout Plain Layout
+
+kada.capture()
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -6565,7 +7820,7 @@ def factorial(n):
 
 \begin_layout Plain Layout
 
-		return n*factorial(n)
+		return n*factorial(n-1)
 \end_layout
 
 \end_inset

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 "ex3_insult.py"
 
-inp = raw_input("Enter your name> ")
+inp = raw_input("Enter your name:  ")
 
 if inp == "Paul":
     print "you are cool"
