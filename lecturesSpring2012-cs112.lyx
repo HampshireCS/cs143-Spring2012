@@ -2835,7 +2835,7 @@ commenting
 \end_layout
 
 \begin_layout Itemize
-multiline comments 
+multiline comments-actually unreferenced strings but since they are ignored...
 \end_layout
 
 \begin_layout Itemize
@@ -2852,17 +2852,6 @@ just create a multiline string
 \end_inset
 
  or ''' at start and end of comment 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-These are not comments, just unrefrenced strings.
- Unless a docstring.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
@@ -4841,7 +4830,7 @@ examples
 \end_layout
 
 \begin_layout Section
-Using Objects NEEDS WORK
+Using Objects
 \end_layout
 
 \begin_layout Itemize
@@ -4907,7 +4896,6 @@ pygame objects
 we've been using them since pygame has them
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 we've been using existing objects
 \end_layout
@@ -4938,16 +4926,18 @@ collision
 \end_layout
 
 \end_deeper
+\end_deeper
 \begin_layout Subsection
 examples
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 drawing a rectangle
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
@@ -5124,12 +5114,13 @@ print "ByeBye"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 move with mouse
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
@@ -5195,12 +5186,13 @@ if grabbed:
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 clamp to window
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
@@ -5223,12 +5215,13 @@ if grabbed:
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 only grab if actually clicked
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
@@ -5251,12 +5244,13 @@ elif evt.type == MOUSEBUTTONDOWN and :
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 multiple
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
@@ -5429,12 +5423,13 @@ for rect in rects:
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 intersecting (breaks)
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
@@ -5477,12 +5472,13 @@ else:
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 intersecting (works)
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
@@ -5518,295 +5514,22 @@ elif rect.collidelist(others) != -1:
 create our own objects NEEDS WORK
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Itemize
 group data and logic
 \end_layout
 
 \begin_deeper
-\begin_layout Enumerate
-everything has an update and draw
-\end_layout
-
-\begin_layout Enumerate
-recreate previous day, but cooler
+\begin_layout Itemize
+attributes
 \end_layout
 
 \begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Point: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	pass
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-blank = Point()
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-blank.x = 3.0
-\end_layout
-
-\begin_layout Plain Layout
-
-blank.y = 4.0
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-functions that run on classes
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-def printPoint(p): 
-\end_layout
-
-\begin_layout Plain Layout
-
-	print ’(’ + str(p.x) + ’, ’ + str(p.y) + ’)’
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-is
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-check to see if to variables point to the same thing
-\end_layout
-
-\begin_layout Itemize
-doesn't check if classes are equal
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
->>> p2 = p1 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> p1 is p2 
-\end_layout
-
-\begin_layout Plain Layout
-
-True
-\end_layout
-
-\end_inset
-
-
+methods
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Rectangle: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	pass 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-box = Rectangle() 
-\end_layout
-
-\begin_layout Plain Layout
-
-box.width = 100.0 
-\end_layout
-
-\begin_layout Plain Layout
-
-box.height = 200.0 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-box.corner = Point() 
-\end_layout
-
-\begin_layout Plain Layout
-
-box.corner.x = 0.0 
-\end_layout
-
-\begin_layout Plain Layout
-
-box.corner.y = 0.0
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-copy module that allows you to copy anything 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-This is more appropriate placement deepcopy is better.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-import copy 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-p1 = Point() 
-\end_layout
-
-\begin_layout Plain Layout
-
-p1.x = 3 
-\end_layout
-
-\begin_layout Plain Layout
-
-p1.y = 4 
-\end_layout
-
-\begin_layout Plain Layout
-
-p2 = copy.copy(p1)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-copy.copy() 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-only copies the top level and creates aliases below top level
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-copy.deepcopy()
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-copes all levels of objects
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Enumerate
-inheritance (*can inherit from multiple, very messy)
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-inherit from existing
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-again rebuild
-\end_layout
-
-\begin_layout Enumerate
-inherit from standard bad guy, etc
-\end_layout
-
-\begin_layout Enumerate
-extend sprite
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-inherit from created
-\end_layout
-
-\begin_layout Enumerate
-introduce sprite group
-\end_layout
-
-\end_deeper
-\begin_layout Subsection*
-Chapter 13 classes and functions
-\end_layout
-
-\begin_layout Itemize
-python allows both
+python allows both chapter 13
 \end_layout
 
 \begin_deeper
@@ -5831,572 +5554,9 @@ change the inputs to a function
 
 \end_deeper
 \end_deeper
-\begin_layout Subsection*
-Chapter 14 classes and methods
-\end_layout
-
-\begin_layout Itemize
-method definition
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Time: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	def printTime(time): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		print str(time.hours) + ":" + 
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-			str(time.minutes) + ":" + 
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-			str(time.seconds)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-currentTime.printTime();
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Time: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	#previous method definitions here...
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\end_layout
-
-\begin_layout Plain Layout
-
-	def increment(self, seconds): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.seconds = seconds + self.seconds 
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\end_layout
-
-\begin_layout Plain Layout
-
-		while self.seconds >= 60: 
-\end_layout
-
-\begin_layout Plain Layout
-
-			self.seconds = self.seconds - 60
-\end_layout
-
-\begin_layout Plain Layout
-
-			self.minutes = self.minutes + 1 
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\end_layout
-
-\begin_layout Plain Layout
-
-		while self.minutes >= 60: 
-\end_layout
-
-\begin_layout Plain Layout
-
-			self.minutes = self.minutes - 60 
-\end_layout
-
-\begin_layout Plain Layout
-
-			self.hours = self.hours + 1
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-currentTime.increment(500)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-methods use a funky definition
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-they pass themselves (or what they want the object to be refereed to) in
- the definition
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-can have methods that take variable argument lists by setting defaults
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-def find(str, ch, start=0): 
-\end_layout
-
-\begin_layout Plain Layout
-
-	index = start 
-\end_layout
-
-\begin_layout Plain Layout
-
-	while index < len(str): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		if str[index] == ch: 
-\end_layout
-
-\begin_layout Plain Layout
-
-			return index 
-\end_layout
-
-\begin_layout Plain Layout
-
-		index = index + 1 
-\end_layout
-
-\begin_layout Plain Layout
-
-	return -1
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-find("apple", "p")
-\end_layout
-
-\begin_layout Plain Layout
-
-find("apple", "p", 2)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-initialization method
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Time: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __init__(self, hours=0, minutes=0, seconds=0): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.hours = hours 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.minutes = minutes 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.seconds = seconds
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime = Time(9, 14, 30) 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime.printTime() 
-\end_layout
-
-\begin_layout Plain Layout
-
-9:14:30
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime = Time() 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime.printTime() 
-\end_layout
-
-\begin_layout Plain Layout
-
-0:0:0
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime = Time (9) 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime.printTime() 
-\end_layout
-
-\begin_layout Plain Layout
-
-9:0:0
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime = Time(seconds = 30, hours = 9) 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime.printTime() 
-\end_layout
-
-\begin_layout Plain Layout
-
-9:0:30
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-to override an existing method for a class use the __ methods
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Point: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __init__(self, x=0, y=0): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.x = x 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.y = y 
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __str__(self): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		return ’(’ + str(self.x) + ’, ’ + str(self.y) + ’)’
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-p=Point(3,4)
-\end_layout
-
-\begin_layout Plain Layout
-
-str(p)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-overriding operators again use __
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Point: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	# previously defined methods here...
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __add__(self, other): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		return Point(self.x + other.x, self.y + other.y)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
->>> p1 = Point(3, 4) 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> p2 = Point(5, 7) 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> p3 = p1 + p2 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> print p3 
-\end_layout
-
-\begin_layout Plain Layout
-
-(8, 11)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-#p1 + p2 is the same as p1.__add__(p2)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-substitutions
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-+ __add__
-\end_layout
-
-\begin_layout Itemize
-* __mul__ __rmul__ p.
- 183
-\end_layout
-
-\end_deeper
-\begin_layout Subsection*
-Chapter 15 sets of objects
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Card: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	suitList = ["Clubs", "Diamonds", "Hearts", "Spades"] 
-\end_layout
-
-\begin_layout Plain Layout
-
-	rankList = ["narf", "Ace", "2", "3", "4", "5", "6", "7", 
-\end_layout
-
-\begin_layout Plain Layout
-
-				"8", "9", "10", "Jack", "Queen", "King"]
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __init__(self, suit=0, rank=2): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.suit = suit 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.rank = rank
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __str__(self): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		return (self.rankList[self.rank] + " of " + 
-\end_layout
-
-\begin_layout Plain Layout
-
-				self.suitList[self.suit])
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-threeOfClubs = Card(3, 1)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-can override == and the like with _cmp_ p.
- 191
-\end_layout
-
-\begin_layout Subsection
-Examples
-\end_layout
-
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
@@ -6505,14 +5665,105 @@ scuba = Course("Underwater Basket Weaving")
 
 \end_layout
 
+\begin_layout Itemize
+is
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+check to see if to variables point to the same thing
+\end_layout
+
+\begin_layout Itemize
+doesn't check if classes are equal
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>>> rob2 = rob 
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> rob is rob2 
+\end_layout
+
+\begin_layout Plain Layout
+
+True
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+copy.copy() 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+only copies the top level and creates aliases below top level
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+copy.deepcopy()
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+copes all levels of objects
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+NEED MORE EXAMPLES I THINK...
+\end_layout
+
 \begin_layout Section
 Object Inheritance NEEDS WORK
 \end_layout
 
-\begin_layout Subsection*
-Chapter 16 inheritance
+\begin_layout Itemize
+create a class and define things within it
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+class that inherits can use everything in the class it inherits from
+\end_layout
+
+\begin_layout Itemize
+possible example is class human and classes male and female inherit from
+ it
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+both male and female have name, age, etc
+\end_layout
+
+\begin_layout Itemize
+different methods-give birth, etc.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+if looks like
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 inheritance is defined in the class def 
 \end_layout
@@ -6537,140 +5788,18 @@ class Hand(Deck):
 
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-how one class uses the inherited stuff
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
->>> deck = Deck() 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> deck.shuffle() 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> hand = Hand("frank") 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> deck.deal([hand], 5) 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> print hand 
-\end_layout
-
-\begin_layout Plain Layout
-
-Hand frank contains 
-\end_layout
-
-\begin_layout Plain Layout
-
-2 of Spades 
-\end_layout
-
-\begin_layout Plain Layout
-
- 3 of Spades 
-\end_layout
-
-\begin_layout Plain Layout
-
-  4 of Spades 
-\end_layout
-
-\begin_layout Plain Layout
-
-   Ace of Hearts 
-\end_layout
-
-\begin_layout Plain Layout
-
-    9 of Clubs
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-how to intermingle methods of same name
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Hand(Deck) 
-\end_layout
-
-\begin_layout Plain Layout
-
-	...
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __str__(self): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		s = "Hand " + self.name 
-\end_layout
-
-\begin_layout Plain Layout
-
-		if self.isEmpty(): 
-\end_layout
-
-\begin_layout Plain Layout
-
-			return s + " is empty
-\backslash
-n" 
-\end_layout
-
-\begin_layout Plain Layout
-
-		else: 
-\end_layout
-
-\begin_layout Plain Layout
-
-			return s + " contains
-\backslash
-n" + Deck.__str__(self)
-\end_layout
-
-\end_inset
-
-
+inheritance (*can inherit from multiple, very messy)
 \end_layout
 
 \begin_layout Subsection*
 13.1 Inheritence Examples
 \end_layout
 
-\begin_layout Itemize
-\begin_inset ERT
+\begin_layout Standard
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
@@ -6828,17 +5957,14 @@ r2 = Rectangle(5,10)
 print "r1 area: %d,  r2 area: %d" % (r1.area(), r2.area())
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
@@ -6939,7 +6065,8 @@ Cat().speak()
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
@@ -7015,17 +6142,14 @@ PetCat("Mrs.
  Pretty").speak()
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
@@ -7110,6 +6234,34 @@ kada.capture()
 
 \end_layout
 
+\begin_layout Enumerate
+inherit from existing
+\end_layout
+
+\begin_layout Enumerate
+again rebuild
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+inherit from standard bad guy, etc
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+extend sprite
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+inherit from created
+\end_layout
+
+\begin_layout Enumerate
+introduce sprite group
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Software Design
 \end_layout
@@ -8261,6 +7413,1001 @@ Present Final Games
 
 \begin_layout Itemize
 have each group give their final game presentation
+\end_layout
+
+\begin_layout Section*
+NOT USED
+\end_layout
+
+\begin_layout Section
+create our own objects NEEDS WORK
+\end_layout
+
+\begin_layout Enumerate
+group data and logic
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+everything has an update and draw
+\end_layout
+
+\begin_layout Enumerate
+recreate previous day, but cooler
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Point: 
+\end_layout
+
+\begin_layout Plain Layout
+
+	pass
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+blank = Point()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+blank.x = 3.0
+\end_layout
+
+\begin_layout Plain Layout
+
+blank.y = 4.0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+functions that run on classes
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def printPoint(p): 
+\end_layout
+
+\begin_layout Plain Layout
+
+	print ’(’ + str(p.x) + ’, ’ + str(p.y) + ’)’
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+is
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+check to see if to variables point to the same thing
+\end_layout
+
+\begin_layout Itemize
+doesn't check if classes are equal
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>>> p2 = p1 
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> p1 is p2 
+\end_layout
+
+\begin_layout Plain Layout
+
+True
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Rectangle: 
+\end_layout
+
+\begin_layout Plain Layout
+
+	pass 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+box = Rectangle() 
+\end_layout
+
+\begin_layout Plain Layout
+
+box.width = 100.0 
+\end_layout
+
+\begin_layout Plain Layout
+
+box.height = 200.0 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+box.corner = Point() 
+\end_layout
+
+\begin_layout Plain Layout
+
+box.corner.x = 0.0 
+\end_layout
+
+\begin_layout Plain Layout
+
+box.corner.y = 0.0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+copy module that allows you to copy anything 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This is more appropriate placement deepcopy is better.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+import copy 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p1 = Point() 
+\end_layout
+
+\begin_layout Plain Layout
+
+p1.x = 3 
+\end_layout
+
+\begin_layout Plain Layout
+
+p1.y = 4 
+\end_layout
+
+\begin_layout Plain Layout
+
+p2 = copy.copy(p1)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+copy.copy() 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+only copies the top level and creates aliases below top level
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+copy.deepcopy()
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+copes all levels of objects
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+inheritance (*can inherit from multiple, very messy)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+inherit from existing
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+again rebuild
+\end_layout
+
+\begin_layout Enumerate
+inherit from standard bad guy, etc
+\end_layout
+
+\begin_layout Enumerate
+extend sprite
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+inherit from created
+\end_layout
+
+\begin_layout Enumerate
+introduce sprite group
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+Chapter 13 classes and functions
+\end_layout
+
+\begin_layout Itemize
+python allows both
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+functions
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+take arguments and don't change the inputs
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+modifiers
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+change the inputs to a function
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection*
+Chapter 14 classes and methods
+\end_layout
+
+\begin_layout Itemize
+method definition
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Time: 
+\end_layout
+
+\begin_layout Plain Layout
+
+	def printTime(time): 
+\end_layout
+
+\begin_layout Plain Layout
+
+		print str(time.hours) + ":" + 
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+			str(time.minutes) + ":" + 
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+			str(time.seconds)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+currentTime.printTime();
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Time: 
+\end_layout
+
+\begin_layout Plain Layout
+
+	#previous method definitions here...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	def increment(self, seconds): 
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.seconds = seconds + self.seconds 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+		while self.seconds >= 60: 
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.seconds = self.seconds - 60
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.minutes = self.minutes + 1 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+		while self.minutes >= 60: 
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.minutes = self.minutes - 60 
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.hours = self.hours + 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+currentTime.increment(500)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+methods use a funky definition
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+they pass themselves (or what they want the object to be refereed to) in
+ the definition
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+can have methods that take variable argument lists by setting defaults
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def find(str, ch, start=0): 
+\end_layout
+
+\begin_layout Plain Layout
+
+	index = start 
+\end_layout
+
+\begin_layout Plain Layout
+
+	while index < len(str): 
+\end_layout
+
+\begin_layout Plain Layout
+
+		if str[index] == ch: 
+\end_layout
+
+\begin_layout Plain Layout
+
+			return index 
+\end_layout
+
+\begin_layout Plain Layout
+
+		index = index + 1 
+\end_layout
+
+\begin_layout Plain Layout
+
+	return -1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+find("apple", "p")
+\end_layout
+
+\begin_layout Plain Layout
+
+find("apple", "p", 2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+initialization method
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Time: 
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, hours=0, minutes=0, seconds=0): 
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.hours = hours 
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.minutes = minutes 
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.seconds = seconds
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> currentTime = Time(9, 14, 30) 
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> currentTime.printTime() 
+\end_layout
+
+\begin_layout Plain Layout
+
+9:14:30
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> currentTime = Time() 
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> currentTime.printTime() 
+\end_layout
+
+\begin_layout Plain Layout
+
+0:0:0
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> currentTime = Time (9) 
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> currentTime.printTime() 
+\end_layout
+
+\begin_layout Plain Layout
+
+9:0:0
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> currentTime = Time(seconds = 30, hours = 9) 
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> currentTime.printTime() 
+\end_layout
+
+\begin_layout Plain Layout
+
+9:0:30
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+to override an existing method for a class use the __ methods
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Point: 
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, x=0, y=0): 
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.x = x 
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.y = y 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __str__(self): 
+\end_layout
+
+\begin_layout Plain Layout
+
+		return ’(’ + str(self.x) + ’, ’ + str(self.y) + ’)’
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p=Point(3,4)
+\end_layout
+
+\begin_layout Plain Layout
+
+str(p)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+overriding operators again use __
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Point: 
+\end_layout
+
+\begin_layout Plain Layout
+
+	# previously defined methods here...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __add__(self, other): 
+\end_layout
+
+\begin_layout Plain Layout
+
+		return Point(self.x + other.x, self.y + other.y)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> p1 = Point(3, 4) 
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> p2 = Point(5, 7) 
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> p3 = p1 + p2 
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> print p3 
+\end_layout
+
+\begin_layout Plain Layout
+
+(8, 11)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#p1 + p2 is the same as p1.__add__(p2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+substitutions
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
++ __add__
+\end_layout
+
+\begin_layout Itemize
+* __mul__ __rmul__ p.
+ 183
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+Chapter 15 sets of objects
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Card: 
+\end_layout
+
+\begin_layout Plain Layout
+
+	suitList = ["Clubs", "Diamonds", "Hearts", "Spades"] 
+\end_layout
+
+\begin_layout Plain Layout
+
+	rankList = ["narf", "Ace", "2", "3", "4", "5", "6", "7", 
+\end_layout
+
+\begin_layout Plain Layout
+
+				"8", "9", "10", "Jack", "Queen", "King"]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, suit=0, rank=2): 
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.suit = suit 
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.rank = rank
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __str__(self): 
+\end_layout
+
+\begin_layout Plain Layout
+
+		return (self.rankList[self.rank] + " of " + 
+\end_layout
+
+\begin_layout Plain Layout
+
+				self.suitList[self.suit])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+threeOfClubs = Card(3, 1)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+can override == and the like with _cmp_ p.
+ 191
+\end_layout
+
+\begin_layout Subsection
+Examples
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+class Student(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, name):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.name = name
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.courses = []
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Course(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, name):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.name = name
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.enrolled = []
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def enroll(student, course):
+\end_layout
+
+\begin_layout Plain Layout
+
+	student.courses.append(course)
+\end_layout
+
+\begin_layout Plain Layout
+
+	course.enrolled.append(student)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rob = Student("Rob")
+\end_layout
+
+\begin_layout Plain Layout
+
+ella = Student("Ella")
+\end_layout
+
+\begin_layout Plain Layout
+
+sam = Student("Sam")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+cs112 = Course("CS112")
+\end_layout
+
+\begin_layout Plain Layout
+
+fort = Course("Fort Building 101")
+\end_layout
+
+\begin_layout Plain Layout
+
+scuba = Course("Underwater Basket Weaving")
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
