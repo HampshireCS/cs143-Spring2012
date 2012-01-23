@@ -3,11 +3,13 @@
 MAX=26
 
 # grab hw number
-hw=`echo $1 | sed "s/^[^1-9]*\([1-9][0-9]*\).*$/\1/"`
+num=`echo "$@" | sed "s/[0-9]/X/g"`
+hw=`echo "$@" | sed "s/^[^1-9]*\([1-9][0-9]*\).*$/\1/"`
 
 # reject a missing number
-if [  -z "$hw" ]; then
+if [ -z "$hw" ] || [ "$num" = "$hw" ]; then
     echo "Could not find homework number"
+    exit 1
 fi
 
 # reject numbers that are out of the range
@@ -22,8 +24,8 @@ if [ "$hw" != "$1" ]; then
     echo "Assuming you meant $hw"
 fi
 
-git add .
-git commit -m "$1 done"
-git tag --force $1
-git push
-git push --tags
+echo git add .
+echo git commit -m "$hw done"
+echo git tag --force $hw
+echo git push
+echo git push --tags
