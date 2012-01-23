@@ -149,3 +149,12 @@ Get Zippy the pinhead quotes<br>
 </tr>
 
 </table></table>
+
+LINK:
+Git
+<ul id='git-links'>
+<li><a href='http://help.github.com/git-cheat-sheets/'>Github's Git Cheat Sheet</a></li>
+<li><a href='http://gitready.com/'>GitReady</a></li>
+<li><a href='http://gitref.org/'>GitRef</a></li>
+<li><a href='http://schacon.github.com/git/git.html'>Official Man Pages (boring)</a></li>
+</ul>
