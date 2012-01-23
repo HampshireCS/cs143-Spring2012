@@ -189,6 +189,10 @@ if you don't keep up you're screwed
 
 \end_deeper
 \begin_layout Subsection
+Talk about Friday section
+\end_layout
+
+\begin_layout Subsection
 Textbook/reading policy
 \end_layout
 
@@ -356,9 +360,121 @@ on hw's @ for _at_
 \end_layout
 
 \begin_layout Subsection
-show Github FIX ME
+show Github
 \end_layout
 
+\begin_layout Itemize
+explain what github is
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+code repository
+\end_layout
+
+\begin_layout Itemize
+version control
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+didn't mean to delete that
+\end_layout
+
+\begin_layout Itemize
+it worked 2 days ago
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+good for working with other people
+\end_layout
+
+\begin_layout Itemize
+over kill here but good to learn
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+instructions
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+create github account
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+go to github.com
+\end_layout
+
+\begin_layout Itemize
+create account
+\end_layout
+
+\begin_layout Itemize
+log out when done...
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+fork our project
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+have them search for project 
+\end_layout
+
+\begin_layout Itemize
+hit fork
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+download script to stout
+\end_layout
+
+\begin_layout Itemize
+run script
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+run through equivelent of hw
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+git pull course master
+\end_layout
+
+\begin_layout Itemize
+<edit the readme>
+\end_layout
+
+\begin_layout Itemize
+git add .
+\end_layout
+
+\begin_layout Itemize
+git commit -m 
+\begin_inset Quotes eld
+\end_inset
+
+message
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+git push
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Beginning Python/how computers work
 \end_layout
@@ -665,9 +781,43 @@ this is a half truth, I'll test it further but quotes should only be docstrings
 
 \end_deeper
 \begin_layout Subsection
-Hit Github again NEEDS WORK
+Hit Github again 
 \end_layout
 
+\begin_layout Itemize
+explain what each step means
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+git pull course master
+\end_layout
+
+\begin_layout Itemize
+<edit the readme>
+\end_layout
+
+\begin_layout Itemize
+git add .
+\end_layout
+
+\begin_layout Itemize
+git commit -m 
+\begin_inset Quotes eld
+\end_inset
+
+message
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+git push
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 How computers work
 \end_layout
@@ -8294,120 +8444,6 @@ threeOfClubs = Card(3, 1)
 \begin_layout Itemize
 can override == and the like with _cmp_ p.
  191
-\end_layout
-
-\begin_layout Subsection
-Examples
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-class Student(object):
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __init__(self, name):
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.name = name
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.courses = []
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-class Course(object):
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __init__(self, name):
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.name = name
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.enrolled = []
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-def enroll(student, course):
-\end_layout
-
-\begin_layout Plain Layout
-
-	student.courses.append(course)
-\end_layout
-
-\begin_layout Plain Layout
-
-	course.enrolled.append(student)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-rob = Student("Rob")
-\end_layout
-
-\begin_layout Plain Layout
-
-ella = Student("Ella")
-\end_layout
-
-\begin_layout Plain Layout
-
-sam = Student("Sam")
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-cs112 = Course("CS112")
-\end_layout
-
-\begin_layout Plain Layout
-
-fort = Course("Fort Building 101")
-\end_layout
-
-\begin_layout Plain Layout
-
-scuba = Course("Underwater Basket Weaving")
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_body
