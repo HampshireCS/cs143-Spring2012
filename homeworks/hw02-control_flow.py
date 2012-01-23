@@ -56,12 +56,14 @@ nums = input_nums()
 # 1) Multiply each value in nums by its index in the list.
 nums = input_nums()
 
+
 # 2) You have n slices of cake. Ask if the user wants cake or death.
 #    If they answer incorrectly, ask again.  When they ask for cake, 
 #    give them one slice.  When there are no slices left and they 
 #    ask for cake, politely explain that you are out of cake and 
 #    ask again. On death, describe their demise.
 n = int(raw_input("How many slices of cake?  ")
+
 
 # 3) Make an ascii christmas tree (or a non-denominational decorative 
 #    holiday festival shubbery).  This tree has a star on the top, 
