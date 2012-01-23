@@ -72,3 +72,7 @@ complet for points.
 As with all Hampshire College
 courses academic honesty is expected, make sure your are familiar
 with the Hampshire's <a href="https://intranet.hampshire.edu/cms/index.php?id=7357">official statement on plagiarism</a>.<p>
+
+LINK:
+Friday Section
+The goal of this group independent study is to take the material presented in CS112 to a level beyond that found in CS112. Students in this study must be enrolled in CS112. For this independent study students will meet one extra day every week (Friday during the normal course time) to go over more advanced topics relating to the CS112 material presented that week. The will also be required to do additional work in each of the assignments given in CS112. These larger assignments will include more and larger programming projects. This is intended for students who wish to gain a more thorough understanding of the computer science and game design concepts of CS112.<p>
