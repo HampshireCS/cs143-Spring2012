@@ -23,12 +23,11 @@ def do_gh(url, method="post", **kw):
 
 
 do_gh('https://api.github.com/user/keys', data=keyjson)
-fork = json.loads(do_gh('https://api.github.com/repos/%s/%s/forks' % (REPO_ORG, REPO_NAME)))
-emails = json.loads(do_gh('https://api.github.com/user/emails', method='get'))
+user = json_loads(do_gh('https://api.github.com/users/%s' % name, method='get'))
 
-print "run this on your client machine(s):"
-print "git config --global user.email '%s'" % emails[0]
-print "git config --global user.name 'Firstname Lastname'"
-print "git clone %s" % fork['git_url']
-print "cd %s" % fork['name']
-print "git remote add course %s" % fork['source']['git_url']
+# print "run this on your client machine(s):"
+os.system("git config --global user.email '%s'" % user['email'])
+os.system("git config --global user.name '%s'" % user['name'])
+# print "git clone %s" % fork['git_url']
+# print "cd %s" % fork['name']
+# print "git remote add course %s" % fork['source']['git_url']
