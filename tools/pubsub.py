@@ -6,7 +6,7 @@ import requests
 from bottle import app, run, post, route, request
 
 def subscribe():
-    r = requests.post("https://api.github.com/hub", data={"hub.mode": "subscribe", "hub.topic": "https://github.com/HampshireCS/cs143-Spring2012/events/push", "hub.callback": "http://icepick.stdnt.hampshire.edu/githacks"}, auth=("jrabbit", getpass.getpass()))
+    r = requests.post("https://api.github.com/hub", data={"hub.mode": "subscribe", "hub.topic": "https://github.com/HampshireCS/cs143-Spring2012/events/push", "hub.callback": "http://icepick.stdnt.hampshire.edu/githacks/"}, auth=("jrabbit", getpass.getpass()))
     print r.content
 
 @post('/')
