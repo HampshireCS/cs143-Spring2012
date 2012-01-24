@@ -13,6 +13,9 @@ def subscribe():
 def recieve_json():
     x = json.loads(request.forms.payload)
     print x
+@route('/')
+def index():
+    print "Nothing here for you to see."
 if __name__ == '__main__':
     if '-setup' in sys.argv:
         subscribe()
