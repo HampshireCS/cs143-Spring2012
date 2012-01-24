@@ -11,10 +11,9 @@ def subscribe():
 
 @post('/')
 def recieve_json():
-    x = json.loads(request.files.payload)
+    x = json.loads(request.forms.payload)
     print x
-
 if __name__ == '__main__':
-    if sys.argv[1] == ['-setup']:
+    if '-setup' in sys.argv:
         subscribe()
-    run(host='localhost', port=9999)    
+    run(host='localhost', port=9999)
