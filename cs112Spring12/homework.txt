@@ -1,23 +1,29 @@
 homework.html
 Homework Assignments
 
-Code for all assignments is to be turned in by placing it in the
-handin folder in the class folder on urza. What you should be turning
-in is a zipped archive of your code with your name and the assignment
-(paulDicksonHW1.zip).  An e-mail containing the name of your archive
-and any other relevant information with a subject line of the assignment
-number, course number, and your name is to 
-be sent to me and the TAs as well (Subject: 112-HW?: Your
-name). 
+All assignments will be turned in with git using the turnin script 
+provided. This will automatically upload and tag your github repository. 
+If you realize you have made a mistake, simply run the script again as 
+only the last submission is counted.  However, running the script after 
+the deadline will mark your assignment as late since it overwrites the 
+previous commit.  Send us an email explaining the situation if this 
+happens.
 <p>
-All collaborations must be listed and all
-work should be your own. All assignments must be turned in by the
-beginning of class on the day specified, late work will not be
-accepted for positive credit.
+All collaborations must be listed and all work should be your own. However,
+part of programming and learning to program is reading other peoples code. 
+Make sure to credit any code you copied/modified/referenced heavily in a 
+comment (the url where you found it and a brief description is enough.)
 <p>
-If you are turning in assignments from a pc you can use the following
-lines to submit homework (with correct substitutions on the homework
-folder number) Type the following at your prompt<br>
-scp yourFile.zip cs110@urza.hampshire.edu:/Volumes/Orim/Course\
-Storage/cs110/handin/hw1/<br>
-
+There are two types of homeworks each week: projects and excercises.
+Excercises are a series of small programming problems and are due at 
+midnight on the days specified (Thursdays).  Projects are larger and 
+will involve making small programs.  These are due at the beginning 
+of class on the day specified (Mondays). All assignments must be 
+turned in properly to github and late work will not be accepted for 
+positive credit.
+<p>
+More is expected of anyone taking the advanced Friday section.  In every
+excercise, there will be an additional advanced section which is required
+for those taking the Friday section.  Also, project assignments will 
+include additional work.  The deadlines for this advanced work is the same
+unless otherwise specified.<br>
