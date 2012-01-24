@@ -1,6 +1,20 @@
+import sys
+import getpass
+import json
+
 import requests
 from bottle import app, run, post, route, request
 
-@post('/recv')
+def subscribe():
+    r = requests.post("https://api.github.com/hub", data={"hub.mode": "subscribe", "hub.topic": "https://github.com/HampshireCS/cs143-Spring2012/events/push", "hub.callback": "http://icepick.stdnt.hampshire.edu/githacks"}, auth=("jrabbit", getpass.getpass()))
+    print r.content
+
+@post('/')
 def recieve_json():
-    print request.files
+    x = json.loads(request.files.payload)
+    print x
+
+if __name__ == '__main__':
+    if sys.argv[1] == ['-setup']:
+        subscribe()
+    run(host='localhost', port=9999)    
