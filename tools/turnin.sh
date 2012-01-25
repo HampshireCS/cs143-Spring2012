@@ -1,5 +1,4 @@
 #!/bin/bash
-
 MAX=26
 
 # grab hw number
@@ -13,8 +12,8 @@ if [ -z "$hw" ] || [ "$num" = "$hw" ]; then
 fi
 
 # reject numbers that are out of the range
-if [ $hw -gt 26 ] || [ $hw -lt 1 ]; then
-    echo "Homework number should be between 1 and 26"
+if [ $hw -gt $MAX ] || [ $hw -lt 1 ]; then
+    echo "Homework number should be between 1 and $MAX"
     exit 1
 fi
 
@@ -24,8 +23,8 @@ if [ "$hw" != "$1" ]; then
     echo "Assuming you meant $hw"
 fi
 
-echo git add .
-echo git commit -m "$hw done"
-echo git tag --force $hw
-echo git push
-echo git push --tags
+git add .
+git commit -m "$hw done"
+git tag --force $hw
+git push
+git push --tags
