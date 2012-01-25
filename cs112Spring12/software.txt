@@ -19,6 +19,9 @@ Pygame doesn't install well on OS X so we're going to install Kivy
 which uses Pygame. So every time you want to use Pygame instead of
 typing python at the terminal you will type kivy. Download and install
 from <a href="http://kivy.org/#download">here</a>.
+<p>
+Though this will work with python, this could make using any additional
+libraries a bit trickier.
 
 
 <p>
