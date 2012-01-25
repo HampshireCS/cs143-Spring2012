@@ -4,7 +4,30 @@ Software Installation
 LINK:
 Mac OS X
 Terminal and Python come installed on all OS X machines so you need to do is
-to get and install the following programs: emacs and Pygame<p>
+to get and install the following programs: emacs and Pygame (which
+require XCode to be installed)<p>
+<p>
+XCode:
+<ul>
+<li>Lion
+<ol>
+Download XCode from the app store
+</ol>
+</li>
+<li>Non-Lion:
+<ol>
+<li>go to <a
+href="http://connect.apple.com/">http://connect.apple.com/</a></li>
+<li>log in (you may have to register for an Apple
+Developer Connection account, it's free)</li> 
+<li>click downloads</li>
+<li>click download developer tools from downloads section</li>
+<li>find the version of xcode that runs on your version of the OS and
+download the disk image</li>
+<li>install software</li>
+</ol>
+</li>
+</ul>
 <p>
 emacs:
 <ol>
