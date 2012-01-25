@@ -1,0 +1,12 @@
+Google "Python parse rss feed"
+
+Hey http://wiki.python.org/moin/RssLibraries looks like a list of stuff!
+
+Links to: http://code.google.com/p/feedparser/ & http://packages.python.org/feedparser/
+yay package.
+
+Or just the name of the package you want "python requests"
+
+Or "Python image manipulation"
+
+First result: http://www.pythonware.com/products/pil/ exactly what we'd want.
