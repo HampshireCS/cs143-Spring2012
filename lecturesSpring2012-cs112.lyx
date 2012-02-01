@@ -342,7 +342,7 @@ Before they leave
 \end_layout
 
 \begin_layout Itemize
-explain Proj0 (or whatever)
+explain hw1
 \end_layout
 
 \begin_deeper
@@ -1392,7 +1392,7 @@ print "Hello...I'm sorry, who are you?"
 
 \begin_layout Plain Layout
 
-name = raw_input(name) 
+name = raw_input() 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1435,7 +1435,12 @@ m = raw_input("Enter another:  ")
 
 \begin_layout Plain Layout
 
-n = int(n) m = int(m)
+n = int(n) 
+\end_layout
+
+\begin_layout Plain Layout
+
+m = int(m)
 \end_layout
 
 \begin_layout Plain Layout
