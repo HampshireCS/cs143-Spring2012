@@ -25,6 +25,7 @@ Make sure the user inputs their own name and responses.
 Step 2:
 -----------------------
 Keep adding to the conversation. Make sure that your program includes the following:
+
  * get and use input from the user
  * 3 math problems
     * at least one should get numbers from the user
@@ -33,6 +34,7 @@ Keep adding to the conversation. Make sure that your program includes the follow
 Advanced
 -------------------------
 Make sure your prissy bot uses string formatting throughout.  Also, new programs for the following:
+ 
  1. draw some kind of ascii art based on user input
  2. print a decimal/binary/hexidecimal conversion table 
     * well formated and labeled
