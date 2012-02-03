@@ -1609,6 +1609,22 @@ not
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+ex
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+a >= 0 and a < 20
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 While loops chapter 7
 \end_layout
@@ -1643,22 +1659,12 @@ status open
 
 \begin_layout Plain Layout
 
-c = 0 
+c = raw_input("Countdown from?  ")
 \end_layout
 
 \begin_layout Plain Layout
 
-while c <= 0:     
-\end_layout
-
-\begin_layout Plain Layout
-
-	c = raw_input("Countdown from?  ")     
-\end_layout
-
-\begin_layout Plain Layout
-
-	c = int(c)
+c = int(c)
 \end_layout
 
 \begin_layout Plain Layout
@@ -1692,6 +1698,10 @@ print "Blastoff!"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+improve example so it validates the number is greater than 0
 \end_layout
 
 \begin_layout Itemize
@@ -2841,11 +2851,11 @@ pygame.key.set_repeat(100,100)
 \end_layout
 
 \begin_layout Section
-Code formatting NEEDS EXAMPLES
+Code formatting and Documentation
 \end_layout
 
 \begin_layout Subsection
-documentation
+getting help from the interpreter
 \end_layout
 
 \begin_layout Itemize
@@ -2857,6 +2867,42 @@ help()
 returns comment string at top
 \end_layout
 
+\begin_layout Itemize
+type 
+\begin_inset Quotes eld
+\end_inset
+
+q
+\begin_inset Quotes erd
+\end_inset
+
+ to quit the help function
+\end_layout
+
+\begin_layout Itemize
+only use in the python interpreter
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>>> help(float)
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> help(abs)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 dir()
@@ -2864,7 +2910,32 @@ dir()
 
 \begin_deeper
 \begin_layout Itemize
-returns all of the functions from inside the file
+returns a list of all the variables/methods in an object
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>>> import math
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> for op in dir(math):
+\end_layout
+
+\begin_layout Plain Layout
+
+    print op
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -2873,13 +2944,77 @@ web searches
 \end_layout
 
 \begin_layout Itemize
-pygame doc
+whatever library you are using probably has documentation
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the python community stresses good documentation as a general rule
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+google is invaluable
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+usually just searching for what you want will get you there
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+examples
 \end_layout
 
 \begin_layout Itemize
-python doc
+getting arguments from the command line when you run it
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+google python command line arguments
+\end_layout
+
+\begin_layout Itemize
+shows 
+\begin_inset Quotes eld
+\end_inset
+
+optparse library for doing lots of stuff
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+shows 
+\begin_inset Quotes eld
+\end_inset
+
+Introduction to Python: Commandline Arguments
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+pygame has lots of event types
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+browse to pygame.org -> documentation -> event
+\end_layout
+
+\begin_layout Itemize
+scroll to event types
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 filtering examples:
 \end_layout
@@ -2896,17 +3031,93 @@ filter the examples for what's good and bad
 always look at more then 1 example
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+there is no limit to how much bad advice there is on the internet
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+learn which sites are reliable
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the library's or pythons site
+\end_layout
+
+\begin_layout Itemize
+stackedoverflow can be good
+\end_layout
+
+\begin_layout Itemize
+blogs can be but look up more than one to double check
+\end_layout
+
+\begin_layout Itemize
+yahoo answers is usually wrong...
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Why format code well
+\end_layout
+
+\begin_layout Itemize
+a program is not necessarily something only you will read
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+in this class your TA's are reading it too
+\end_layout
+
+\begin_layout Itemize
+multiple programmers on a team
+\end_layout
+
+\begin_layout Itemize
+open source means anyone can read
+\end_layout
+
+\begin_layout Itemize
+your future self might not remember why you called that number 
+\begin_inset Quotes eld
+\end_inset
+
+bob
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+python is a language that stresses legibility
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+don't ruin it by making things indecipherable
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 talk about good formatting of code
 \end_layout
 
 \begin_layout Itemize
-comment block at top
+comment block at top (documentation)
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 this is what help returns
+\end_layout
+
+\begin_layout Itemize
+describes how the program works
 \end_layout
 
 \end_deeper
@@ -2916,9 +3127,291 @@ variable naming
 
 \begin_deeper
 \begin_layout Itemize
+starts with a letter or 
+\begin_inset Quotes eld
+\end_inset
+
+_
+\begin_inset Quotes erd
+\end_inset
+
+, then can be a letter, number, or 
+\begin_inset Quotes eld
+\end_inset
+
+_
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+obj
+\end_layout
+
+\begin_layout Plain Layout
+
+screen_size
+\end_layout
+
+\begin_layout Plain Layout
+
+player1
+\end_layout
+
+\begin_layout Plain Layout
+
+Sprite
+\end_layout
+
+\begin_layout Plain Layout
+
+x
+\end_layout
+
+\begin_layout Plain Layout
+
+_stuff
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
 if it's important then give it a name that's representative
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+important essentially means used in more than one logical 
+\begin_inset Quotes eld
+\end_inset
+
+place
+\begin_inset Quotes erd
+\end_inset
+
+ of the code
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# not descriptive
+\end_layout
+
+\begin_layout Plain Layout
+
+bob = 42
+\end_layout
+
+\begin_layout Plain Layout
+
+EIGHT = 256
+\end_layout
+
+\begin_layout Plain Layout
+
+charmander = 'c'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# hard to remember
+\end_layout
+
+\begin_layout Plain Layout
+
+b0b = ...
+\end_layout
+
+\begin_layout Plain Layout
+
+funv4r = ...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# not descriptive enough
+\end_layout
+
+\begin_layout Plain Layout
+
+pi = pygame.Surface()
+\end_layout
+
+\begin_layout Plain Layout
+
+pI = pygame.Surface()
+\end_layout
+
+\begin_layout Plain Layout
+
+p_i = pygame.Surface()
+\end_layout
+
+\begin_layout Plain Layout
+
+p_img = pygame.Surface()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# good
+\end_layout
+
+\begin_layout Plain Layout
+
+player_image = pygame.Surface()
+\end_layout
+
+\begin_layout Plain Layout
+
+ply_img = pygame.Surface()
+\end_layout
+
+\begin_layout Plain Layout
+
+player_rect = Rect()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# excessive
+\end_layout
+
+\begin_layout Plain Layout
+
+the_player_image_to_draw = pygame.Surface()
+\end_layout
+
+\begin_layout Plain Layout
+
+player_rect_for_collision = Rect()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for int_counter in range(30):
+\end_layout
+
+\begin_layout Plain Layout
+
+   ...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+avoid incrementing numbers when it 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# bad
+\end_layout
+
+\begin_layout Plain Layout
+
+t1 = 3
+\end_layout
+
+\begin_layout Plain Layout
+
+t2 = 4
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# better
+\end_layout
+
+\begin_layout Plain Layout
+
+a = 3
+\end_layout
+
+\begin_layout Plain Layout
+
+b = 4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+it can make sense sometimes
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+player1
+\end_layout
+
+\begin_layout Plain Layout
+
+player2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 conventions
 \end_layout
@@ -2928,25 +3421,136 @@ conventions
 all caps CONSTANT
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
-first letter capital is Object
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# good
 \end_layout
 
+\begin_layout Plain Layout
+
+PI = 3.1415927
+\end_layout
+
+\begin_layout Plain Layout
+
+TILE_WIDTH = 20
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# misleading
+\end_layout
+
+\begin_layout Plain Layout
+
+PLAYER_X = 3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
-long names
+first letter capital is a class
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-camelCaps: DO NOT use this
+you don't know what these are yet
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+long/multiword names
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+camelCaps: (python does not usually use this)
 \end_layout
 
 \begin_layout Itemize
-under_Score
+under_score (has_key)
 \end_layout
 
 \begin_layout Itemize
-nothingbetween
+nothingbetween (isinstance)
+\end_layout
+
+\begin_layout Itemize
+never ever mix and match
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# bad
+\end_layout
+
+\begin_layout Plain Layout
+
+isEqual_to
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# better
+\end_layout
+
+\begin_layout Plain Layout
+
+isEqualTo
+\end_layout
+
+\begin_layout Plain Layout
+
+is_equal_to
+\end_layout
+
+\begin_layout Plain Layout
+
+isequalto
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# best
+\end_layout
+
+\begin_layout Plain Layout
+
+isequal
+\end_layout
+
+\begin_layout Plain Layout
+
+equals
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -2990,7 +3594,7 @@ commenting
 \end_layout
 
 \begin_layout Itemize
-multiline comments-actually unreferenced strings but since they are ignored...
+multiline comments-actually unused strings but since they are ignored...
 \end_layout
 
 \begin_layout Itemize
@@ -3014,21 +3618,211 @@ more conventional to use # at start of first line
 \end_layout
 
 \begin_layout Itemize
-should put a comment around everything that is not obvious
+should put a comment around/near anything that is not obvious
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+print "On page", pg+1  # add one to compensate for 0 indexing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+long comments go on line before code
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#bad
+\end_layout
+
+\begin_layout Plain Layout
+
+if player.x < 0:            # switch direction the player is  
+\end_layout
+
+\begin_layout Plain Layout
+
+    player.dx = -player.dx  # moving if they hit the wall
+\end_layout
+
+\begin_layout Plain Layout
+
+                     
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-long comments on line before code
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#better
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# switch direction the player is
+\end_layout
+
+\begin_layout Plain Layout
+
+# moving if they hit the wall
+\end_layout
+
+\begin_layout Plain Layout
+
+if player.x < 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    player.dx = -player.dx
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# better still
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# switch direction if player hits wall
+\end_layout
+
+\begin_layout Plain Layout
+
+if player.x < 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    player.dx = -player.dx
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+talk about what variable is used for if not obvious
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+w,h = 10,10   # dimensions of a tile
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-talk about what variable is used for
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# unecessary
 \end_layout
 
+\begin_layout Plain Layout
+
+player_image = pygame.Surface()  # the players image
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# really unecessary
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# we use this variable to store the image for the player
+\end_layout
+
+\begin_layout Plain Layout
+
+player_image = pygame.Surface()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 describe how functions work
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+more on this when we learn functions
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Itemize
 spacing
@@ -3036,7 +3830,191 @@ spacing
 
 \begin_deeper
 \begin_layout Itemize
-use spaces to separate different ideas
+since tabs and spaces look the same, as a rule only use spaces
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+emacs takes care of this for you
+\end_layout
+
+\begin_layout Itemize
+others might not and code copied from the internet may break
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+putting space around operators makes it easier to read
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# bad
+\end_layout
+
+\begin_layout Plain Layout
+
+t=x*3+y*3/2
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# good
+\end_layout
+
+\begin_layout Plain Layout
+
+t = x*3 + y*3/2
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# possibly excessive
+\end_layout
+
+\begin_layout Plain Layout
+
+t = x * 3 + y * 3 / 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+spaces make functions easier to read
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+max(a,b)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+max(a, b)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+add blank lines between logically grouped code
+\end_layout
+
+\begin_layout Itemize
+legible and clean is more important than short and compact
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+avoid 
+\begin_inset Quotes eld
+\end_inset
+
+magic numbers
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+if you reuse 
+\begin_inset Quotes eld
+\end_inset
+
+640
+\begin_inset Quotes erd
+\end_inset
+
+ whenever you want the right boundary, make a variable called 
+\begin_inset Quotes eld
+\end_inset
+
+right_bound
+\begin_inset Quotes erd
+\end_inset
+
+ or something
+\end_layout
+
+\begin_layout Itemize
+values 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+, 0, empty, etc are usually fine to not make a variable
+\end_layout
+
+\begin_layout Itemize
+also leave things like dividing by 2
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+define variables near where they are needed
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+if they are used everywhere, constant, or a 
+\begin_inset Quotes eld
+\end_inset
+
+setting
+\begin_inset Quotes erd
+\end_inset
+
+ put them at the top
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+you can reuse generic variable names
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+you can just keep reusing i
+\end_layout
+
+\begin_layout Itemize
+don't name them i1, i2, i3 etc
 \end_layout
 
 \end_deeper
@@ -3055,7 +4033,47 @@ status open
 
 \begin_layout Plain Layout
 
-bad
+var1=0
+\end_layout
+
+\begin_layout Plain Layout
+
+var2=[]
+\end_layout
+
+\begin_layout Plain Layout
+
+var3=None
+\end_layout
+
+\begin_layout Plain Layout
+
+while var3 != "":
+\end_layout
+
+\begin_layout Plain Layout
+
+    var3=raw_input()
+\end_layout
+
+\begin_layout Plain Layout
+
+    var2.append(float(var3))
+\end_layout
+
+\begin_layout Plain Layout
+
+for var in var2:
+\end_layout
+
+\begin_layout Plain Layout
+
+    var1+=var
+\end_layout
+
+\begin_layout Plain Layout
+
+print var1/len(var2)
 \end_layout
 
 \end_inset
@@ -3074,7 +4092,73 @@ status open
 
 \begin_layout Plain Layout
 
-good
+"Find the average of inputed numbers"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+nums = []
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# keep grabbing numbers until nothing is entered
+\end_layout
+
+\begin_layout Plain Layout
+
+inp = None
+\end_layout
+
+\begin_layout Plain Layout
+
+while inp != "":
+\end_layout
+
+\begin_layout Plain Layout
+
+	inp = raw_input("Enter a number: ")
+\end_layout
+
+\begin_layout Plain Layout
+
+	nums.append( float(inp) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+total = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+for n in nums:
+\end_layout
+
+\begin_layout Plain Layout
+
+	total += n
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print "Average: ", total / len(nums)
 \end_layout
 
 \end_inset
@@ -3083,9 +4167,15 @@ good
 \end_layout
 
 \begin_layout Itemize
-give them the following to clean up on their own
+give them the following to clean up on their own (bubble sort)
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+swap method is bad, but that's less important for now
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset listings
 inline false
@@ -3093,7 +4183,269 @@ status open
 
 \begin_layout Plain Layout
 
-bad 2
+from random import randint
+\end_layout
+
+\begin_layout Plain Layout
+
+s=1
+\end_layout
+
+\begin_layout Plain Layout
+
+t=int(raw_input())
+\end_layout
+
+\begin_layout Plain Layout
+
+rr=[]
+\end_layout
+
+\begin_layout Plain Layout
+
+for _ in range(t):
+\end_layout
+
+\begin_layout Plain Layout
+
+    rr.append(randint(0,20))
+\end_layout
+
+\begin_layout Plain Layout
+
+print rr
+\end_layout
+
+\begin_layout Plain Layout
+
+while s:
+\end_layout
+
+\begin_layout Plain Layout
+
+    s=0
+\end_layout
+
+\begin_layout Plain Layout
+
+    for var in range(1,t):
+\end_layout
+
+\begin_layout Plain Layout
+
+        if rr[var-1]>rr[var]:
+\end_layout
+
+\begin_layout Plain Layout
+
+            t1=rr[i-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+            t2=rr[i]
+\end_layout
+
+\begin_layout Plain Layout
+
+            rr[i-1]=t2
+\end_layout
+
+\begin_layout Plain Layout
+
+            rr[i]=t1
+\end_layout
+
+\begin_layout Plain Layout
+
+            s=1
+\end_layout
+
+\begin_layout Plain Layout
+
+print rr
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+cleaner code (don't give them)
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+"Sorts a list of random numbers"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from random import randint
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# make the list of numbers
+\end_layout
+
+\begin_layout Plain Layout
+
+size = int(raw_input("Enter the size of the list: "))
+\end_layout
+
+\begin_layout Plain Layout
+
+nums = []
+\end_layout
+
+\begin_layout Plain Layout
+
+for _ in range(size):
+\end_layout
+
+\begin_layout Plain Layout
+
+    nums.append(randint(0, 20))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print "Unsorted: ", nums
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+### Sorting (bubble)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+did_swap = True
+\end_layout
+
+\begin_layout Plain Layout
+
+while did_swap:
+\end_layout
+
+\begin_layout Plain Layout
+
+	did_swap = False
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# go through each num and swap if out of order
+\end_layout
+
+\begin_layout Plain Layout
+
+	for i in range(1, size):
+\end_layout
+
+\begin_layout Plain Layout
+
+		if nums[i-1] > nums[i]:
+\end_layout
+
+\begin_layout Plain Layout
+
+			a = nums[i-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+			b = nums[i]
+\end_layout
+
+\begin_layout Plain Layout
+
+			nums[i-1] = b
+\end_layout
+
+\begin_layout Plain Layout
+
+			nums[i] = a
+\end_layout
+
+\begin_layout Plain Layout
+
+			did_swap = True
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		# or
+\end_layout
+
+\begin_layout Plain Layout
+
+		# a = nums[i-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+		# b = nums[i]
+\end_layout
+
+\begin_layout Plain Layout
+
+		# if a < b:
+\end_layout
+
+\begin_layout Plain Layout
+
+		# 	nums[i-1] = b
+\end_layout
+
+\begin_layout Plain Layout
+
+		# 	nums[i] = a
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print "Sorted:", nums
 \end_layout
 
 \end_inset
@@ -3141,7 +4493,17 @@ Programming errors
 \end_layout
 
 \begin_layout Itemize
-types
+These errors prevent your program from even beginning to run
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+in other languages, compile time error
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+common types
 \end_layout
 
 \begin_deeper
@@ -3184,6 +4546,46 @@ the biggest thing is figuring out exactly where the error is
 you'll do this on the homework
 \end_layout
 
+\begin_layout Itemize
+Sometimes, the program will crash halfway through
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+runtime error
+\end_layout
+
+\begin_layout Itemize
+these will crash your program
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+common types
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+dividing by zero
+\end_layout
+
+\begin_layout Itemize
+array bounds
+\end_layout
+
+\begin_layout Itemize
+converting 
+\begin_inset Quotes eld
+\end_inset
+
+apple
+\begin_inset Quotes erd
+\end_inset
+
+ to a number (aka unexpected input/condition)
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 Algorithmic errors
 \end_layout
@@ -3224,7 +4626,78 @@ the instructions were wrong
 computers are stupid and have no common sense
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+they know what you tell them, not what you mean
+\end_layout
+
 \end_deeper
+\end_deeper
+\begin_layout Itemize
+normal errors
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+sorted list is backwards
+\end_layout
+
+\begin_layout Itemize
+grid is rotated 90 degrees
+\end_layout
+
+\begin_layout Itemize
+math being horribly horribly wrong
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+some examples Alec remembers in games
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+player moves in the direction opposite as expected
+\end_layout
+
+\begin_layout Itemize
+drawing the background last and therefore over everything else
+\end_layout
+
+\begin_layout Itemize
+player disappearing for no reason but leaving a shadow
+\end_layout
+
+\begin_layout Itemize
+spinning to fast or the wrong way
+\end_layout
+
+\begin_layout Itemize
+object detects that it is touching itself
+\end_layout
+
+\begin_layout Itemize
+floor swallowing player
+\end_layout
+
+\begin_layout Itemize
+gravity going the wrong way for player but not enemies
+\end_layout
+
+\begin_layout Itemize
+getting caught in walls
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+nice thing about programming games is the errors are usually visual and
+ obvious
+\end_layout
+
+\begin_layout Subsubsection
+How to fix these
+\end_layout
+
 \begin_layout Itemize
 print out all variable values to check them
 \end_layout
@@ -3240,11 +4713,76 @@ act out the interpreter
 
 \end_deeper
 \begin_layout Itemize
-print statements
+print statements, print statements, print statements
 \end_layout
 
 \begin_layout Itemize
 you can use raw_input() as a way to pause a program part way through running
+\end_layout
+
+\begin_layout Subsubsection
+Testing and preventative care
+\end_layout
+
+\begin_layout Itemize
+YOU WILL MAKE ERRORS, this is ok
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+don't worry about being wrong the first time
+\end_layout
+
+\begin_layout Itemize
+just try it out and fix it when it breaks
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+the bulk of programming is just making and fixing your bugs
+\end_layout
+
+\begin_layout Itemize
+make your program in small steps/chunks
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+since every bit of code will probably have bugs, the less new code you are
+ testing at once the easier to find
+\end_layout
+
+\begin_layout Itemize
+you will also know which bits of logic work as expected when something goes
+ weird
+\end_layout
+
+\begin_layout Itemize
+this is easier once you know functions (next week)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+comment/document as you go for when things go wrong later
+\end_layout
+
+\begin_layout Itemize
+test things in the interpreter to see if they work as you'd expect
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+does random.randint(0,2) include 0,1 or 0,1,2?
+\end_layout
+
+\begin_layout Itemize
+does range(10,0,-1) include 0 or not?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+prototypes and testing things in a separate file is more work, but a good
+ idea
 \end_layout
 
 \begin_layout Section
