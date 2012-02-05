@@ -1,27 +1,30 @@
 #!/usr/bin/env python
 """
-Problem Set 1
+Control Flow
 =============================
+Problem Set 1
+-----------------------------
 
 Solve these simple problems with conditionals and loops
 """
+
 from hwtools import *
 
-#Section 1:  If Statements
-#==============================
-# 1) Get a number n from the input, is it even?
-# 2) If n is not even, double it.
-# 3) If n is divisible by 3, add four.
-# 4) What is n's letter grade value? (eg. 90-100 is A)
+# Section 1:  If Statements
+# ==============================
+#  1) Get a number n from the input, is it even?
+#  2) If n is not even, double it.
+#  3) If n is divisible by 3, add four.
+#  4) Get another number m from the input.  What is m's 
+#     letter grade value? (eg. 90-100 is A)
 
 
 
 # Section 2:  Loops
 # ==============================
-
-# 1)  Keep getting a number from the input, until it is a multiple of 3.
-# 2)  Print a countdown from n to 0 by threes 
-#      ex:  
+#  1)  Keep getting a number from the input, until it is a multiple of 3.
+#  2)  Print a countdown from n to 0 by threes 
+#       ex:  
 #         9...
 #         6...
 #         3...
@@ -44,24 +47,23 @@ nums = input_nums()
 
 # Section 4:  For Loops
 # ==============================
-
 # 1) What is the sum of all the numbers in nums?
 # 2) Print every even number in nums
 # 3) Print the phrase "only even numbers" if nums only 
 #    contains even numbers, otherwise print "some odd numbers".
-# 4) Generate a list of odd numbers less than 100. [Hint use range()]
+# 4) Generate a list every odd number less than 100. [Hint use range()]
 
 # ADVANCED:
 # =====================================
+
 # 1) Multiply each value in nums by its index in the list.
 nums = input_nums()
 
-
-# 2) You have n slices of cake. Ask if the user wants cake or death.
-#    If they answer incorrectly, ask again.  When they ask for cake, 
-#    give them one slice.  When there are no slices left and they 
-#    ask for cake, politely explain that you are out of cake and 
-#    ask again. On death, describe their demise.
+# 2) You have n slices of cake. Continually ask if the user wants cake 
+#    or death.  If they answer incorrectly, ask again.  When they ask 
+#    for cake, give them one slice.  When there are no slices left and 
+#    they ask for cake, politely explain that you are out of cake and 
+#    ask again. On death, describe their demise and quit.
 n = int(raw_input("How many slices of cake?  ")
 
 
@@ -81,6 +83,3 @@ n = int(raw_input("How many slices of cake?  ")
 # ^.^.^.^.^
 #     |
 #     |
-
-h = int( raw_input("Enter the height of the branches:  ") )
-t = int( raw_input("Enter the height of the trunk:  ") )
