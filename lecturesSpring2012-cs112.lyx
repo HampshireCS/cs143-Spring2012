@@ -3342,7 +3342,7 @@ for int_counter in range(30):
 
 \end_deeper
 \begin_layout Itemize
-avoid incrementing numbers when it 
+avoid incrementing numbers when it doesn't correspond
 \end_layout
 
 \begin_deeper
@@ -3978,11 +3978,11 @@ values
 \begin_inset Quotes erd
 \end_inset
 
-, 0, empty, etc are usually fine to not make a variable
+, 0, empty, etc are usually fine to not make a variable ???
 \end_layout
 
 \begin_layout Itemize
-also leave things like dividing by 2
+also leave things like dividing by 2 ???
 \end_layout
 
 \end_deeper
@@ -4607,6 +4607,7 @@ wife asks her husband to go the the store and pick up a loaf of bread and
 
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 \begin_inset Quotes eld
 \end_inset
@@ -4618,6 +4619,7 @@ husband returns with a dozen loaves of bread
 
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 the instructions were wrong
 \end_layout
