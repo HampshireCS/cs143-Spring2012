@@ -12,18 +12,18 @@ Section 1:  If Statements
  4) Get another number m from the input.  What is m's letter grade value? (eg. 90-100 is A)
 
 
-
 Section 2:  Loops
 -----------------------------
 
  1) Keep getting a number from the input until it is a multiple of 3.
  2) Print a countdown from n to 0 by threes 
+
 ```
 Example:  
-        9...
-        6...
-        3...
-        Done!
+   9...
+   6...
+   3...
+   Done!
 ```
 
  3) Get another number, if it is a multiple of 3, countdown by 
