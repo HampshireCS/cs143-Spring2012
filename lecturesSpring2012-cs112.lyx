@@ -1565,11 +1565,11 @@ boolean expressions p.
  66
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 ==
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 !=
 \end_layout
@@ -1704,6 +1704,12 @@ print "Blastoff!"
 improve example so it validates the number is greater than 0
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+second while loop that keeps asking for input as long as c<=0
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 tabbing over is included in code
 \end_layout
