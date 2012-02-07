@@ -3,75 +3,36 @@ Control Flow
 Problem Set 1
 -----------------------------
 
-Section 1:  If Statements
------------------------------
+For homework four, complete the questions in the following files.
+ * `sect1_if.py`
+ * `sect2_while.py`
+ * `sect3_lists.py`
+ * `sect4_for.py`
 
- 1. Get a number n from the input, is it even?
- 2. If n is not even, double it.
- 3. If n is divisible by 3, add four.
- 4. Get another number m from the input.  What is m's letter grade value? (eg. 90-100 is A)
+You can safely ignore everything in `hwtools.py`, it just contains some helper functions for doing the homework.  When you are done, run `./turnin.sh hw04` from your project directory.
 
-
-Section 2:  Loops
------------------------------
-
- 1. Keep getting a number from the input until it is a multiple of 3.
- 2. Print a countdown from n to 0 by threes.  See example below.
- 3. Get another number, if it is a multiple of 3, countdown by 
-    threes again.  If it is not a multiple of 3 but is even, 
-    countdown by twos.  Otherwise just countdown by one.
-
-```
-Example:  
-   9...
-   6...
-   3...
-   Done!
-```
-
-Section 3:  Lists
------------------------------
-
- 1.  How many numbers were entered?
- 2.  Append 3 and 5 to nums then print it.
- 3.  Remove the last element from nums.
- 4.  Set the 3rd element to 7 and print nums.
-
-
-Section 4:  For Loops
------------------------------
-
- 1. What is the sum of all the numbers in nums?
- 2. Print every even number in nums
- 3. Print the phrase "only even numbers" if nums only 
-    contains even numbers, otherwise print "some odd numbers".
- 4. Generate a list every odd number less than 100. Hint use range()
 
 ADVANCED:
 -----------------------------
+Make sure you complete each `[ADVANCED]` question in the homework.  In addtion, make the following two programs:
 
-1. Multiply each value in nums by its index in the list.
-2. You have n slices of cake. Continually ask if the user wants cake 
-   or death.  If they answer incorrectly, ask again.  When they ask 
-   for cake, give them one slice.  When there are no slices left and 
-   they ask for cake, politely explain that you are out of cake and 
-   ask again. On death, describe their demise and quit.
-3. Make an ascii christmas tree (or a non-denominational decorative 
-   holiday festival shubbery).  This tree has a star on the top, 
-   has a height of "h" for branches, and the trunk is "t" tall.
+1. **`cake.py`**:  Implement a program version of [cake or death](http://youtu.be/BNjcuZ-LiSY).  Here are the rules:
+    * Keep asking "cake or death?" until death is selected
+    * if the user asks for something else, just ask again
+    * if the user asks for cake, give them one slice
+    * if there is no more cake, politely explain that you are out of cake
+      there is no more cake and ask again
+    * if the user selects death, describe their death vividly and quit
+2. **`board.py`**:  Make an ascii checkerboard for a given the height and the width.  There are many ways to do this, but make sure your solution uses loops and if statements.
 
 ```
-An example tree:
+Example checkerboard:
 
-Enter the height of the branches: 5
-Enter the height of the trunk: 2
+Height: 4
+Width: 7
 
-    *
-    ^
-   ^.^
-  ^.^.^
- ^.^.^.^
-^.^.^.^.^
-    |
-    |
+#-#-#-#
+-#-#-#-
+#-#-#-#
+-#-#-#-
 ```
