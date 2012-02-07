@@ -1565,11 +1565,11 @@ boolean expressions p.
  66
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 ==
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 !=
 \end_layout
@@ -1704,6 +1704,12 @@ print "Blastoff!"
 improve example so it validates the number is greater than 0
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+second while loop that keeps asking for input as long as c<=0
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 tabbing over is included in code
 \end_layout
@@ -2930,6 +2936,7 @@ status open
 
 \begin_layout Plain Layout
 
+...
     print op
 \end_layout
 
@@ -3978,11 +3985,11 @@ values
 \begin_inset Quotes erd
 \end_inset
 
-, 0, empty, etc are usually fine to not make a variable ???
+, 0, empty, etc are usually fine to not make a variable
 \end_layout
 
 \begin_layout Itemize
-also leave things like dividing by 2 ???
+also leave things like dividing by 2
 \end_layout
 
 \end_deeper
@@ -4454,7 +4461,7 @@ print "Sorted:", nums
 \end_layout
 
 \begin_layout Section
-Debugging NEEDS EXAMPLES
+Debugging
 \end_layout
 
 \begin_layout Itemize
