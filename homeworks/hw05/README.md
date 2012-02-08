@@ -28,7 +28,9 @@ Program tic tac toe.  It can be graphical or text.  There can be AI or just two 
 ## lists.py
 Finish all the problems in `lists.py`.  Each question only requires a single python statement.
 
-## Rings Examples
+----
+
+# Rings Examples
 > **Basic Rings:**
 > ![Image](https://github.com/HampshireCS/cs143-Spring2012/raw/master/homeworks/hw05/example_rings_basic.png)
 >
