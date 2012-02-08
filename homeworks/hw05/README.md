@@ -11,7 +11,7 @@ Draw the olymic rings. The output of your file should look something like this.
 
 ## nims.py
 
-
+----
 
 # Advanced
 
