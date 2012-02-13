@@ -2139,15 +2139,15 @@ lists are mutable
 
 \begin_deeper
 \begin_layout Itemize
-list = [’a’, ’d’, ’f’] 
+letters = [’a’, ’d’, ’f’] 
 \end_layout
 
 \begin_layout Itemize
-list[1:1] = [’b’, ’c’]
+letters[1:1] = [’b’, ’c’]
 \end_layout
 
 \begin_layout Itemize
-print list 
+print letters 
 \end_layout
 
 \begin_deeper
@@ -2157,11 +2157,11 @@ print list
 
 \end_deeper
 \begin_layout Itemize
-list[4:4] = [’e’] 
+letters[4:4] = [’e’] 
 \end_layout
 
 \begin_layout Itemize
-print list 
+print letters 
 \end_layout
 
 \begin_deeper
@@ -2175,11 +2175,11 @@ delete with del
 \end_layout
 
 \begin_layout Itemize
-del list[2:4] 
+del letters[2:4] 
 \end_layout
 
 \begin_layout Itemize
-print list
+print letters
 \end_layout
 
 \begin_deeper
@@ -2205,6 +2205,10 @@ referencing
 \begin_deeper
 \begin_layout Itemize
 sorta like pointers
+\end_layout
+
+\begin_layout Itemize
+letters2=letters
 \end_layout
 
 \begin_layout Itemize
@@ -2936,6 +2940,7 @@ status open
 
 \begin_layout Plain Layout
 
+...
     print op
 \end_layout
 
@@ -3984,11 +3989,11 @@ values
 \begin_inset Quotes erd
 \end_inset
 
-, 0, empty, etc are usually fine to not make a variable ???
+, 0, empty, etc are usually fine to not make a variable
 \end_layout
 
 \begin_layout Itemize
-also leave things like dividing by 2 ???
+also leave things like dividing by 2
 \end_layout
 
 \end_deeper
@@ -4460,7 +4465,7 @@ print "Sorted:", nums
 \end_layout
 
 \begin_layout Section
-Debugging NEEDS EXAMPLES
+Debugging
 \end_layout
 
 \begin_layout Itemize
