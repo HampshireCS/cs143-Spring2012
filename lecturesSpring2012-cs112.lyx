@@ -6143,6 +6143,58 @@ print "temp in C is ",c
 
 \end_layout
 
+\begin_layout Itemize
+multiple return function
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+import Math
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def quadratic(a,b,c):
+\end_layout
+
+\begin_layout Plain Layout
+
+	x1 = (-b + Math.sqrt(b**2 - 4*a*c)) / (2*a)
+\end_layout
+
+\begin_layout Plain Layout
+
+	x2 = (-b - Math.sqrt(b**2 - 4*a*c)) / (2*a)
+\end_layout
+
+\begin_layout Plain Layout
+
+	return x1, x2
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+out1, out2 = quadratic(1, 2, 1)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Subsection
 examples
