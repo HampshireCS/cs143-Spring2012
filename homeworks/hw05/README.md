@@ -8,8 +8,8 @@ Nims is a classic game where players take turns taking stones off of a pile.  Wh
 
 ```
 $ python nims.py
-Total number of stones in pile:  40
-Maximum number of stones per turn: 5
+Number of stones in the pile:  40
+Max number of stones per turn: 5
 
 40 stones left.  Player 1 [1-5]:  5
 35 stones left.  Player 2 [1-5]:  4
@@ -43,7 +43,7 @@ Instead of one pile, implement nims to have N piles.  Whoever takes the absolute
 
 ```
 $ python nims.py
-Total number of stones in each pile:  12 14 15 9
+Number of stones in each pile:  12 14 15 9
 
  A  B  C  D | Move
 -------------------------------

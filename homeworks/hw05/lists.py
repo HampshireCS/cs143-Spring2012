@@ -14,6 +14,5 @@ A bunch of excercises to see if you understand list comprehensions
 #           for y in range(10) ]
 #
 
-# 
-print []
+# This will be filled in after the friday course
 

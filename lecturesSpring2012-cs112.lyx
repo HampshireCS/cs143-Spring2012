@@ -4519,19 +4519,19 @@ common types
 
 \begin_deeper
 \begin_layout Itemize
-indentation errors
+indentation errors (01_indent.py)
 \end_layout
 
 \begin_layout Itemize
-syntax errors
+syntax errors (02_syntax.py, 03_syntax2.py, 04_syntax3.py)
 \end_layout
 
 \begin_layout Itemize
-everytihng is a typo
+everytihng is a typo (05_typo.py, 06_typo2.py)
 \end_layout
 
 \begin_layout Itemize
-variable not defined
+variable not defined (07_missing_var.py)
 \end_layout
 
 \end_deeper
@@ -4577,11 +4577,11 @@ common types
 
 \begin_deeper
 \begin_layout Itemize
-dividing by zero
+dividing by zero (08_runtime_zero.py)
 \end_layout
 
 \begin_layout Itemize
-array bounds
+array bounds (09_runtime_array.py)
 \end_layout
 
 \begin_layout Itemize
@@ -4593,7 +4593,7 @@ apple
 \begin_inset Quotes erd
 \end_inset
 
- to a number (aka unexpected input/condition)
+ to a number (aka unexpected input/condition) (10_runtime_error.py)
 \end_layout
 
 \end_deeper

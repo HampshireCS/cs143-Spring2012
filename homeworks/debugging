@@ -1,3 +1,25 @@
+syntax errors
+-------------------------------
+
+indentation
+lots and lots of typos
+
+string without a comma
+
+punctuation errors
+
+large program with multiple errors
+
+if statment commenting out errors
+
+
+
+
+Divide by zero error (integer math problem)
+array out of bounds
+convertinat non number strings to number
+
+
 algo
 ---------------------------------
 loop, adds "done"
