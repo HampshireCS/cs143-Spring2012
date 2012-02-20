@@ -13,7 +13,7 @@ from pygame.locals import *
 ## Settings
 BLACK = 0,0,0
 
-size = 800,600
+SCREEN_SIZE = 800,600
 ties = []
 
 
@@ -46,31 +46,32 @@ def update():
         if tie[2] <= 0:
             ties.remove(tie)
 
+def main():
+    ## Initialize
+    pygame.init()
+    screen = pygame.display.set_mode(SCREEN_SIZE)
 
-## Initialize
-pygame.init()
-screen = pygame.display.set_mode(size)
+    done = False
+    while not done:
+        ## Input
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                done = True
+            elif event.type == KEYDOWN and event.key == K_ESCAPE:
+                done = True
+            elif event.type == MOUSEBUTTONDOWN:
+                create_tie()
 
-done = False
-while not done:
-    ## Input
-    for event in pygame.event.get():
-        if event.type == QUIT:
-            done = True
-        elif event.type == KEYDOWN and event.key == K_ESCAPE:
-            done = True
-        elif event.type == MOUSEBUTTONDOWN:
-            create_tie()
+        update()
+        ## Draw
+        screen.fill(BLACK)
+        for pos,color,size in ties:
+            draw_tie(screen, pos, color, size)
 
-    update()
+        ## Refresh
+        pygame.display.flip()
+        pygame.time.wait(50)
 
-    ## Draw
-    screen.fill(BLACK)
-    for pos,color,size in ties:
-        draw_tie(screen, pos, color, size)
-
-    ## Refresh
-    pygame.display.flip()
-    pygame.time.wait(50)
-        
-print "ByeBye"
+if __name__ == "__main__":
+    main()
+    print "ByeBye"
