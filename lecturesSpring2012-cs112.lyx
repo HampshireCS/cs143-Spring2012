@@ -6197,9 +6197,388 @@ out1, out2 = quadratic(1, 2, 1)
 
 \end_deeper
 \begin_layout Subsection
+main
+\end_layout
+
+\begin_layout Itemize
+this allows you to use command line arguments
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+##!/usr/bin/env python 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import sys
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def main(args):
+\end_layout
+
+\begin_layout Plain Layout
+
+    "Average numbers"
+\end_layout
+
+\begin_layout Plain Layout
+
+    total = 0.0
+\end_layout
+
+\begin_layout Plain Layout
+
+    for a in args:
+\end_layout
+
+\begin_layout Plain Layout
+
+        total += float(a)
+\end_layout
+
+\begin_layout Plain Layout
+
+    print "Avg:",(total / len(args)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if __name__ == '__main__':
+\end_layout
+
+\begin_layout Plain Layout
+
+    main(sys.argv[1:])
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 examples
 \end_layout
 
+\begin_layout Itemize
+bouncing tie fighter
+\end_layout
+
+\begin_layout Itemize
+start with tie_fighter example from last class (the originalish)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+import pygame
+\end_layout
+
+\begin_layout Plain Layout
+
+from pygame import draw
+\end_layout
+
+\begin_layout Plain Layout
+
+from random import randrange
+\end_layout
+
+\begin_layout Plain Layout
+
+from pygame.locals import *
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+color = []
+\end_layout
+
+\begin_layout Plain Layout
+
+position = []
+\end_layout
+
+\begin_layout Plain Layout
+
+size = []
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pygame.init()
+\end_layout
+
+\begin_layout Plain Layout
+
+screen = pygame.display.set_mode((800,600))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+x,y = 400,300
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def draw_tie(surf, pos, color=(255,0,0), size=40):
+\end_layout
+
+\begin_layout Plain Layout
+
+    "Draws a tie fighter"
+\end_layout
+
+\begin_layout Plain Layout
+
+    x,y = pos
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    wall = size/8
+\end_layout
+
+\begin_layout Plain Layout
+
+    x0,x1 = x - (size/2), x + (size/2)
+\end_layout
+
+\begin_layout Plain Layout
+
+    y0,y1 = y - (size/2), y + (size/2)
+\end_layout
+
+\begin_layout Plain Layout
+
+    draw.rect(surf, color, (x0, y0, wall, size))
+\end_layout
+
+\begin_layout Plain Layout
+
+    draw.rect(surf, color, (x1-wall, y0, wall, size))
+\end_layout
+
+\begin_layout Plain Layout
+
+    draw.rect(surf, color, (x0, y-(wall/2), size, wall))
+\end_layout
+
+\begin_layout Plain Layout
+
+    draw.circle(surf, color, (x, y), size/4)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def move(x, y):
+\end_layout
+
+\begin_layout Plain Layout
+
+    return x, y
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+done = False
+\end_layout
+
+\begin_layout Plain Layout
+
+while not done:
+\end_layout
+
+\begin_layout Plain Layout
+
+    for event in pygame.event.get():
+\end_layout
+
+\begin_layout Plain Layout
+
+        if event.type == QUIT:
+\end_layout
+
+\begin_layout Plain Layout
+
+            done = True
+\end_layout
+
+\begin_layout Plain Layout
+
+        elif event.type == KEYDOWN and event.key == K_ESCAPE:
+\end_layout
+
+\begin_layout Plain Layout
+
+            done = True
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    x,y = move(x,y)
+\end_layout
+
+\begin_layout Plain Layout
+
+    screen.fill((0,0,0))
+\end_layout
+
+\begin_layout Plain Layout
+
+    draw_tie(screen, [x, y])
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    pygame.display.flip()
+\end_layout
+
+\begin_layout Plain Layout
+
+    pygame.time.wait(50)
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+print "ByeBye"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+change move so that it actually moves
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def move(x, y, dx, dy):
+\end_layout
+
+\begin_layout Plain Layout
+
+    x += dx
+\end_layout
+
+\begin_layout Plain Layout
+
+    y += dy
+\end_layout
+
+\begin_layout Plain Layout
+
+    return x, y, dx, dy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Have them try
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+shift it to bounce off walls (have move take edges
+\end_layout
+
+\begin_layout Itemize
+have the tie_fighter leave a drag line
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+each time through loop add to a list
+\end_layout
+
+\begin_layout Itemize
+remove elements of list to set a length if choosen
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+drop drag lines and have it create 2 tie_fighters that bounce back every
+ time a wall is hit
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Advanced data structures NEEDS EXAMPLES
 \end_layout
