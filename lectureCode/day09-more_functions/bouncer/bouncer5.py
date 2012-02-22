@@ -1,74 +1,77 @@
-from random import randrange
-
 import pygame
 from pygame import draw
+from random import randrange
 from pygame.locals import *
 
-SCREEN_SIZE = WIDTH, HEIGHT = 800,600
+from collections import namedtuple
+
+pygame.init()
+screen = pygame.display.set_mode((800,600))
 
 
-def draw_tie(surf, pos, color=(255,0,0), size=40):
+def draw_tie(surf, tie):
     "Draws a tie fighter"
-    x,y = pos
+    color = 255,0,0
+    x,y,dx,dy,size = tie
     
-    wall = size/8
-    x0,x1 = x - (size/2), x + (size/2)
-    y0,y1 = y - (size/2), y + (size/2)
+    width = size/8
 
-    draw.rect(surf, color, (x0, y0, wall, size))
-    draw.rect(surf, color, (x1-wall, y0, wall, size))
-    draw.rect(surf, color, (x0, y-(wall/2), size, wall))
-    draw.circle(surf, color, (x, y), size/4)
+    draw.rect(surf, color, (x, y, width, size))
+    draw.rect(surf, color, (x+(size-width), y, width, size))
+    draw.rect(surf, color, (x, y+(size-width)/2, size, width))
+    draw.circle(surf, color, (x+size/2, y+size/2), size/4)
 
 
-def create_tie(width, height):
-    tie = {
-        "color": [randrange(100,256), randrange(100,256), randrange(100,256)],
-        "pos": [randrange(width), randrange(height), randrange(-4,5), randrange(-4,5)]
-    }
-    return tie
+def move(tie, bounds):
+    x, y, dx, dy, size = tie
 
-
-def move(pos, width, height):
-    x,y,dx,dy = pos
     x += dx
     y += dy
 
-    if x < 0 or x >= width:
+    if x < bounds.left or x + size > bounds.right:
         dx = -dx
-        x += 2*dx
-    if y < 0 or y >= height:
+        x += 2 * dx
+        split(tie)
+
+    if y < bounds.top or y + size > bounds.bottom:
         dy = -dy
-        y += 2*dy
+        y += 2 * dy
+        split(tie)
 
-    return x, y, dx, dy
+    return x,y,dx,dy,size
 
 
-pygame.init()
-screen = pygame.display.set_mode(SCREEN_SIZE)
+def split(tie):
+    global ties
+    x,y,dx,dy,size = tie
+    size /= 2
+    if size != 0:
+        ties.append([x,y,-dx,-dy,size])
 
-ties = [ create_tie(WIDTH, HEIGHT) ] 
+ties = [
+  [400, 300, 2, 2, 40],
+  [200, 200, -1, 3, 50]
+]
+bounds = screen.get_rect()
 
 done = False
+clock = pygame.time.Clock() 
 while not done:
     for event in pygame.event.get():
         if event.type == QUIT:
             done = True
         elif event.type == KEYDOWN and event.key == K_ESCAPE:
             done = True
-        elif event.type == KEYDOWN and event.key == K_SPACE:
-            ties.append(create_tie(WIDTH, HEIGHT))
 
-    for tie in ties:
-        color = tie["color"]
-        tie["pos"] = move(tie["pos"], WIDTH, HEIGHT)
-
+    for i in range(len(ties)):
+        ties[i] = move(ties[i], bounds)
+    
 
     screen.fill((0,0,0))
     for tie in ties:
-        draw_tie(screen, tie["pos"][:2], tie["color"])
+        draw_tie(screen, tie)
     
     pygame.display.flip()
-    pygame.time.wait(20)
+    clock.tick(30)
     
 print "ByeBye"

@@ -6,7 +6,6 @@ from pygame.locals import *
 pygame.init()
 screen = pygame.display.set_mode((800,600))
 tie_x, tie_y = 400,300
-tie_dx, tie_dy = 2,2
 
 def draw_tie(surf, pos, color=(255,0,0), size=40):
     "Draws a tie fighter"
@@ -20,21 +19,7 @@ def draw_tie(surf, pos, color=(255,0,0), size=40):
     draw.circle(surf, color, (x+size/2, y+size/2), size/4)
 
 
-def move(x,y,dx,dy,size,bounds):
-    x += dx
-    y += dy
-
-    if x < bounds.left or x > bounds.right:
-        dx = -dx
-        x += 2 * dx
-
-    if y < bounds.top or y > bounds.bottom:
-        dy = -dy
-        y += 2 * dy
-    return x,y,dx,dy
-
 done = False
-clock = pygame.time.Clock() 
 while not done:
     for event in pygame.event.get():
         if event.type == QUIT:
@@ -42,12 +27,10 @@ while not done:
         elif event.type == KEYDOWN and event.key == K_ESCAPE:
             done = True
 
-    tie_x, tie_y, tie_dx, tie_dy = move(tie_x, tie_y, tie_dx, tie_dy, 40, screen.get_rect())
-
     screen.fill((0,0,0))
     draw_tie(screen, [tie_x, tie_y])
     
     pygame.display.flip()
-    clock.tick(15)
+    pygame.time.wait(50)
     
 print "ByeBye"
