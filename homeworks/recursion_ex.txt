@@ -1,0 +1,5 @@
+a "twitter" search function
+    simple creates a bunch of people and finds the minimum distance between any two
+    (this would be a graph search)
+
+
