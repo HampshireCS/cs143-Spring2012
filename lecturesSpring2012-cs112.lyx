@@ -6589,7 +6589,7 @@ lists within lists
 \end_layout
 
 \begin_layout Itemize
-list = ["hello", 2.0, 5, [10, 20]]
+matrix = ["hello", 2.0, 5, [10, 20]]
 \end_layout
 
 \begin_deeper
@@ -6598,7 +6598,7 @@ matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 \end_layout
 
 \begin_layout Itemize
-access with list[3][1]
+access with matrix[3][1]
 \end_layout
 
 \end_deeper
