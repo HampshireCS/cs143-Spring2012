@@ -6154,7 +6154,7 @@ status open
 
 \begin_layout Plain Layout
 
-import Math
+import math
 \end_layout
 
 \begin_layout Plain Layout
@@ -6168,12 +6168,12 @@ def quadratic(a,b,c):
 
 \begin_layout Plain Layout
 
-	x1 = (-b + Math.sqrt(b**2 - 4*a*c)) / (2*a)
+	x1 = (-b + math.sqrt(b**2 - 4*a*c)) / (2*a)
 \end_layout
 
 \begin_layout Plain Layout
 
-	x2 = (-b - Math.sqrt(b**2 - 4*a*c)) / (2*a)
+	x2 = (-b - math.sqrt(b**2 - 4*a*c)) / (2*a)
 \end_layout
 
 \begin_layout Plain Layout
@@ -6344,7 +6344,7 @@ def move(x, y, dx, dy, size, bounds):
 
 \begin_layout Plain Layout
 
-	if y < bounds.top or y > bound.bottom:
+	if y < bounds.top or y > bounds.bottom:
 \end_layout
 
 \begin_layout Plain Layout
@@ -6602,6 +6602,31 @@ access with list[3][1]
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+lists of positions
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+pos = []
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pos.append((0,0))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Tuples chapter 12
 \end_layout
@@ -6961,6 +6986,10 @@ Pytho
 
 \begin_layout Subsection
 examples
+\end_layout
+
+\begin_layout Itemize
+Reading code example, can it be figured out
 \end_layout
 
 \begin_layout Section

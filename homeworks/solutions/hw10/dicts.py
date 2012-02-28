@@ -16,6 +16,14 @@ manipulate python dictionaries.
 
 def freq(data):
     "calculate the frequency for each value in data"
+    totals = {}
+
+    for v in data:
+        if v not in totals:
+            totals[v] = 0
+        totals[v] += 1
+
+    return totals
 
 
 
@@ -26,29 +34,45 @@ def freq(data):
 #        stores a score in the "movies" dictionary
 #
 #      avg_score:
-#        returns the average score of a movie, rounded to the 
-#        nearest 1/2 point.
+#        returns the average score of a movie
 #
 #      Examples:
 #      >>> score("Fargo", 4)
 #      >>> score("Fargo", 5)
 #      >>> score("Fargo", 5)
 #      >>> avg_score("Fargo")
-#      4.5
+#      4.6666666667
+#      >>> avg_score("missing movie")
+#      None
 
 movies = {}
 
-def score(movie, value):
+def score(title, value):
     "register the score for a given movie out of 5"
+    if title not in movies:
+        movies[title] = {"total": 0, "count": 0.0 }
 
-def avg_score(movie):
-    "return the average score for a given movie rounded to the nearest 1/2 point"
+    movies[title]["total"] += value
+    movies[title]["count"] += 1
+
+def avg_score(title):
+    "return the average score for a given movie"
+    if title in movies:
+        movie = movies[title]
+        val = movie["total"] / movie["count"]
+        return val
+    else:
+        return None
 
 
 
 # 3. parse_csv (Advanced)
 #        Takes an input string and spits back a list of comma
-#        separated values (csv) entries.
+#        separated values (csv) entries.  Hint, check the zip
+#        and dict functions.
+#
+#        The point of this is to create your own parser, not to
+#        use pythons builtin 'csv' library.
 #
 #           >>> csv = """
 #           name,age,email
@@ -63,3 +87,11 @@ def avg_score(movie):
 
 def parse_csv(data):
     "parses a csv file into a list of dictionaries"
+    data = data.strip()
+    lines = data.split("\n")
+    rows = [ [ c.strip() for c in line.strip().split(",") ] for line in lines ]
+    header = rows[0]
+
+    csv = [ dict(zip(header, row)) for row in rows[1:] ]
+    return csv
+
