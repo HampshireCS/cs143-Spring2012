@@ -19,6 +19,8 @@ looks something like this:
        "Steve M": { "age": 18, "follows": [ ] },
        ...
      }
+
+You can see the actual data as a table in users_data.txt
 """
 
 # 1. followers
@@ -40,7 +42,6 @@ def followers(users, *names):
 #      users themselves
 #          >>> underage_follows(users)
 #          [ "Steve M", "Gerald Q", "Frank L" ]
-
 def underage_follows(users):
     "find who underage users follow"
 
@@ -53,7 +54,7 @@ def underage_follows(users):
 #         [ "Sally F", "Frank L", "Steve M" ]
 
 def foaf(users, name):
-    "find everyone whom a user's followers follow (not including user"
+    "find everyone whom a user's followers follow (not including user)"
 
 
 
@@ -70,7 +71,13 @@ def foaf(users, name):
 #           ...
 #         }
 
- def age_demographics(users):
+def age_demographics(users):
      "calculate age demographics"
 
+
+
+# UNCOMMENT THE FOLLOWING TO WRITE YOUR OWN CODE USING USERS
+# if __name__ == "__main__":
+#    from tests.test_users import USERS
+#    print USERS
 

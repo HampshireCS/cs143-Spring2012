@@ -24,6 +24,7 @@ Terms:
   Rectangle:  pygame.Rect
 """
 
+from pygame import Rect
 
 # 1. poly_in_rect
 #      Check to see if the polygon is completely within a given 
@@ -36,13 +37,14 @@ def poly_in_rect(poly, rect):
 
 
 
-
 # 2. surround_poly
 #      Create a rectangle which contains the given polygon.  
-#      Using this rect with poly_in_rect returns True
+#      It should return the smallest possible rectangle 
+#      where poly_in_rect returns True.
 #
 #      returns:  pygame.Rect
 
 def surround_poly(poly):
     "create a rectangle which surounds a polygon"
+
 
