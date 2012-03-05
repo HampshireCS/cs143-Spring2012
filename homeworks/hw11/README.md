@@ -39,6 +39,3 @@ Requirements:
      * when the game is paused, the numbers cannot be visible
  * again, try to make it "unique" somehow
 
-### surfarray
-
-Do a bunch of surfarray manipulations

@@ -16,14 +16,6 @@ manipulate python dictionaries.
 
 def freq(data):
     "calculate the frequency for each value in data"
-    totals = {}
-
-    for v in data:
-        if v not in totals:
-            totals[v] = 0
-        totals[v] += 1
-
-    return totals
 
 
 
@@ -49,20 +41,10 @@ movies = {}
 
 def score(title, value):
     "register the score for a given movie out of 5"
-    if title not in movies:
-        movies[title] = {"total": 0, "count": 0.0 }
 
-    movies[title]["total"] += value
-    movies[title]["count"] += 1
 
 def avg_score(title):
     "return the average score for a given movie"
-    if title in movies:
-        movie = movies[title]
-        val = movie["total"] / movie["count"]
-        return val
-    else:
-        return None
 
 
 
@@ -77,8 +59,8 @@ def avg_score(title):
 #           >>> csv = """
 #           name,age,email
 #           Foo, 24, foo@example.com
-#           Bar, 22, bar@example.com
-#           Baz, 20, baz@gmail.com
+#           Bar ,22 ,bar@example.com
+#           Baz, 20 , baz@gmail.com
 #           """
 #           >>> parse_csv(csv)
 #           [ { "name": "Foo", "age": "24", "email": "foo@example.com" },
@@ -87,11 +69,4 @@ def avg_score(title):
 
 def parse_csv(data):
     "parses a csv file into a list of dictionaries"
-    data = data.strip()
-    lines = data.split("\n")
-    rows = [ [ c.strip() for c in line.strip().split(",") ] for line in lines ]
-    header = rows[0]
-
-    csv = [ dict(zip(header, row)) for row in rows[1:] ]
-    return csv
 

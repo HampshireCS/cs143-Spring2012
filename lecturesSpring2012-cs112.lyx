@@ -7717,7 +7717,8 @@ change the inputs to a function
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
+\begin_layout Itemize
+Creating first object
 \begin_inset listings
 inline false
 status open
@@ -7725,545 +7726,6 @@ status open
 \begin_layout Plain Layout
 
 class Student(object):
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __init__(self, name):
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.name = name
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.courses = []
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-class Course(object):
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __init__(self, name):
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.name = name
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.enrolled = []
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-def enroll(student, course):
-\end_layout
-
-\begin_layout Plain Layout
-
-	student.courses.append(course)
-\end_layout
-
-\begin_layout Plain Layout
-
-	course.enrolled.append(student)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-rob = Student("Rob")
-\end_layout
-
-\begin_layout Plain Layout
-
-ella = Student("Ella")
-\end_layout
-
-\begin_layout Plain Layout
-
-sam = Student("Sam")
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-cs112 = Course("CS112")
-\end_layout
-
-\begin_layout Plain Layout
-
-fort = Course("Fort Building 101")
-\end_layout
-
-\begin_layout Plain Layout
-
-scuba = Course("Underwater Basket Weaving")
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-is
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-check to see if to variables point to the same thing
-\end_layout
-
-\begin_layout Itemize
-doesn't check if classes are equal
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
->>> rob2 = rob 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> rob is rob2 
-\end_layout
-
-\begin_layout Plain Layout
-
-True
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-copy.copy() 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-only copies the top level and creates aliases below top level
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-copy.deepcopy()
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-copes all levels of objects
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-
-\series bold
-NEED MORE EXAMPLES I THINK...
-\end_layout
-
-\begin_layout Section
-Object Inheritance NEEDS WORK
-\end_layout
-
-\begin_layout Itemize
-create a class and define things within it
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-class that inherits can use everything in the class it inherits from
-\end_layout
-
-\begin_layout Itemize
-possible example is class human and classes male and female inherit from
- it
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-both male and female have name, age, etc
-\end_layout
-
-\begin_layout Itemize
-different methods-give birth, etc.
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-if looks like
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-inheritance is defined in the class def 
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Hand(Deck):
-\end_layout
-
-\begin_layout Plain Layout
-
-	pass
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-inheritance (*can inherit from multiple, very messy)
-\end_layout
-
-\begin_layout Subsection*
-13.1 Inheritence Examples
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-import math
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-class Shape(object):
-\end_layout
-
-\begin_layout Plain Layout
-
-    x = 0
-\end_layout
-
-\begin_layout Plain Layout
-
-    y = 0
-\end_layout
-
-\begin_layout Plain Layout
-
-    def area(self):
-\end_layout
-
-\begin_layout Plain Layout
-
-        "Generic shaps don't really have an area function"
-\end_layout
-
-\begin_layout Plain Layout
-
-        return None
-\end_layout
-
-\begin_layout Plain Layout
-
-    def move(self, x, y):
-\end_layout
-
-\begin_layout Plain Layout
-
-        self.x = x
-\end_layout
-
-\begin_layout Plain Layout
-
-        self.y = y
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-class Circle(Shape):
-\end_layout
-
-\begin_layout Plain Layout
-
-    def __init__(self, radius):
-\end_layout
-
-\begin_layout Plain Layout
-
-        self.radius = radius
-\end_layout
-
-\begin_layout Plain Layout
-
-    def area(self):
-\end_layout
-
-\begin_layout Plain Layout
-
-        return self.radius * self.radius * math.pi
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-class Rectangle(Shape):
-\end_layout
-
-\begin_layout Plain Layout
-
-    def __init__(self, width, height):
-\end_layout
-
-\begin_layout Plain Layout
-
-        self.width = width
-\end_layout
-
-\begin_layout Plain Layout
-
-        self.height = height
-\end_layout
-
-\begin_layout Plain Layout
-
-    def area(self):
-\end_layout
-
-\begin_layout Plain Layout
-
-        return self.width * self.height
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-class Square(Rectangle):
-\end_layout
-
-\begin_layout Plain Layout
-
-    def __init__(self, size):
-\end_layout
-
-\begin_layout Plain Layout
-
-        Rectangle.__init__(self, size, size)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-r1 = Rectangle(4,5)
-\end_layout
-
-\begin_layout Plain Layout
-
-r2 = Rectangle(5,10)
-\end_layout
-
-\begin_layout Plain Layout
-
-print "r1 area: %d,  r2 area: %d" % (r1.area(), r2.area())
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Animal(object):
-\end_layout
-
-\begin_layout Plain Layout
-
-    says = "<undefinable>"
-\end_layout
-
-\begin_layout Plain Layout
-
-    def get_name(self):
-\end_layout
-
-\begin_layout Plain Layout
-
-        return self.__class__.__name__
-\end_layout
-
-\begin_layout Plain Layout
-
-    def get_phrase(self):
-\end_layout
-
-\begin_layout Plain Layout
-
-        word = self.says.capitalize()
-\end_layout
-
-\begin_layout Plain Layout
-
-        return "%s, %s!" % (word, word)
-\end_layout
-
-\begin_layout Plain Layout
-
-    def speak(self):
-\end_layout
-
-\begin_layout Plain Layout
-
-        print '"%s", says the %s' % (self.get_phrase(), self.get_name())
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-class Dog(Animal):
-\end_layout
-
-\begin_layout Plain Layout
-
-    says = "woof"
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-class Cat(Animal):
-\end_layout
-
-\begin_layout Plain Layout
-
-    says = "meow"
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Animal().speak()
-\end_layout
-
-\begin_layout Plain Layout
-
-Dog().speak()
-\end_layout
-
-\begin_layout Plain Layout
-
-Cat().speak()
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Pet(Animal):
-\end_layout
-
-\begin_layout Plain Layout
-
-    def __init__(self, name):
-\end_layout
-
-\begin_layout Plain Layout
-
-        self.name = name
-\end_layout
-
-\begin_layout Plain Layout
-
-    def get_name(self):
-\end_layout
-
-\begin_layout Plain Layout
-
-        return self.name
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-class PetDog(Pet, Dog):
 \end_layout
 
 \begin_layout Plain Layout
@@ -8277,3293 +7739,12 @@ class PetDog(Pet, Dog):
 
 \begin_layout Plain Layout
 
-class PetCat(Pet, Cat):
+bob = Student()
 \end_layout
 
 \begin_layout Plain Layout
 
-    def get_phrase(self):
-\end_layout
-
-\begin_layout Plain Layout
-
-        return "..."
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-PetDog("Bandit").speak()
-\end_layout
-
-\begin_layout Plain Layout
-
-PetCat("Mrs.
- Pretty").speak()
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Abra(Animal):
-\end_layout
-
-\begin_layout Plain Layout
-
-    says = "abra"
-\end_layout
-
-\begin_layout Plain Layout
-
-    def capture(self):
-\end_layout
-
-\begin_layout Plain Layout
-
-        print "%s uses teleport" % self.get_name()
-\end_layout
-
-\begin_layout Plain Layout
-
-class Kadabra(Abra):
-\end_layout
-
-\begin_layout Plain Layout
-
-    def get_phrase(self):
-\end_layout
-
-\begin_layout Plain Layout
-
-        return "Kaaadaaabraaaa!"
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-abra = Abra()
-\end_layout
-
-\begin_layout Plain Layout
-
-abra.speak()
-\end_layout
-
-\begin_layout Plain Layout
-
-abra.capture()
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-kada = Kadabra()
-\end_layout
-
-\begin_layout Plain Layout
-
-kada.speak()
-\end_layout
-
-\begin_layout Plain Layout
-
-kada.capture()
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-inherit from existing
-\end_layout
-
-\begin_layout Enumerate
-again rebuild
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-inherit from standard bad guy, etc
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-extend sprite
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-inherit from created
-\end_layout
-
-\begin_layout Enumerate
-introduce sprite group
-\end_layout
-
-\end_deeper
-\begin_layout Section
-Software Design
-\end_layout
-
-\begin_layout Subsection
-Data design
-\end_layout
-
-\begin_layout Itemize
-walk them through a large design example
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Quotes eld
-\end_inset
-
-modeling Hampshire
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-have them give what they think would make Hampshire
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-people
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-staff
-\end_layout
-
-\begin_layout Itemize
-students
-\end_layout
-
-\begin_layout Itemize
-faculty
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-rooms
-\end_layout
-
-\begin_layout Itemize
-dorms
-\end_layout
-
-\begin_layout Itemize
-meds
-\end_layout
-
-\begin_layout Itemize
-building
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-once they list everything lead them through grouping 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-staff students under people, etc.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-give them a little example of then starting to lay out what makes up one
- of the classes
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-attributes and methods of people
-\end_layout
-
-\begin_layout Itemize
-what inherits from what
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-now based on what they create give them a piece to design (not program)
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-break into groups to work on it
-\end_layout
-
-\begin_layout Itemize
-have each group discuss their solution
-\end_layout
-
-\begin_layout Itemize
-from their solutions build more of the Hampshire solution on the board
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Now how to build it
-\end_layout
-
-\begin_layout Itemize
-now lets assume that we need the above because we're building a game, what
- do we need
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-have them make suggests
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-network based
-\end_layout
-
-\begin_layout Itemize
-web based
-\end_layout
-
-\begin_layout Itemize
-gui based
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-how will we build it?
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-based on their suggests, show them how to find libraries
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-look up on the google
-\end_layout
-
-\begin_layout Itemize
-find as many examples as possible
-\end_layout
-
-\begin_layout Itemize
-look at code examples
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-see how ugly it is
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-look at feature lists
-\end_layout
-
-\begin_layout Itemize
-look at about page to see what it's trying to fill
-\end_layout
-
-\begin_layout Itemize
-look at forums to see what people think
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-google 
-\begin_inset Quotes eld
-\end_inset
-
-should I use INSERT NAME HERE
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-when last updated
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Pair programing
-\end_layout
-
-\begin_layout Itemize
-explain
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-one types
-\end_layout
-
-\begin_layout Itemize
-one looks over shoulder
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-checks for typos
-\end_layout
-
-\begin_layout Itemize
-looks up documentation
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Section
-Algorithm Design NEEDS EXAMPLES
-\end_layout
-
-\begin_layout Subsection
-Pseudo code
-\end_layout
-
-\begin_layout Itemize
-explain what it is
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-general structure of code
-\end_layout
-
-\begin_layout Itemize
-defining arguments
-\end_layout
-
-\begin_layout Itemize
-figure out input and output
-\end_layout
-
-\begin_layout Itemize
-has full comments
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Solve a maze
-\end_layout
-
-\begin_layout Itemize
-give them a maze and have them work in pairs to write code to solve mazes
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Insert maze here
-\end_layout
-
-\begin_layout Itemize
-once they have it solved bring them back together to have a complete set
- up pseudo code
-\end_layout
-
-\begin_layout Itemize
-have them convert the pseudo code to actual code
-\end_layout
-
-\begin_layout Itemize
-have them try their code using our maze generation code
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-maze code
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-remember we're building games
-\end_layout
-
-\begin_layout Itemize
-have them them define what a game is
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-they are wrong
-\end_layout
-
-\begin_layout Itemize
-a game is fun, interactive, and has rewards
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-this is fundamental
-\end_layout
-
-\begin_layout Itemize
-they need to think about this when designing their games
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Section
-Game Pitch Day 
-\end_layout
-
-\begin_layout Itemize
-have everyone present their pitch (about 2 minutes per)
-\end_layout
-
-\begin_layout Itemize
-then go around having them glomming into pairs
-\end_layout
-
-\begin_layout Itemize
-get it all organized
-\end_layout
-
-\begin_layout Section
-Project Management/Exceptions and Files Chapter 14 NEEDS EXAMPLES
-\end_layout
-
-\begin_layout Itemize
-talk about how you plan a project
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-goals 
-\end_layout
-
-\begin_layout Itemize
-timelines 
-\end_layout
-
-\begin_layout Itemize
-estimating times
-\end_layout
-
-\begin_layout Itemize
-give them CPM talk
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-run through example of game
-\end_layout
-
-\begin_layout Itemize
-show how to fudge-exact sticking to cpm not necessary
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-they need to plan to meet and work together
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Github
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-will make it easier for them to work together
-\end_layout
-
-\begin_layout Itemize
-explain details of github
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-dates to know
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Apr 9: Virtical Slice
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-no graphics
-\end_layout
-
-\begin_layout Itemize
-proof of concept/core game play elements
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Apr 23: Virtical Slice
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-game must be playable
-\end_layout
-
-\begin_layout Itemize
-does not yet need graphics
-\end_layout
-
-\begin_layout Itemize
-all parts of game must be implemented 
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Subsection
-Exceptions and Files Chapter 11 
-\end_layout
-
-\begin_layout Itemize
-open a file
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-f = open("test.dat","w")
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-write to a file
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-f.write("Now is the time")
-\end_layout
-
-\begin_layout Itemize
-can only write strings
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-f.write (str(x))
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-close a file
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-f.close()
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-read a file
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-entire file
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-text=f.read()
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-read a line
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-f.readline()
-\end_layout
-
-\begin_layout Itemize
-reads to and includes the 
-\backslash
-n
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-read lines
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-f.readlines()
-\end_layout
-
-\begin_layout Itemize
-returns a list of strings
-\end_layout
-
-\begin_layout Itemize
-done better with
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-text=f.read().strip().split('
-\backslash
-n')
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-there are libraries for importing most interesting types of images
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-pygame: images
-\end_layout
-
-\begin_layout Itemize
-jason: csv config files
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-formatting strings
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-"In July we sold %d cars." % cars
-\end_layout
-
-\begin_layout Itemize
-%d int
-\end_layout
-
-\begin_layout Itemize
-%f float
-\end_layout
-
-\begin_layout Itemize
-%s strings
-\end_layout
-
-\begin_layout Itemize
-typical C style formatting
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-pickling 
-\series bold
-needed?
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-write data to files not as strings
-\end_layout
-
-\begin_layout Itemize
-import pickle
-\end_layout
-
-\begin_layout Itemize
-f = open("test.pck","w")
-\end_layout
-
-\begin_layout Itemize
-pickle.dump(12.3, f)
-\end_layout
-
-\begin_layout Itemize
-x = pickle.load(f)
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-reloads
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-throwing exceptions p.
- 153
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-filename = raw_input(’Enter a file name: ’) 
-\end_layout
-
-\begin_layout Plain Layout
-
-try: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	f = open (filename, "r") 
-\end_layout
-
-\begin_layout Plain Layout
-
-except IOError: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	print ’There is no file named’, filename
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-examples
-\end_layout
-
-\begin_layout Section
-Plan Review/Work Day 
-\end_layout
-
-\begin_layout Itemize
-attendance is mandatory
-\end_layout
-
-\begin_layout Itemize
-during class review groups project plan
-\end_layout
-
-\begin_layout Itemize
-everyone not being spoken to at that instant should be working
-\end_layout
-
-\begin_layout Section
-Recursion Data Structures chapter 5 NEEDS WORK
-\end_layout
-
-\begin_layout Itemize
-VIRTICAL SLICE DUE
-\end_layout
-
-\begin_layout Subsection
-recursion
-\end_layout
-
-\begin_layout Itemize
-show factorial example
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-def factorial(n):
-\end_layout
-
-\begin_layout Plain Layout
-
-	if n<=1:
-\end_layout
-
-\begin_layout Plain Layout
-
-		return 1
-\end_layout
-
-\begin_layout Plain Layout
-
-	else:
-\end_layout
-
-\begin_layout Plain Layout
-
-		return n*factorial(n-1)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-use this to explain recursion
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-recursion works by calling a function on itself (with minor changes) until
- some base case is reached
-\end_layout
-
-\begin_layout Itemize
-kind of like proof by induction
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-show a bottles of beer example
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env/ python
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-def beer(amount):
-\end_layout
-
-\begin_layout Plain Layout
-
-    if amount <=0:
-\end_layout
-
-\begin_layout Plain Layout
-
-        print "no bottle of beer on the wall, no bottles of beer, cry a
- lot"
-\end_layout
-
-\begin_layout Plain Layout
-
-    else:
-\end_layout
-
-\begin_layout Plain Layout
-
-        beer(amount-1)
-\end_layout
-
-\begin_layout Plain Layout
-
-        print amount," bottles of beer on the wall ",amount,
-\end_layout
-
-\begin_layout Plain Layout
-
-			" bottles of beer, you take one down, pass it around ",(amount-1),
-\end_layout
-
-\begin_layout Plain Layout
-
-			" bottles of beer on the wall"
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-beer(99) 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-have them try Fibinacci (give them only 5-10 minutes, just enough to show
- holes in understanding)
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env/ python
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-def fib(n):
-\end_layout
-
-\begin_layout Plain Layout
-
-	#print "fib(",n,")"
-\end_layout
-
-\begin_layout Plain Layout
-
-	if n==0 or n==1:
-\end_layout
-
-\begin_layout Plain Layout
-
-		return n
-\end_layout
-
-\begin_layout Plain Layout
-
-	else:
-\end_layout
-
-\begin_layout Plain Layout
-
-		return fib(n-1)+fib(n-2)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-fib(100) 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-explain fibonacci then show them how it works by adding a print statement
-\end_layout
-
-\begin_layout Subsection
-data structures
-\end_layout
-
-\begin_layout Subsubsection
-linked lists 
-\end_layout
-
-\begin_layout Itemize
-diagram them and explain them
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-we don't need them anymore
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-they were really useful before mutable arrays (lists)
-\end_layout
-
-\begin_layout Itemize
-they weren't mutable in C and earlier languages
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Subsubsection
-trees
-\end_layout
-
-\begin_layout Itemize
-explain what a tree is
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-file system on a computer
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-you can go down into folders
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-create a maze without loops
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-diagram the maze as a tree
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-label each box as a letter
-\end_layout
-
-\begin_layout Itemize
-show the letters in the tree
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-use to explain
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-depth first search
-\end_layout
-
-\begin_layout Itemize
-breadth first search
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-now lets try a real example
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\series bold
-PUT IN REAL TREE EXAMPLES
-\end_layout
-
-\end_deeper
-\begin_layout Section
-State Machines NEEDS WORK
-\end_layout
-
-\begin_layout Subsection
-graphs
-\end_layout
-
-\begin_layout Itemize
-create a maze again
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-this one can have loops
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Graphics
-	filename Figures/day20-1-maze.eps
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-build into a graph
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Graphics
-	filename Figures/day20-1-graph.eps
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Subsection
-state machines
-\end_layout
-
-\begin_layout Itemize
-show Pacman example
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename Figures/day20-2-Pacman.eps
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-add details of pacman example
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-build pacman
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Animation and Sound NEEDS WORK
-\end_layout
-
-\begin_layout Itemize
-animation
-\end_layout
-
-\begin_layout Itemize
-sprite sheets
-\end_layout
-
-\begin_layout Section
-Menus NEEDS WORK
-\end_layout
-
-\begin_layout Itemize
-pgu libraries
-\end_layout
-
-\begin_layout Section
-Real World Python NEEDS WORK
-\end_layout
-
-\begin_layout Itemize
-show them how to find libraries
-\end_layout
-
-\begin_layout Itemize
-VIRTICAL SLICE DUE
-\end_layout
-
-\begin_layout Itemize
-the example is a deathfest character generator
-\end_layout
-
-\begin_layout Itemize
-building command line programs
-\end_layout
-
-\begin_layout Itemize
-GUI
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-show them how they can build real stand along programs
-\end_layout
-
-\end_deeper
-\begin_layout Section
-Real World Python NEEDS WORK
-\end_layout
-
-\begin_layout Itemize
-shift the deathfest character stuff to the web
-\end_layout
-
-\begin_layout Itemize
-mention web scraping
-\end_layout
-
-\begin_layout Itemize
-life hacking
-\end_layout
-
-\begin_layout Section
-Play Final Games Course Wrap-Up 
-\end_layout
-
-\begin_layout Itemize
-start with course wrap-up
-\end_layout
-
-\begin_layout Itemize
-get pluses and minuses for improvement next time
-\end_layout
-
-\begin_layout Subsection
-play games
-\end_layout
-
-\begin_layout Itemize
-have each group put their game up on a computer
-\end_layout
-
-\begin_layout Itemize
-have everyone try out games for the rest of class time
-\end_layout
-
-\begin_layout Section
-Present Final Games
-\end_layout
-
-\begin_layout Itemize
-have each group give their final game presentation
-\end_layout
-
-\begin_layout Section*
-NOT USED
-\end_layout
-
-\begin_layout Section
-create our own objects NEEDS WORK
-\end_layout
-
-\begin_layout Enumerate
-group data and logic
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-everything has an update and draw
-\end_layout
-
-\begin_layout Enumerate
-recreate previous day, but cooler
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Point: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	pass
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-blank = Point()
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-blank.x = 3.0
-\end_layout
-
-\begin_layout Plain Layout
-
-blank.y = 4.0
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-functions that run on classes
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-def printPoint(p): 
-\end_layout
-
-\begin_layout Plain Layout
-
-	print ’(’ + str(p.x) + ’, ’ + str(p.y) + ’)’
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-is
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-check to see if to variables point to the same thing
-\end_layout
-
-\begin_layout Itemize
-doesn't check if classes are equal
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
->>> p2 = p1 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> p1 is p2 
-\end_layout
-
-\begin_layout Plain Layout
-
-True
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Rectangle: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	pass 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-box = Rectangle() 
-\end_layout
-
-\begin_layout Plain Layout
-
-box.width = 100.0 
-\end_layout
-
-\begin_layout Plain Layout
-
-box.height = 200.0 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-box.corner = Point() 
-\end_layout
-
-\begin_layout Plain Layout
-
-box.corner.x = 0.0 
-\end_layout
-
-\begin_layout Plain Layout
-
-box.corner.y = 0.0
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-copy module that allows you to copy anything 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-This is more appropriate placement deepcopy is better.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-import copy 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-p1 = Point() 
-\end_layout
-
-\begin_layout Plain Layout
-
-p1.x = 3 
-\end_layout
-
-\begin_layout Plain Layout
-
-p1.y = 4 
-\end_layout
-
-\begin_layout Plain Layout
-
-p2 = copy.copy(p1)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-copy.copy() 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-only copies the top level and creates aliases below top level
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-copy.deepcopy()
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-copes all levels of objects
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Enumerate
-inheritance (*can inherit from multiple, very messy)
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-inherit from existing
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-again rebuild
-\end_layout
-
-\begin_layout Enumerate
-inherit from standard bad guy, etc
-\end_layout
-
-\begin_layout Enumerate
-extend sprite
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-inherit from created
-\end_layout
-
-\begin_layout Enumerate
-introduce sprite group
-\end_layout
-
-\end_deeper
-\begin_layout Subsection*
-Chapter 13 classes and functions
-\end_layout
-
-\begin_layout Itemize
-python allows both
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-functions
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-take arguments and don't change the inputs
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-modifiers
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-change the inputs to a function
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Subsection*
-Chapter 14 classes and methods
-\end_layout
-
-\begin_layout Itemize
-method definition
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Time: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	def printTime(time): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		print str(time.hours) + ":" + 
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-			str(time.minutes) + ":" + 
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-			str(time.seconds)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-currentTime.printTime();
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Time: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	#previous method definitions here...
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\end_layout
-
-\begin_layout Plain Layout
-
-	def increment(self, seconds): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.seconds = seconds + self.seconds 
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\end_layout
-
-\begin_layout Plain Layout
-
-		while self.seconds >= 60: 
-\end_layout
-
-\begin_layout Plain Layout
-
-			self.seconds = self.seconds - 60
-\end_layout
-
-\begin_layout Plain Layout
-
-			self.minutes = self.minutes + 1 
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\end_layout
-
-\begin_layout Plain Layout
-
-		while self.minutes >= 60: 
-\end_layout
-
-\begin_layout Plain Layout
-
-			self.minutes = self.minutes - 60 
-\end_layout
-
-\begin_layout Plain Layout
-
-			self.hours = self.hours + 1
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-currentTime.increment(500)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-methods use a funky definition
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-they pass themselves (or what they want the object to be refereed to) in
- the definition
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-can have methods that take variable argument lists by setting defaults
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-def find(str, ch, start=0): 
-\end_layout
-
-\begin_layout Plain Layout
-
-	index = start 
-\end_layout
-
-\begin_layout Plain Layout
-
-	while index < len(str): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		if str[index] == ch: 
-\end_layout
-
-\begin_layout Plain Layout
-
-			return index 
-\end_layout
-
-\begin_layout Plain Layout
-
-		index = index + 1 
-\end_layout
-
-\begin_layout Plain Layout
-
-	return -1
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-find("apple", "p")
-\end_layout
-
-\begin_layout Plain Layout
-
-find("apple", "p", 2)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-initialization method
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Time: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __init__(self, hours=0, minutes=0, seconds=0): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.hours = hours 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.minutes = minutes 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.seconds = seconds
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime = Time(9, 14, 30) 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime.printTime() 
-\end_layout
-
-\begin_layout Plain Layout
-
-9:14:30
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime = Time() 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime.printTime() 
-\end_layout
-
-\begin_layout Plain Layout
-
-0:0:0
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime = Time (9) 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime.printTime() 
-\end_layout
-
-\begin_layout Plain Layout
-
-9:0:0
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime = Time(seconds = 30, hours = 9) 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> currentTime.printTime() 
-\end_layout
-
-\begin_layout Plain Layout
-
-9:0:30
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-to override an existing method for a class use the __ methods
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Point: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __init__(self, x=0, y=0): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.x = x 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.y = y 
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __str__(self): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		return ’(’ + str(self.x) + ’, ’ + str(self.y) + ’)’
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-p=Point(3,4)
-\end_layout
-
-\begin_layout Plain Layout
-
-str(p)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-overriding operators again use __
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Point: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	# previously defined methods here...
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __add__(self, other): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		return Point(self.x + other.x, self.y + other.y)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
->>> p1 = Point(3, 4) 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> p2 = Point(5, 7) 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> p3 = p1 + p2 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> print p3 
-\end_layout
-
-\begin_layout Plain Layout
-
-(8, 11)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-#p1 + p2 is the same as p1.__add__(p2)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-substitutions
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-+ __add__
-\end_layout
-
-\begin_layout Itemize
-* __mul__ __rmul__ p.
- 183
-\end_layout
-
-\end_deeper
-\begin_layout Subsection*
-Chapter 15 sets of objects
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-class Card: 
-\end_layout
-
-\begin_layout Plain Layout
-
-	suitList = ["Clubs", "Diamonds", "Hearts", "Spades"] 
-\end_layout
-
-\begin_layout Plain Layout
-
-	rankList = ["narf", "Ace", "2", "3", "4", "5", "6", "7", 
-\end_layout
-
-\begin_layout Plain Layout
-
-				"8", "9", "10", "Jack", "Queen", "King"]
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __init__(self, suit=0, rank=2): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.suit = suit 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.rank = rank
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	def __str__(self): 
-\end_layout
-
-\begin_layout Plain Layout
-
-		return (self.rankList[self.rank] + " of " + 
-\end_layout
-
-\begin_layout Plain Layout
-
-				self.suitList[self.suit])
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-threeOfClubs = Card(3, 1)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-can override == and the like with _cmp_ p.
- 191
-\end_layout
-
-\end_body
-\end_document
-=======
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
-\begin_document
-\begin_header
-\textclass article
-\use_default_options true
-\maintain_unincluded_children false
-\language english
-\language_package default
-\inputencoding auto
-\fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_default_family default
-\use_non_tex_fonts false
-\font_sc false
-\font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
-
-\graphics default
-\default_output_format default
-\output_sync 0
-\bibtex_command default
-\index_command default
-\paperfontsize default
-\use_hyperref false
-\papersize default
-\use_geometry false
-\use_amsmath 1
-\use_esint 1
-\use_mhchem 1
-\use_mathdots 1
-\cite_engine basic
-\use_bibtopic false
-\use_indices false
-\paperorientation portrait
-\suppress_date false
-\use_refstyle 0
-\index Index
-\shortcut idx
-\color #008000
-\end_index
-\secnumdepth 3
-\tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
-\quotes_language english
-\papercolumns 1
-\papersides 1
-\paperpagestyle default
-\tracking_changes false
-\output_changes false
-\html_math_output 0
-\html_css_as_file 0
-\html_be_strict false
-\end_header
-
-\begin_body
-
-\begin_layout Title
-CS 112: Programming Games: Introduction to Programming using Python and
- Pygame
-\end_layout
-
-\begin_layout Title
-Spring 2012 lectures
-\end_layout
-
-\begin_layout Author
-Paul Dickson
-\end_layout
-
-\begin_layout Section
-Introduction
-\end_layout
-
-\begin_layout Subsection
-Introduction
-\end_layout
-
-\begin_layout Itemize
-this class is a Python programming class
-\end_layout
-
-\begin_layout Itemize
-learn Python in the content of game creation
-\end_layout
-
-\begin_layout Itemize
-why Python?
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-easy
-\end_layout
-
-\begin_layout Itemize
-game libraries exist
-\end_layout
-
-\begin_layout Itemize
-python is starting to be everywhere
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-scripting
-\end_layout
-
-\begin_layout Itemize
-web servers
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-should be fun
-\end_layout
-
-\begin_layout Itemize
-first time course is being taught
-\end_layout
-
-\begin_layout Itemize
-class website will have everything
-\end_layout
-
-\begin_layout Itemize
-TAs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Alec
-\end_layout
-
-\begin_layout Itemize
-Jonah
-\end_layout
-
-\begin_layout Itemize
-Jack
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Structure of course
-\end_layout
-
-\begin_layout Itemize
-discuss point policy on assignments 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-+1 on time 
-\end_layout
-
-\begin_layout Itemize
-0 late
-\end_layout
-
-\begin_layout Itemize
--1 skipped
-\end_layout
-
-\begin_layout Itemize
-they must get at least 2 fewer points then total number of assignments 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-(20 assignments-18 points needed)
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-why point policy
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-if you don't keep up you're screwed
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Talk about Friday section
-\end_layout
-
-\begin_layout Subsection
-Textbook/reading policy
-\end_layout
-
-\begin_layout Itemize
-first time trying a free (downloadable) text, we'll see how it goes
-\end_layout
-
-\begin_layout Subsection
-Get to know each other
-\end_layout
-
-\begin_layout Itemize
-this works best if they're comfortable chatting
-\end_layout
-
-\begin_layout Itemize
-go around and ask 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-names
-\end_layout
-
-\begin_layout Itemize
-why they took course
-\end_layout
-
-\begin_layout Itemize
-what they hope to get
-\end_layout
-
-\begin_layout Itemize
-etc.
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Python
-\end_layout
-
-\begin_layout Itemize
-interpreted language 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-code is interpreted
-\end_layout
-
-\begin_layout Itemize
-not compiled like C, Java, etc
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-My first program
-\end_layout
-
-\begin_layout Itemize
-open terminal
-\end_layout
-
-\begin_layout Itemize
-have them type
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-emacs day1.py &
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-print "hello nurse!"
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-type
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-C-x C-s
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-in terminal
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-python day1.py
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-interpreted not compiled language
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-interpreter runs it
-\end_layout
-
-\begin_layout Itemize
-not compiled and then run
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-explain that they've just created their first program
-\end_layout
-
-\begin_layout Itemize
-explain details as time permits
-\end_layout
-
-\begin_layout Itemize
-talk about how python can do terminal or programs but we'll focus on programs
- to start
-\end_layout
-
-\begin_layout Subsection
-Before they leave
-\end_layout
-
-\begin_layout Itemize
-explain hw1
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-have them start it
-\end_layout
-
-\begin_layout Itemize
-prove they have git installed.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-on hw's @ for _at_
-\end_layout
-
-\begin_layout Subsection
-show Github
-\end_layout
-
-\begin_layout Itemize
-explain what github is
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-code repository
-\end_layout
-
-\begin_layout Itemize
-version control
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-didn't mean to delete that
-\end_layout
-
-\begin_layout Itemize
-it worked 2 days ago
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-good for working with other people
-\end_layout
-
-\begin_layout Itemize
-over kill here but good to learn
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-instructions
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-create github account
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-go to github.com
-\end_layout
-
-\begin_layout Itemize
-create account
-\end_layout
-
-\begin_layout Itemize
-log out when done...
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-fork our project
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-have them search for project 
-\end_layout
-
-\begin_layout Itemize
-hit fork
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-download script to stout
-\end_layout
-
-\begin_layout Itemize
-run script
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-run through equivelent of hw
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-git pull course master
-\end_layout
-
-\begin_layout Itemize
-<edit the readme>
-\end_layout
-
-\begin_layout Itemize
-git add .
-\end_layout
-
-\begin_layout Itemize
-git commit -m 
-\begin_inset Quotes eld
-\end_inset
-
-message
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-git push
-\end_layout
-
-\end_deeper
-\begin_layout Section
-Beginning Python/how computers work
-\end_layout
-
-\begin_layout Subsection
-Revisit first program
-\end_layout
-
-\begin_layout Itemize
-open terminal
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-mac is built on unix style system
-\end_layout
-
-\begin_layout Itemize
-terminal gives you this access
-\end_layout
-
-\begin_layout Itemize
-linux has it native
-\end_layout
-
-\begin_layout Itemize
-windows must install it
-\end_layout
-
-\begin_layout Itemize
-original way operating systems worked
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-basic unix
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-show correspondence between unix view and point and click
-\end_layout
-
-\begin_layout Itemize
-show basic commands
-\end_layout
-
-\begin_layout Itemize
-show link to commands in webpage
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-text editor
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-emacs day2.py &
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-calls a unix program
-\end_layout
-
-\begin_layout Itemize
-.py means a py file
-\end_layout
-
-\begin_layout Itemize
-no spaces or special characters
-\end_layout
-
-\begin_layout Itemize
-& stops it from taking over window
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-explain what emacs does-edit text files
-\end_layout
-
-\begin_layout Itemize
-they can use any they want, I prefer emacs
-\end_layout
-
-\begin_layout Itemize
-show where commands can be found
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-explain code line by line
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-comments
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-#this is a comment after first line...
-\end_layout
-
-\begin_layout Plain Layout
-
-print "hello nurse!" 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-show them how to save
-\end_layout
-
-\begin_layout Itemize
-in terminal
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-python day2.py
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-this calls interpreter
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Subsection
-Interpreter
-\end_layout
-
-\begin_layout Itemize
-open interpreter by typing python (or kivy...)
-\end_layout
-
-\begin_layout Itemize
-talk about what it does (allows you to test python code)
-\end_layout
-
-\begin_layout Itemize
-show examples like
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-1 + 3 + 6 / 2 (order of ops) 
-\end_layout
-
-\begin_layout Itemize
-20 / 0 (errors) 
-\end_layout
-
-\begin_layout Itemize
-3 / 2 (int math) 
-\end_layout
-
-\begin_layout Itemize
-3 / 2.0 (double math)
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Program 2
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-lstparams "language=Python"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-""" 
-\end_layout
-
-\begin_layout Plain Layout
-
-ex1_hello.py
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-A simple hello world program 
-\end_layout
-
-\begin_layout Plain Layout
-
-"""
-\end_layout
-
-\begin_layout Plain Layout
-
-# print a greeting 
-\end_layout
-
-\begin_layout Plain Layout
-
-print "Hello World!" 
-\end_layout
-
-\begin_layout Plain Layout
-
-print "Isn't it a wonderful day?!" 
-\end_layout
-
-\begin_layout Plain Layout
-
-print "I can do math see!" 
-\end_layout
-
-\begin_layout Plain Layout
-
-print "1 + 3 =", 1+3     # ',' let you join multiple things with a space
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-print "2 * 8 =", 2*8 
-\end_layout
-
-\begin_layout Plain Layout
-
-print "..." 
-\end_layout
-
-\begin_layout Plain Layout
-
-print "I guess I'll get going" 
-\end_layout
-
-\begin_layout Plain Layout
-
-print "goodbye"
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Commenting 
-\end_layout
-
-\begin_layout Itemize
-begin with # (equivalent to //)
-\end_layout
-
-\begin_layout Itemize
-or between 
-\begin_inset Quotes eld
-\end_inset
-
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-this is a half truth, I'll test it further but quotes should only be docstrings
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Hit Github again 
-\end_layout
-
-\begin_layout Itemize
-explain what each step means
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-git pull course master
-\end_layout
-
-\begin_layout Itemize
-<edit the readme>
-\end_layout
-
-\begin_layout Itemize
-git add .
-\end_layout
-
-\begin_layout Itemize
-git commit -m 
-\begin_inset Quotes eld
-\end_inset
-
-message
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-git push
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-How computers work
-\end_layout
-
-\begin_layout Itemize
-show off hardware
-\end_layout
-
-\begin_layout Itemize
-explain basic architecture
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-processor
-\end_layout
-
-\begin_layout Itemize
-RAM
-\end_layout
-
-\begin_layout Itemize
-etc
-\end_layout
-
-\end_deeper
-\begin_layout Section
-Data types and Variables chapter 2
-\end_layout
-
-\begin_layout Subsection
-Datatypes
-\end_layout
-
-\begin_layout Itemize
-Basic types 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-numbers 
-\end_layout
-
-\begin_layout Itemize
-booleans 
-\end_layout
-
-\begin_layout Itemize
-strings 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-we will see others like lists, dictionaries, and objects later
-\end_layout
-
-\begin_layout Itemize
-Integers
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-positive/negative whole numbers 
-\end_layout
-
-\begin_layout Itemize
-2, -3, 0 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Longs 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-really really big integers.
- 
-\end_layout
-
-\begin_layout Itemize
-1000000000000000000000000000000000000000000000000L 
-\end_layout
-
-\begin_layout Itemize
-python should convert between these two types automatically if your integers
- get too big
-\end_layout
-
-\begin_layout Itemize
-Longs end in a "L", don't worry about it if you see one
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Floats
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-A number with a decimal 
-\end_layout
-
-\begin_layout Itemize
-3.5, -0.23 called floats because of floating decimal points
-\end_layout
-
-\begin_layout Itemize
-_coders_ actually a double 
-\end_layout
-
-\begin_layout Itemize
-can also be written in scientific notation -5.23E-4 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Booleans
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-True or False
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Variables
-\end_layout
-
-\begin_layout Itemize
-variables are set to whatever appears to the right of =
-\end_layout
-
-\begin_layout Itemize
-variable assignment
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-message = "What’s up, Doc?"
-\end_layout
-
-\begin_layout Itemize
-n = 17
-\end_layout
-
-\begin_layout Itemize
-pi = 3.14159
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-single and double quotes do the same thing in python
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-except when you want to inclose an apostrophe...
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-reserved words p.
- 43 section 2.3
-\end_layout
-
-\begin_layout Itemize
-how you store data
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-talk about area set aside in memory
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-can't have
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-spaces
-\end_layout
-
-\begin_layout Itemize
-symbols
-\end_layout
-
-\begin_layout Itemize
-start with numbers
-\end_layout
-
-\begin_layout Itemize
-be reserved words
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-can have
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-letters 
-\end_layout
-
-\begin_layout Itemize
-numbers
-\end_layout
-
-\begin_layout Itemize
-underscores
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-basic data types
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-int
-\end_layout
-
-\begin_layout Itemize
-float
-\end_layout
-
-\begin_layout Itemize
-string
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-type command to determine data type
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-type(3.2)
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-display using print
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-lstparams "language=Python"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-bob="a string of text"
-\end_layout
-
-\begin_layout Plain Layout
-
-number=5
-\end_layout
-
-\begin_layout Plain Layout
-
-num2=6.5
-\end_layout
-
-\begin_layout Plain Layout
-
-answer=number+num2
+bob.name = "Bob"
 \end_layout
 
 \begin_layout Plain Layout
@@ -11577,252 +7758,75 @@ print bob
 
 \begin_layout Plain Layout
 
-print number
+print bob.name
 \end_layout
 
-\begin_layout Plain Layout
-
-print num2
-\end_layout
-
-\begin_layout Plain Layout
-
-print answer
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-print type(bob)
-\end_layout
-
-\begin_layout Plain Layout
-
-print type(number)
-\end_layout
-
-\begin_layout Plain Layout
-
-print type(num2)
-\end_layout
-
-\begin_layout Plain Layout
-
-print type(answer)
-\end_layout
-
 \end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Arithmetic
-\end_layout
-
-\begin_layout Itemize
-+
-\end_layout
-
-\begin_layout Itemize
--
-\end_layout
-
-\begin_layout Itemize
-*
-\end_layout
-
-\begin_layout Itemize
-/
-\end_layout
-
-\begin_layout Itemize
-// integer division operation
-\end_layout
 
-\begin_layout Itemize
-** (power, 2 to the 5th is 2**5)
-\end_layout
-
-\begin_layout Itemize
-% modulo
-\end_layout
-
-\begin_layout Itemize
-string operations
-\end_layout
 
-\begin_deeper
-\begin_layout Itemize
-+ concatenates
-\end_layout
-
-\begin_layout Itemize
-* works if one is string and one integer (repeats the string integer times)
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-# to write comments
-\end_layout
-
-\begin_layout Standard
+Creating first method
 \begin_inset listings
 inline false
 status open
 
 \begin_layout Plain Layout
 
-div1=6/5.0
+class Student(object):
 \end_layout
 
 \begin_layout Plain Layout
 
-div2=6//5.0
+	def say(self, message):
 \end_layout
 
 \begin_layout Plain Layout
 
-pow=2**8
+		print self.name + ": " + message
 \end_layout
 
 \begin_layout Plain Layout
 
-print "div1=",div1
 \end_layout
 
 \begin_layout Plain Layout
 
-print "div2=",div2
+bob = Student()
 \end_layout
 
 \begin_layout Plain Layout
 
-print "pow=",pow
+bob.name = "Bob"
 \end_layout
 
 \begin_layout Plain Layout
 
-ans="huh "*5
 \end_layout
 
 \begin_layout Plain Layout
 
-print "ans=",ans 
+fred = Student()
 \end_layout
 
 \begin_layout Plain Layout
 
-mod=6%4
+fred.name = "Fred"
 \end_layout
 
 \begin_layout Plain Layout
-
-print "mod=",mod
-\end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Assignment operations
-\end_layout
-
-\begin_layout Itemize
-+=
-\end_layout
-
-\begin_layout Itemize
--=
-\end_layout
-
-\begin_layout Itemize
-*=
-\end_layout
-
-\begin_layout Itemize
-/=
-\end_layout
-
-\begin_layout Itemize
-%=
-\end_layout
-
-\begin_layout Subsection
-Strings
-\end_layout
-
-\begin_layout Itemize
-strings are a "sequence of characters" (best definition I could find)
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-A character is a single letter, number, symbol like 'a', '4', '!', ' ',
- 
-\end_layout
-
-\begin_layout Itemize
-anything you can create with "one key press" 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Strings are immutable 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-once you create a string you cannot change it joining it with other strings
- 
-\end_layout
-
-\begin_layout Itemize
-taking off chunks simply creates new a string 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-you can create using single or double quotes, though double are usually
- preferred
-\end_layout
-
-\begin_layout Subsection
-Input
-\end_layout
-
-\begin_layout Itemize
-keyboard input p.
- 73
 \end_layout
 
-\begin_layout Itemize
-input = raw_input ()
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-name = raw_input ("What...is your name? ")
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
 \begin_layout Plain Layout
 
-inp = raw_input("type a number")
+bob.say("Hi Fred")
 \end_layout
 
 \begin_layout Plain Layout
 
-num = float(inp) 
+fred.say("Go away, Bob")
 \end_layout
 
 \end_inset
@@ -11830,57 +7834,25 @@ num = float(inp)
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-example 1 (ex1_sayhi.py)
-\end_layout
-
-\begin_layout Standard
+Initializing values
 \begin_inset listings
 inline false
 status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-print "Hello...I'm sorry, who are you?" 
-\end_layout
 
 \begin_layout Plain Layout
 
-name = raw_input() 
+class Student(object):
 \end_layout
 
 \begin_layout Plain Layout
-
-print "Hello, %s!" % name
-\end_layout
-
-\end_inset
-
-
-\end_layout
 
-\begin_layout Itemize
-example 2 (ex2_math.py)
+	def __init__(self, name):
 \end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
 
 \begin_layout Plain Layout
 
-#!/usr/bin/env python
+		self.name = name
 \end_layout
 
 \begin_layout Plain Layout
@@ -11889,42 +7861,40 @@ status open
 
 \begin_layout Plain Layout
 
-n = raw_input("Enter a number:  ") 
+	def say(self, message):
 \end_layout
 
 \begin_layout Plain Layout
 
-m = raw_input("Enter another:  ")
+		print self.name + ": " + message
 \end_layout
 
 \begin_layout Plain Layout
 
-n = int(n) 
 \end_layout
 
 \begin_layout Plain Layout
 
-m = int(m)
+bob = Student("Bob")
 \end_layout
 
 \begin_layout Plain Layout
 
-print "%d+%d=%d" % (n,m,n+m) 
+fred = Student("Fred")
 \end_layout
 
 \begin_layout Plain Layout
 
-print "%d-%d=%d" % (n,m,n-m) 
 \end_layout
 
 \begin_layout Plain Layout
 
-print "%d*%d=%d" % (n,m,n*m) 
+bob.say("Hi, Fred")
 \end_layout
 
 \begin_layout Plain Layout
 
-print "%d/%d=%f" % (n,m,n/float(m))
+fred.say("Go away, Bob")
 \end_layout
 
 \end_inset
@@ -11933,6225 +7903,91 @@ print "%d/%d=%f" % (n,m,n/float(m))
 \end_layout
 
 \begin_layout Itemize
-example 3 (ex3_diamond.py)
-\end_layout
-
-\begin_layout Standard
+Using other objects
 \begin_inset listings
 inline false
 status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-s = " " 
-\end_layout
-
-\begin_layout Plain Layout
-
-c = raw_input("What character is a diamond block?  ")
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-print 3*s, c 
-\end_layout
-
-\begin_layout Plain Layout
-
-print 2*s, c*3 
-\end_layout
 
 \begin_layout Plain Layout
 
-print 1*s, c*5 
+class Student(object):
 \end_layout
 
 \begin_layout Plain Layout
 
-print 0*s, c*7 
+	def __init__(self, name):
 \end_layout
 
 \begin_layout Plain Layout
 
-print 1*s, c*5 
+		self.name = name
 \end_layout
 
 \begin_layout Plain Layout
 
-print 2*s, c*3 
 \end_layout
 
 \begin_layout Plain Layout
-
-print 3*s, c
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-If and While chapter 5 and 7
-\end_layout
-
-\begin_layout Subsection
-Flow control
-\end_layout
-
-\begin_layout Itemize
-control how to proceed though a program
-\end_layout
-
-\begin_layout Itemize
-don't necessarily go in a linear manner
-\end_layout
-
-\begin_layout Subsection
-conditionals chapter 5
-\end_layout
-
-\begin_layout Itemize
-boolean expressions p.
- 66
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-==
-\end_layout
-
-\begin_layout Itemize
-!=
-\end_layout
-
-\begin_layout Itemize
->
-\end_layout
-
-\begin_layout Itemize
-< 
-\end_layout
-
-\begin_layout Itemize
->=
-\end_layout
-
-\begin_layout Itemize
-<=
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-logical expressions p.66
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-and
-\end_layout
-
-\begin_layout Itemize
-or
-\end_layout
 
-\begin_layout Itemize
-not
+	def say(self, message):
 \end_layout
-
-\end_deeper
-\begin_layout Itemize
-ex
-\begin_inset listings
-inline false
-status open
 
 \begin_layout Plain Layout
-
-a >= 0 and a < 20
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-While loops chapter 7
-\end_layout
-
-\begin_layout Itemize
-run while true
-\end_layout
 
-\begin_layout Itemize
-for next example work through logic and flow on white board before doing
- code
+		print self.name + ": " + message
 \end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
 
 \begin_layout Plain Layout
 
-#!/usr/bin/env python
 \end_layout
 
 \begin_layout Plain Layout
 
-"ex1_countdown.py"
+	def say_to(self, other, message):
 \end_layout
 
 \begin_layout Plain Layout
 
+		self.say(message + ", " + other.name)
 \end_layout
 
 \begin_layout Plain Layout
 
-c = raw_input("Countdown from?  ")
 \end_layout
 
 \begin_layout Plain Layout
 
-c = int(c)
+bob = Student("Bob")
 \end_layout
 
 \begin_layout Plain Layout
 
+fred = Student("Fred")
 \end_layout
 
 \begin_layout Plain Layout
 
-while c > 0:     
 \end_layout
 
 \begin_layout Plain Layout
 
-	print "%d..." % c     
+bob.say_to(fred, "Hi")
 \end_layout
 
 \begin_layout Plain Layout
 
-	c -= 1     
+fred.say_to(bob, "Go away")
 \end_layout
-
-\begin_layout Plain Layout
 
-\end_layout
+\end_inset
 
-\begin_layout Plain Layout
 
-print "Blastoff!"
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-improve example so it validates the number is greater than 0
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-second while loop that keeps asking for input as long as c<=0
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-tabbing over is included in code
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-not the {} of other languages
-\end_layout
-
-\begin_layout Itemize
-for once formatting matters
-\end_layout
-
-\begin_layout Itemize
-tab is bad (unless it just adds spaces.)
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-pygame introduction
-\end_layout
-
-\begin_layout Itemize
-http://pygame.org/
-\end_layout
-
-\begin_layout Itemize
-module that supplies stuff for games 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-like math module but for games
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-first example of it working
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python
-\end_layout
-
-\begin_layout Plain Layout
-
-"ex2_gameloop"
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-import pygame
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-screen_size = 640,480
-\end_layout
-
-\begin_layout Plain Layout
-
-background = 255,0,255
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-#init pygame
-\end_layout
-
-\begin_layout Plain Layout
-
-pygame.init()
-\end_layout
-
-\begin_layout Plain Layout
-
-screen = pygame.display.set_mode(screen_size)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-while True:
-\end_layout
-
-\begin_layout Plain Layout
-
-    screen.fill(background)
-\end_layout
-
-\begin_layout Plain Layout
-
-	pygame.display.flip()
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-explain how code works
-\end_layout
-
-\begin_layout Itemize
-use ctrl-c to kill processes that never end
-\end_layout
-
-\begin_layout Itemize
-infinite loops-explain
-\end_layout
-
-\begin_layout Subsection
-if chapter 5
-\end_layout
-
-\begin_layout Itemize
-if p.67
-\end_layout
-
-\begin_layout Itemize
-explain logic
-\end_layout
-
-\begin_layout Itemize
-talk about how it changes flow
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python
-\end_layout
-
-\begin_layout Plain Layout
-
-"ex3_insult"
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-inp = raw_input("Enter your name:  ")
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-if inp=="Paul":
-\end_layout
-
-\begin_layout Plain Layout
-
-	print "you are cool"
-\end_layout
-
-\begin_layout Plain Layout
-
-elif inp=="Alec" or inp=="Jonah" or inp=="Jack":
-\end_layout
-
-\begin_layout Plain Layout
-
-	print "you smell bad"
-\end_layout
-
-\begin_layout Plain Layout
-
-else:
-\end_layout
-
-\begin_layout Plain Layout
-
-	print "you need some learnin"
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-now combine for a true game loop
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python                                                 
-\end_layout
-
-\begin_layout Plain Layout
-
-"ex4_quittablegame"     
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-import pygame
-\end_layout
-
-\begin_layout Plain Layout
-
-from pygame.locals import *
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-screen_size = 640,480
-\end_layout
-
-\begin_layout Plain Layout
-
-background = 255,0,255
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# initialize pygame
-\end_layout
-
-\begin_layout Plain Layout
-
-pygmae.init()
-\end_layout
-
-\begin_layout Plain Layout
-
-screen = pygame.display.set_mode(screen_size)                            
-     
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# loop                                                                 
-       
-\end_layout
-
-\begin_layout Plain Layout
-
-done = False
-\end_layout
-
-\begin_layout Plain Layout
-
-while not done:     
-\end_layout
-
-\begin_layout Plain Layout
-
-	event = pygame.event.poll()     
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	if event.type == QUIT:         
-\end_layout
-
-\begin_layout Plain Layout
-
-		done = True     
-\end_layout
-
-\begin_layout Plain Layout
-
-	elif event.type == KEYDOWN and event.key == K_ESCAPE:         
-\end_layout
-
-\begin_layout Plain Layout
-
-		done = True
-\end_layout
-
-\begin_layout Plain Layout
-
-	elif event.type == MOUSEBUTTONDOWN:
-\end_layout
-
-\begin_layout Plain Layout
-
-		print "Mouse %d, %d" % pygame.mouse.get_pos()
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	screen.fill(background)
-\end_layout
-
-\begin_layout Plain Layout
-
-	pygame.display.flip()
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-print "ByeBye"
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-For and lists
-\end_layout
-
-\begin_layout Subsection
-Lists chapter 10
-\end_layout
-
-\begin_layout Itemize
-mutable arrays
-\end_layout
-
-\begin_layout Itemize
-can store multiple pieces of data
-\end_layout
-
-\begin_layout Itemize
-can store multiple kinds of data
-\end_layout
-
-\begin_layout Itemize
-access like arrays
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-bob[1]
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-len(list) works for lists too 
-\end_layout
-
-\begin_layout Itemize
-search in list
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-bob=['fred', 'jim']
-\end_layout
-
-\begin_layout Itemize
-'fred' in bob (True)
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-+ concatenates lists together
-\end_layout
-
-\begin_layout Itemize
-[:] work on lists like on strings p.
- 116
-\end_layout
-
-\begin_layout Itemize
-lists are mutable
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-letters = [’a’, ’d’, ’f’] 
-\end_layout
-
-\begin_layout Itemize
-letters[1:1] = [’b’, ’c’]
-\end_layout
-
-\begin_layout Itemize
-print letters 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[’a’, ’b’, ’c’, ’d’, ’f’]
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-letters[4:4] = [’e’] 
-\end_layout
-
-\begin_layout Itemize
-print letters 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[’a’, ’b’, ’c’, ’d’, ’e’, ’f’]
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-delete with del
-\end_layout
-
-\begin_layout Itemize
-del letters[2:4] 
-\end_layout
-
-\begin_layout Itemize
-print letters
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-['a', 'b', 'e', 'f']
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-python has 
-\begin_inset Quotes eld
-\end_inset
-
-referencing
-\begin_inset Quotes erd
-\end_inset
-
- p.
- 120
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-sorta like pointers
-\end_layout
-
-\begin_layout Itemize
-letters2=letters
-\end_layout
-
-\begin_layout Itemize
-doesn't reference everything...
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-list[-1]
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-returns last element in list
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-to copy instead of refernce a list
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-b=a[:]
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-books=["title1",
-\end_layout
-
-\begin_layout Plain Layout
-
-	"title2",
-\end_layout
-
-\begin_layout Plain Layout
-
-	"title3"]
-\end_layout
-
-\begin_layout Plain Layout
-
-books.append("title 5")
-\end_layout
-
-\begin_layout Plain Layout
-
-print books
-\end_layout
-
-\begin_layout Plain Layout
-
-print books[0]
-\end_layout
-
-\begin_layout Plain Layout
-
-len(books)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-For
-\end_layout
-
-\begin_layout Itemize
-loop through data, like a while loop
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-for book in books:
-\end_layout
-
-\begin_layout Plain Layout
-
-	print book,"is awesome"
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-In
-\end_layout
-
-\begin_layout Itemize
-always variable in a list
-\end_layout
-
-\begin_layout Itemize
-revisit previous
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-inp = raw_input("Enter your name:  ")
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-TAs=["Alec","Jack","Jonah"]
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-if inp=="Paul":
-\end_layout
-
-\begin_layout Plain Layout
-
-	print "you are cool"
-\end_layout
-
-\begin_layout Plain Layout
-
-elif inp in TAs:
-\end_layout
-
-\begin_layout Plain Layout
-
-	print "you smell bad"
-\end_layout
-
-\begin_layout Plain Layout
-
-else:
-\end_layout
-
-\begin_layout Plain Layout
-
-	print "you need some learnin"
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-range
-\end_layout
-
-\begin_layout Itemize
-can create a range p.
- 111
-\end_layout
-
-\begin_layout Itemize
-range(10)
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[0,1,2,3,4,5,6,7,8,9]
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-range(1,5) 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[1,2,3,4]
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-range(1, 10, 2) 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[1, 3, 5, 7, 9]
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-empty=[]
-\end_layout
-
-\begin_layout Subsection
-for again
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-for i in range(100):
-\end_layout
-
-\begin_layout Plain Layout
-
-	print i
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Drawing lines
-\end_layout
-
-\begin_layout Itemize
-pygame.draw.circle(place,color,point,radius,width)
-\end_layout
-
-\begin_layout Itemize
-draw found at
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-http://pygame.org/docs/ref/draw.html
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-examples
-\end_layout
-
-\begin_layout Subsubsection
-basic lines and flip-give them this one, let them build the rest
-\end_layout
-
-\begin_layout Itemize
-explain why line only goes to 399
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python 
-\end_layout
-
-\begin_layout Plain Layout
-
-""" 
-\end_layout
-
-\begin_layout Plain Layout
-
-drawlines.py
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Draw a bunch of lines to the screen 
-\end_layout
-
-\begin_layout Plain Layout
-
-""" 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-import pygame 
-\end_layout
-
-\begin_layout Plain Layout
-
-from pygame.locals import *
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-## Settings 
-\end_layout
-
-\begin_layout Plain Layout
-
-BLACK = 0,0,0 
-\end_layout
-
-\begin_layout Plain Layout
-
-RED = 255,0,0
-\end_layout
-
-\begin_layout Plain Layout
-
-size = 400,400
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-## Initialize 
-\end_layout
-
-\begin_layout Plain Layout
-
-pygame.init() 
-\end_layout
-
-\begin_layout Plain Layout
-
-screen = pygame.display.set_mode(size) 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-done = False
-\end_layout
-
-\begin_layout Plain Layout
-
-while not done:
-\end_layout
-
-\begin_layout Plain Layout
-
-    ## Input
-\end_layout
-
-\begin_layout Plain Layout
-
-    for event in pygame.event.get():
-\end_layout
-
-\begin_layout Plain Layout
-
-        if event.type == QUIT:
-\end_layout
-
-\begin_layout Plain Layout
-
-            done = True
-\end_layout
-
-\begin_layout Plain Layout
-
-       elif event.type == KEYDOWN and event.key == K_ESCAPE:
-\end_layout
-
-\begin_layout Plain Layout
-
-            done = True
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    ## Draw
-\end_layout
-
-\begin_layout Plain Layout
-
-    screen.fill(BLACK)
-\end_layout
-
-\begin_layout Plain Layout
-
-    for i in range(400):
-\end_layout
-
-\begin_layout Plain Layout
-
-        pygame.draw.line(screen, RED, (0,i), (i,399))
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    ## Refresh
-\end_layout
-
-\begin_layout Plain Layout
-
-    pygame.display.flip()
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-print "ByeBye"
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-explain flip
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-double buffering term, means redraw screen
-\end_layout
-
-\end_deeper
-\begin_layout Subsubsection
-now separate lines
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-for i in range(0,400,8)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-draw in all corners
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-BLUE = 0,255,255
-\end_layout
-
-\begin_layout Plain Layout
-
-YELLOW = 255,255,0
-\end_layout
-
-\begin_layout Plain Layout
-
-GREEN = 0,255,0
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# <snip>
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-pygame.draw.line(screen, RED, (0,i), (i,399))             
-\end_layout
-
-\begin_layout Plain Layout
-
-pygame.draw.line(screen, BLUE, (0,i), (399-i,0))             
-\end_layout
-
-\begin_layout Plain Layout
-
-pygame.draw.line(screen, GREEN, (i,0), (399,i))             
-\end_layout
-
-\begin_layout Plain Layout
-
-pygame.draw.line(screen, YELLOW, (i,399), (399,399-i))
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-user controls separation
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#before while loop
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-minstep = 1 
-\end_layout
-
-\begin_layout Plain Layout
-
-maxstep = 200
-\end_layout
-
-\begin_layout Plain Layout
-
-step = 10
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-#in while loop
-\end_layout
-
-\begin_layout Plain Layout
-
-elif event.type == KEYDOWN and event.key == K_UP:
-\end_layout
-
-\begin_layout Plain Layout
-
-	step = max(minstep, step-1)
-\end_layout
-
-\begin_layout Plain Layout
-
-elif event.type == KEYDOWN and event.key == K_DOWN:
-\end_layout
-
-\begin_layout Plain Layout
-
-	step = min(maxstep, step+1)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-now handle holding down keys
-\end_layout
-
-\begin_layout Itemize
-repeatedly send key command 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-allows you to hold down key
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-pygame.key.set_repeat(100,100)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Code formatting and Documentation
-\end_layout
-
-\begin_layout Subsection
-getting help from the interpreter
-\end_layout
-
-\begin_layout Itemize
-help()
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-returns comment string at top
-\end_layout
-
-\begin_layout Itemize
-type 
-\begin_inset Quotes eld
-\end_inset
-
-q
-\begin_inset Quotes erd
-\end_inset
-
- to quit the help function
-\end_layout
-
-\begin_layout Itemize
-only use in the python interpreter
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
->>> help(float)
-\end_layout
-
-\begin_layout Plain Layout
-
->>> help(abs)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-dir()
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-returns a list of all the variables/methods in an object
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
->>> import math
-\end_layout
-
-\begin_layout Plain Layout
-
->>> for op in dir(math):
-\end_layout
-
-\begin_layout Plain Layout
-
-...
-    print op
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-web searches
-\end_layout
-
-\begin_layout Itemize
-whatever library you are using probably has documentation
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-the python community stresses good documentation as a general rule
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-google is invaluable
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-usually just searching for what you want will get you there
-\end_layout
-
-\end_deeper
-\begin_layout Subsubsection
-examples
-\end_layout
-
-\begin_layout Itemize
-getting arguments from the command line when you run it
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-google python command line arguments
-\end_layout
-
-\begin_layout Itemize
-shows 
-\begin_inset Quotes eld
-\end_inset
-
-optparse library for doing lots of stuff
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-shows 
-\begin_inset Quotes eld
-\end_inset
-
-Introduction to Python: Commandline Arguments
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-pygame has lots of event types
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-browse to pygame.org -> documentation -> event
-\end_layout
-
-\begin_layout Itemize
-scroll to event types
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-filtering examples:
-\end_layout
-
-\begin_layout Itemize
-do a web search for a specific thing we want to do
-\end_layout
-
-\begin_layout Itemize
-filter the examples for what's good and bad
-\end_layout
-
-\begin_layout Itemize
-always look at more then 1 example
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-there is no limit to how much bad advice there is on the internet
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-learn which sites are reliable
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-the library's or pythons site
-\end_layout
-
-\begin_layout Itemize
-stackedoverflow can be good
-\end_layout
-
-\begin_layout Itemize
-blogs can be but look up more than one to double check
-\end_layout
-
-\begin_layout Itemize
-yahoo answers is usually wrong...
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Why format code well
-\end_layout
-
-\begin_layout Itemize
-a program is not necessarily something only you will read
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-in this class your TA's are reading it too
-\end_layout
-
-\begin_layout Itemize
-multiple programmers on a team
-\end_layout
-
-\begin_layout Itemize
-open source means anyone can read
-\end_layout
-
-\begin_layout Itemize
-your future self might not remember why you called that number 
-\begin_inset Quotes eld
-\end_inset
-
-bob
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-python is a language that stresses legibility
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-don't ruin it by making things indecipherable
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-talk about good formatting of code
-\end_layout
-
-\begin_layout Itemize
-comment block at top (documentation)
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-this is what help returns
-\end_layout
-
-\begin_layout Itemize
-describes how the program works
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-variable naming
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-starts with a letter or 
-\begin_inset Quotes eld
-\end_inset
-
-_
-\begin_inset Quotes erd
-\end_inset
-
-, then can be a letter, number, or 
-\begin_inset Quotes eld
-\end_inset
-
-_
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-obj
-\end_layout
-
-\begin_layout Plain Layout
-
-screen_size
-\end_layout
-
-\begin_layout Plain Layout
-
-player1
-\end_layout
-
-\begin_layout Plain Layout
-
-Sprite
-\end_layout
-
-\begin_layout Plain Layout
-
-x
-\end_layout
-
-\begin_layout Plain Layout
-
-_stuff
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-if it's important then give it a name that's representative
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-important essentially means used in more than one logical 
-\begin_inset Quotes eld
-\end_inset
-
-place
-\begin_inset Quotes erd
-\end_inset
-
- of the code
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-# not descriptive
-\end_layout
-
-\begin_layout Plain Layout
-
-bob = 42
-\end_layout
-
-\begin_layout Plain Layout
-
-EIGHT = 256
-\end_layout
-
-\begin_layout Plain Layout
-
-charmander = 'c'
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# hard to remember
-\end_layout
-
-\begin_layout Plain Layout
-
-b0b = ...
-\end_layout
-
-\begin_layout Plain Layout
-
-funv4r = ...
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# not descriptive enough
-\end_layout
-
-\begin_layout Plain Layout
-
-pi = pygame.Surface()
-\end_layout
-
-\begin_layout Plain Layout
-
-pI = pygame.Surface()
-\end_layout
-
-\begin_layout Plain Layout
-
-p_i = pygame.Surface()
-\end_layout
-
-\begin_layout Plain Layout
-
-p_img = pygame.Surface()
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# good
-\end_layout
-
-\begin_layout Plain Layout
-
-player_image = pygame.Surface()
-\end_layout
-
-\begin_layout Plain Layout
-
-ply_img = pygame.Surface()
-\end_layout
-
-\begin_layout Plain Layout
-
-player_rect = Rect()
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# excessive
-\end_layout
-
-\begin_layout Plain Layout
-
-the_player_image_to_draw = pygame.Surface()
-\end_layout
-
-\begin_layout Plain Layout
-
-player_rect_for_collision = Rect()
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-for int_counter in range(30):
-\end_layout
-
-\begin_layout Plain Layout
-
-   ...
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-avoid incrementing numbers when it doesn't correspond
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-# bad
-\end_layout
-
-\begin_layout Plain Layout
-
-t1 = 3
-\end_layout
-
-\begin_layout Plain Layout
-
-t2 = 4
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# better
-\end_layout
-
-\begin_layout Plain Layout
-
-a = 3
-\end_layout
-
-\begin_layout Plain Layout
-
-b = 4
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-it can make sense sometimes
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-player1
-\end_layout
-
-\begin_layout Plain Layout
-
-player2
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-conventions
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-all caps CONSTANT
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-# good
-\end_layout
-
-\begin_layout Plain Layout
-
-PI = 3.1415927
-\end_layout
-
-\begin_layout Plain Layout
-
-TILE_WIDTH = 20
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# misleading
-\end_layout
-
-\begin_layout Plain Layout
-
-PLAYER_X = 3
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-first letter capital is a class
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-you don't know what these are yet
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-long/multiword names
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-camelCaps: (python does not usually use this)
-\end_layout
-
-\begin_layout Itemize
-under_score (has_key)
-\end_layout
-
-\begin_layout Itemize
-nothingbetween (isinstance)
-\end_layout
-
-\begin_layout Itemize
-never ever mix and match
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-# bad
-\end_layout
-
-\begin_layout Plain Layout
-
-isEqual_to
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# better
-\end_layout
-
-\begin_layout Plain Layout
-
-isEqualTo
-\end_layout
-
-\begin_layout Plain Layout
-
-is_equal_to
-\end_layout
-
-\begin_layout Plain Layout
-
-isequalto
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# best
-\end_layout
-
-\begin_layout Plain Layout
-
-isequal
-\end_layout
-
-\begin_layout Plain Layout
-
-equals
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-__len__ 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-special variables
-\end_layout
-
-\begin_layout Itemize
-python has defined
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-_x 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-considered private
-\end_layout
-
-\begin_layout Itemize
-not actually private
-\end_layout
-
-\end_deeper
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-commenting
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-#comment
-\end_layout
-
-\begin_layout Itemize
-multiline comments-actually unused strings but since they are ignored...
-\end_layout
-
-\begin_layout Itemize
-just create a multiline string 
-\begin_inset Quotes eld
-\end_inset
-
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\begin_inset Quotes erd
-\end_inset
-
- or ''' at start and end of comment 
-\end_layout
-
-\begin_layout Itemize
-more conventional to use # at start of first line
-\end_layout
-
-\begin_layout Itemize
-should put a comment around/near anything that is not obvious
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-print "On page", pg+1  # add one to compensate for 0 indexing
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-long comments go on line before code
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#bad
-\end_layout
-
-\begin_layout Plain Layout
-
-if player.x < 0:            # switch direction the player is  
-\end_layout
-
-\begin_layout Plain Layout
-
-    player.dx = -player.dx  # moving if they hit the wall
-\end_layout
-
-\begin_layout Plain Layout
-
-                     
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#better
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# switch direction the player is
-\end_layout
-
-\begin_layout Plain Layout
-
-# moving if they hit the wall
-\end_layout
-
-\begin_layout Plain Layout
-
-if player.x < 0:
-\end_layout
-
-\begin_layout Plain Layout
-
-    player.dx = -player.dx
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# better still
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# switch direction if player hits wall
-\end_layout
-
-\begin_layout Plain Layout
-
-if player.x < 0:
-\end_layout
-
-\begin_layout Plain Layout
-
-    player.dx = -player.dx
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-talk about what variable is used for if not obvious
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-w,h = 10,10   # dimensions of a tile
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-# unecessary
-\end_layout
-
-\begin_layout Plain Layout
-
-player_image = pygame.Surface()  # the players image
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# really unecessary
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# we use this variable to store the image for the player
-\end_layout
-
-\begin_layout Plain Layout
-
-player_image = pygame.Surface()
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-describe how functions work
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-more on this when we learn functions
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-spacing
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-since tabs and spaces look the same, as a rule only use spaces
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-emacs takes care of this for you
-\end_layout
-
-\begin_layout Itemize
-others might not and code copied from the internet may break
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-putting space around operators makes it easier to read
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-# bad
-\end_layout
-
-\begin_layout Plain Layout
-
-t=x*3+y*3/2
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# good
-\end_layout
-
-\begin_layout Plain Layout
-
-t = x*3 + y*3/2
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# possibly excessive
-\end_layout
-
-\begin_layout Plain Layout
-
-t = x * 3 + y * 3 / 2
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-spaces make functions easier to read
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-max(a,b)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-max(a, b)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-add blank lines between logically grouped code
-\end_layout
-
-\begin_layout Itemize
-legible and clean is more important than short and compact
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-avoid 
-\begin_inset Quotes eld
-\end_inset
-
-magic numbers
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-if you reuse 
-\begin_inset Quotes eld
-\end_inset
-
-640
-\begin_inset Quotes erd
-\end_inset
-
- whenever you want the right boundary, make a variable called 
-\begin_inset Quotes eld
-\end_inset
-
-right_bound
-\begin_inset Quotes erd
-\end_inset
-
- or something
-\end_layout
-
-\begin_layout Itemize
-values 
-\begin_inset Quotes eld
-\end_inset
-
-
-\begin_inset Quotes erd
-\end_inset
-
-, 0, empty, etc are usually fine to not make a variable
-\end_layout
-
-\begin_layout Itemize
-also leave things like dividing by 2
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-define variables near where they are needed
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-if they are used everywhere, constant, or a 
-\begin_inset Quotes eld
-\end_inset
-
-setting
-\begin_inset Quotes erd
-\end_inset
-
- put them at the top
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-you can reuse generic variable names
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-you can just keep reusing i
-\end_layout
-
-\begin_layout Itemize
-don't name them i1, i2, i3 etc
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-examples
-\end_layout
-
-\begin_layout Itemize
-bad code
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-var1=0
-\end_layout
-
-\begin_layout Plain Layout
-
-var2=[]
-\end_layout
-
-\begin_layout Plain Layout
-
-var3=None
-\end_layout
-
-\begin_layout Plain Layout
-
-while var3 != "":
-\end_layout
-
-\begin_layout Plain Layout
-
-    var3=raw_input()
-\end_layout
-
-\begin_layout Plain Layout
-
-    var2.append(float(var3))
-\end_layout
-
-\begin_layout Plain Layout
-
-for var in var2:
-\end_layout
-
-\begin_layout Plain Layout
-
-    var1+=var
-\end_layout
-
-\begin_layout Plain Layout
-
-print var1/len(var2)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-work towards
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-"Find the average of inputed numbers"
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-nums = []
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# keep grabbing numbers until nothing is entered
-\end_layout
-
-\begin_layout Plain Layout
-
-inp = None
-\end_layout
-
-\begin_layout Plain Layout
-
-while inp != "":
-\end_layout
-
-\begin_layout Plain Layout
-
-	inp = raw_input("Enter a number: ")
-\end_layout
-
-\begin_layout Plain Layout
-
-	nums.append( float(inp) )
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-total = 0
-\end_layout
-
-\begin_layout Plain Layout
-
-for n in nums:
-\end_layout
-
-\begin_layout Plain Layout
-
-	total += n
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-print "Average: ", total / len(nums)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-give them the following to clean up on their own (bubble sort)
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-swap method is bad, but that's less important for now
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-from random import randint
-\end_layout
-
-\begin_layout Plain Layout
-
-s=1
-\end_layout
-
-\begin_layout Plain Layout
-
-t=int(raw_input())
-\end_layout
-
-\begin_layout Plain Layout
-
-rr=[]
-\end_layout
-
-\begin_layout Plain Layout
-
-for _ in range(t):
-\end_layout
-
-\begin_layout Plain Layout
-
-    rr.append(randint(0,20))
-\end_layout
-
-\begin_layout Plain Layout
-
-print rr
-\end_layout
-
-\begin_layout Plain Layout
-
-while s:
-\end_layout
-
-\begin_layout Plain Layout
-
-    s=0
-\end_layout
-
-\begin_layout Plain Layout
-
-    for var in range(1,t):
-\end_layout
-
-\begin_layout Plain Layout
-
-        if rr[var-1]>rr[var]:
-\end_layout
-
-\begin_layout Plain Layout
-
-            t1=rr[i-1]
-\end_layout
-
-\begin_layout Plain Layout
-
-            t2=rr[i]
-\end_layout
-
-\begin_layout Plain Layout
-
-            rr[i-1]=t2
-\end_layout
-
-\begin_layout Plain Layout
-
-            rr[i]=t1
-\end_layout
-
-\begin_layout Plain Layout
-
-            s=1
-\end_layout
-
-\begin_layout Plain Layout
-
-print rr
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-cleaner code (don't give them)
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-"Sorts a list of random numbers"
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-from random import randint
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# make the list of numbers
-\end_layout
-
-\begin_layout Plain Layout
-
-size = int(raw_input("Enter the size of the list: "))
-\end_layout
-
-\begin_layout Plain Layout
-
-nums = []
-\end_layout
-
-\begin_layout Plain Layout
-
-for _ in range(size):
-\end_layout
-
-\begin_layout Plain Layout
-
-    nums.append(randint(0, 20))
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-print "Unsorted: ", nums
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-### Sorting (bubble)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-did_swap = True
-\end_layout
-
-\begin_layout Plain Layout
-
-while did_swap:
-\end_layout
-
-\begin_layout Plain Layout
-
-	did_swap = False
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	# go through each num and swap if out of order
-\end_layout
-
-\begin_layout Plain Layout
-
-	for i in range(1, size):
-\end_layout
-
-\begin_layout Plain Layout
-
-		if nums[i-1] > nums[i]:
-\end_layout
-
-\begin_layout Plain Layout
-
-			a = nums[i-1]
-\end_layout
-
-\begin_layout Plain Layout
-
-			b = nums[i]
-\end_layout
-
-\begin_layout Plain Layout
-
-			nums[i-1] = b
-\end_layout
-
-\begin_layout Plain Layout
-
-			nums[i] = a
-\end_layout
-
-\begin_layout Plain Layout
-
-			did_swap = True
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-		# or
-\end_layout
-
-\begin_layout Plain Layout
-
-		# a = nums[i-1]
-\end_layout
-
-\begin_layout Plain Layout
-
-		# b = nums[i]
-\end_layout
-
-\begin_layout Plain Layout
-
-		# if a < b:
-\end_layout
-
-\begin_layout Plain Layout
-
-		# 	nums[i-1] = b
-\end_layout
-
-\begin_layout Plain Layout
-
-		# 	nums[i] = a
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-print "Sorted:", nums
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Debugging
-\end_layout
-
-\begin_layout Itemize
-how to fix your shit without outside help
-\end_layout
-
-\begin_layout Itemize
-describe how we learned to debug
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Alec wanted to build a program and had no one to ask for help
-\end_layout
-
-\begin_layout Itemize
-Jonah was working on a final project at 3am and Lee wasn't available by
- phone
-\end_layout
-
-\begin_layout Itemize
-Jack was doing something complicated and no one to ask
-\end_layout
-
-\begin_layout Itemize
-Paul had a professor who made him do it line by line
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-you learn to debug by doing it
-\end_layout
-
-\begin_layout Subsection
-Programming errors
-\end_layout
-
-\begin_layout Itemize
-These errors prevent your program from even beginning to run
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-in other languages, compile time error
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-common types
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-indentation errors (01_indent.py)
-\end_layout
-
-\begin_layout Itemize
-syntax errors (02_syntax.py, 03_syntax2.py, 04_syntax3.py)
-\end_layout
-
-\begin_layout Itemize
-everytihng is a typo (05_typo.py, 06_typo2.py)
-\end_layout
-
-\begin_layout Itemize
-variable not defined (07_missing_var.py)
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-python shows you where the error is, usually
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-if not look above
-\end_layout
-
-\begin_layout Itemize
-it should be near by
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-the biggest thing is figuring out exactly where the error is
-\end_layout
-
-\begin_layout Itemize
-you'll do this on the homework
-\end_layout
-
-\begin_layout Itemize
-Sometimes, the program will crash halfway through
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-runtime error
-\end_layout
-
-\begin_layout Itemize
-these will crash your program
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-common types
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-dividing by zero (08_runtime_zero.py)
-\end_layout
-
-\begin_layout Itemize
-array bounds (09_runtime_array.py)
-\end_layout
-
-\begin_layout Itemize
-converting 
-\begin_inset Quotes eld
-\end_inset
-
-apple
-\begin_inset Quotes erd
-\end_inset
-
- to a number (aka unexpected input/condition) (10_runtime_error.py)
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Algorithmic errors
-\end_layout
-
-\begin_layout Itemize
-it runs but does the wrong thing
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Quotes eld
-\end_inset
-
-wife asks her husband to go the the store and pick up a loaf of bread and
- if they have eggs to pick up a dozen
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Quotes eld
-\end_inset
-
-husband returns with a dozen loaves of bread
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-the instructions were wrong
-\end_layout
-
-\begin_layout Itemize
-computers are stupid and have no common sense
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-they know what you tell them, not what you mean
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-normal errors
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-sorted list is backwards
-\end_layout
-
-\begin_layout Itemize
-grid is rotated 90 degrees
-\end_layout
-
-\begin_layout Itemize
-math being horribly horribly wrong
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-some examples Alec remembers in games
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-player moves in the direction opposite as expected
-\end_layout
-
-\begin_layout Itemize
-drawing the background last and therefore over everything else
-\end_layout
-
-\begin_layout Itemize
-player disappearing for no reason but leaving a shadow
-\end_layout
-
-\begin_layout Itemize
-spinning to fast or the wrong way
-\end_layout
-
-\begin_layout Itemize
-object detects that it is touching itself
-\end_layout
-
-\begin_layout Itemize
-floor swallowing player
-\end_layout
-
-\begin_layout Itemize
-gravity going the wrong way for player but not enemies
-\end_layout
-
-\begin_layout Itemize
-getting caught in walls
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-nice thing about programming games is the errors are usually visual and
- obvious
-\end_layout
-
-\begin_layout Subsubsection
-How to fix these
-\end_layout
-
-\begin_layout Itemize
-print out all variable values to check them
-\end_layout
-
-\begin_layout Itemize
-manually run through what they expect the code to be doing at each step
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-act out the interpreter
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-print statements, print statements, print statements
-\end_layout
-
-\begin_layout Itemize
-you can use raw_input() as a way to pause a program part way through running
-\end_layout
-
-\begin_layout Subsubsection
-Testing and preventative care
-\end_layout
-
-\begin_layout Itemize
-YOU WILL MAKE ERRORS, this is ok
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-don't worry about being wrong the first time
-\end_layout
-
-\begin_layout Itemize
-just try it out and fix it when it breaks
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-the bulk of programming is just making and fixing your bugs
-\end_layout
-
-\begin_layout Itemize
-make your program in small steps/chunks
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-since every bit of code will probably have bugs, the less new code you are
- testing at once the easier to find
-\end_layout
-
-\begin_layout Itemize
-you will also know which bits of logic work as expected when something goes
- weird
-\end_layout
-
-\begin_layout Itemize
-this is easier once you know functions (next week)
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-comment/document as you go for when things go wrong later
-\end_layout
-
-\begin_layout Itemize
-test things in the interpreter to see if they work as you'd expect
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-does random.randint(0,2) include 0,1 or 0,1,2?
-\end_layout
-
-\begin_layout Itemize
-does range(10,0,-1) include 0 or not?
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-prototypes and testing things in a separate file is more work, but a good
- idea
-\end_layout
-
-\begin_layout Section
-Functions chapter 3
-\end_layout
-
-\begin_layout Itemize
-prebuilt functions
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-raw_input()
-\end_layout
-
-\begin_layout Itemize
-type()
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-returns type of variable
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-int()
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-pulls the integer out of a string 
-\end_layout
-
-\begin_layout Itemize
-converts floating-point values to integers
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-str1="5"
-\end_layout
-
-\begin_layout Plain Layout
-
-str2="7"
-\end_layout
-
-\begin_layout Plain Layout
-
-str3=str1+str2
-\end_layout
-
-\begin_layout Plain Layout
-
-print str3
-\end_layout
-
-\begin_layout Plain Layout
-
-str1=int(str1)
-\end_layout
-
-\begin_layout Plain Layout
-
-str2=int(str2)
-\end_layout
-
-\begin_layout Plain Layout
-
-str3=str1+str2
-\end_layout
-
-\begin_layout Plain Layout
-
-print str3 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-float()
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-equivalent to int() but for floats
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-str()
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-converts to string
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-python automatically converts to float if either operator is a float
-\end_layout
-
-\begin_layout Itemize
-functions defined as follows
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-def NAME( LIST OF PARAMETERS ): 
-\end_layout
-
-\begin_layout Plain Layout
-
-	STATEMENTS
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-def printStuff(arg1, bob):
-\end_layout
-
-\begin_layout Plain Layout
-
-	print arg1
-\end_layout
-
-\begin_layout Plain Layout
-
-	print bob
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-variables defined within functions are local
-\end_layout
-
-\begin_layout Subsection
-examples
-\end_layout
-
-\begin_layout Subsubsection
-draw tie fighter in upper left corner
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python
-\end_layout
-
-\begin_layout Plain Layout
-
-"""
-\end_layout
-
-\begin_layout Plain Layout
-
-tie1.py
-\end_layout
-
-\begin_layout Plain Layout
-
-draws a tie fighter in the upper corner of the screen
-\end_layout
-
-\begin_layout Plain Layout
-
-"""
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-import pygame
-\end_layout
-
-\begin_layout Plain Layout
-
-from pygame import draw
-\end_layout
-
-\begin_layout Plain Layout
-
-from pygame.locals import *
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-pygame.init()
-\end_layout
-
-\begin_layout Plain Layout
-
-screen = pygame.display.set_mode((800,600))
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-screen.fill((0,0,0))
-\end_layout
-
-\begin_layout Plain Layout
-
-done = False
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-while not done:
-\end_layout
-
-\begin_layout Plain Layout
-
-    for event in pygame.event.get():
-\end_layout
-
-\begin_layout Plain Layout
-
-        if event.type == QUIT:
-\end_layout
-
-\begin_layout Plain Layout
-
-            done = True
-\end_layout
-
-\begin_layout Plain Layout
-
-        elif event.type == KEYDOWN and event.key == K_ESCAPE:
-\end_layout
-
-\begin_layout Plain Layout
-
-            done = True
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-   # draw tie fighter
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.rect(screen, (255,0,0), (0,0,5,40))
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.rect(screen, (255,0,0), (35,0,5,40))
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.rect(screen, (255,0,0), (0,17,40,5))
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.circle(screen, (255,0,0), (20,20), 10)
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\end_layout
-
-\begin_layout Plain Layout
-
-    pygame.display.flip()
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-print "ByeBye"
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-now do same thing but with function
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python
-\end_layout
-
-\begin_layout Plain Layout
-
-"""
-\end_layout
-
-\begin_layout Plain Layout
-
-tie2.py
-\end_layout
-
-\begin_layout Plain Layout
-
-draws a tie fighter in the upper corner of the screen with func
-\end_layout
-
-\begin_layout Plain Layout
-
-"""
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-import pygame
-\end_layout
-
-\begin_layout Plain Layout
-
-from pygame import draw
-\end_layout
-
-\begin_layout Plain Layout
-
-from pygame.locals import *
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-pygame.init()
-\end_layout
-
-\begin_layout Plain Layout
-
-screen = pygame.display.set_mode((800,600))
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-screen.fill((0,0,0))
-\end_layout
-
-\begin_layout Plain Layout
-
-done = False
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-def draw_tie(surf, color):
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.rect(surf, color, (0,0,5,40))
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.rect(surf, color, (35,0,5,40))
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.rect(surf, color, (0,17,40,5))
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.circle(surf, color, (20,20), 10)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-while not done:
-\end_layout
-
-\begin_layout Plain Layout
-
-    for event in pygame.event.get():
-\end_layout
-
-\begin_layout Plain Layout
-
-        if event.type == QUIT:
-\end_layout
-
-\begin_layout Plain Layout
-
-            done = True
-\end_layout
-
-\begin_layout Plain Layout
-
-        elif event.type == KEYDOWN and event.key == K_ESCAPE:
-\end_layout
-
-\begin_layout Plain Layout
-
-            done = True
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-   # draw tie fighter
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw_tie(screen, (255,0,0))
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\end_layout
-
-\begin_layout Plain Layout
-
-    pygame.display.flip()
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-print "ByeBye"
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-now get them do draw multiple tie fighters
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-# draw tie fighter     
-\end_layout
-
-\begin_layout Plain Layout
-
-draw_tie(screen, (255,0,0), (20, 200))     
-\end_layout
-
-\begin_layout Plain Layout
-
-draw_tie(screen, (255,128,255), (0, 0))     
-\end_layout
-
-\begin_layout Plain Layout
-
-draw_tie(screen, (255,255,0), (300, 400))
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-now draw where you click
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#function
-\end_layout
-
-\begin_layout Plain Layout
-
-def draw_tie(surf, color, pos):
-\end_layout
-
-\begin_layout Plain Layout
-
-    x,y = pos
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.rect(surf, color, (x,y,5,40))
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.rect(surf, color, (x+35,y,5,40))
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.rect(surf, color, (x,y+17,40,5))
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.circle(surf, color, (x+20,y+20), 10)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-#in code
-\end_layout
-
-\begin_layout Plain Layout
-
-	elif event.type == MOUSEBUTTONDOWN:
-\end_layout
-
-\begin_layout Plain Layout
-
-		draw_tie(screen, (255,0,0), pygame.mouse.get_pos())
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-examples for them to try
-\end_layout
-
-\begin_layout Subsubsection
-have them change the size of tie fighters
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-def draw_tie(surf, pos, color=(255,0,0), size=40):
-\end_layout
-
-\begin_layout Plain Layout
-
-    "Draws a tie fighter"
-\end_layout
-
-\begin_layout Plain Layout
-
-    x,y = pos
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\end_layout
-
-\begin_layout Plain Layout
-
-    wall = size/8
-\end_layout
-
-\begin_layout Plain Layout
-
-    x0,x1 = x - (size/2), x + (size/2)
-\end_layout
-
-\begin_layout Plain Layout
-
-    y0,y1 = y - (size/2), y + (size/2)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.rect(surf, color, (x0, y0, wall, size))
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.rect(surf, color, (x1-wall, y0, wall, size))
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.rect(surf, color, (x0, y-(wall/2), size, wall))
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.circle(surf, color, (x, y), size/4) 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-#call with
-\end_layout
-
-\begin_layout Plain Layout
-
-draw_tie(screen, pygame.mouse.get_pos(), size=80)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-talk about default values to functions
-\end_layout
-
-\begin_layout Subsubsection
-now draw random size and color
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-elif event.type == MOUSEBUTTONDOWN:             
-\end_layout
-
-\begin_layout Plain Layout
-
-	pos = pygame.mouse.get_pos()             
-\end_layout
-
-\begin_layout Plain Layout
-
-	color = (randrange(100,256), randrange(100,256), randrange(100,256))  
-           
-\end_layout
-
-\begin_layout Plain Layout
-
-	size = randrange(30,80)             
-\end_layout
-
-\begin_layout Plain Layout
-
-	draw_tie(screen, pos, color, size)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-now same thing but with redrawing the background 
-\end_layout
-
-\begin_layout Itemize
-(talk about redrawing background)
-\end_layout
-
-\begin_layout Itemize
-screen redraw every time through the loop
-\end_layout
-
-\begin_layout Itemize
-use a list
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-elif event.type == MOUSEBUTTONDOWN:
-\end_layout
-
-\begin_layout Plain Layout
-
-	pos = pygame.mouse.get_pos()
-\end_layout
-
-\begin_layout Plain Layout
-
-	color = (randrange(100,256), randrange(100,256), randrange(100,256))
-\end_layout
-
-\begin_layout Plain Layout
-
-	size = randrange(30,80)
-\end_layout
-
-\begin_layout Plain Layout
-
-	ties.append((pos,color,size))
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# draw
-\end_layout
-
-\begin_layout Plain Layout
-
-screen.fill((0,0,0))
-\end_layout
-
-\begin_layout Plain Layout
-
-for tie in ties:
-\end_layout
-
-\begin_layout Plain Layout
-
-	pos,color,size = tie
-\end_layout
-
-\begin_layout Plain Layout
-
-	draw_tie(screen, pos, color, size) 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-now have tie fighters shrink
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-        elif event.type == MOUSEBUTTONDOWN:
-\end_layout
-
-\begin_layout Plain Layout
-
-            pos = pygame.mouse.get_pos()
-\end_layout
-
-\begin_layout Plain Layout
-
-            color = (randrange(100,256), randrange(100,256), randrange(100,256))
-\end_layout
-
-\begin_layout Plain Layout
-
-            size = 80
-\end_layout
-
-\begin_layout Plain Layout
-
-            ties.append([pos,color,size])
-\end_layout
-
-\begin_layout Plain Layout
-
-    # update
-\end_layout
-
-\begin_layout Plain Layout
-
-    # not crazy about this, but list comps are complicated
-\end_layout
-
-\begin_layout Plain Layout
-
-    for i in range(len(ties)-1, -1, -1):
-\end_layout
-
-\begin_layout Plain Layout
-
-        tie = ties[i]
-\end_layout
-
-\begin_layout Plain Layout
-
-        tie[2] -= 2
-\end_layout
-
-\begin_layout Plain Layout
-
-        if tie[2] <= 0:
-\end_layout
-
-\begin_layout Plain Layout
-
-            ties.pop(i)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-now full solution but cleaner
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python
-\end_layout
-
-\begin_layout Plain Layout
-
-"""
-\end_layout
-
-\begin_layout Plain Layout
-
-tie9.py
-\end_layout
-
-\begin_layout Plain Layout
-
-tie fighters now shrink.
-  A bit cleaner
-\end_layout
-
-\begin_layout Plain Layout
-
-"""
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-from random import randrange
-\end_layout
-
-\begin_layout Plain Layout
-
-import pygame
-\end_layout
-
-\begin_layout Plain Layout
-
-from pygame import draw
-\end_layout
-
-\begin_layout Plain Layout
-
-from pygame.locals import *
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-def draw_tie(surf, pos, color=(255,0,0), size=40):
-\end_layout
-
-\begin_layout Plain Layout
-
-    "Draws a tie fighter"
-\end_layout
-
-\begin_layout Plain Layout
-
-    x,y = pos
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\end_layout
-
-\begin_layout Plain Layout
-
-    wall = size/8
-\end_layout
-
-\begin_layout Plain Layout
-
-    x0,x1 = x - (size/2), x + (size/2)
-\end_layout
-
-\begin_layout Plain Layout
-
-    y0,y1 = y - (size/2), y + (size/2)
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.rect(surf, color, (x0, y0, wall, size))
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.rect(surf, color, (x1-wall, y0, wall, size))
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.rect(surf, color, (x0, y-(wall/2), size, wall))
-\end_layout
-
-\begin_layout Plain Layout
-
-    draw.circle(surf, color, (x, y), size/4)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-ties = []
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-def create_tie():
-\end_layout
-
-\begin_layout Plain Layout
-
-    pos = pygame.mouse.get_pos()
-\end_layout
-
-\begin_layout Plain Layout
-
-    color = (randrange(100,256), randrange(100,256), randrange(100,256))
-\end_layout
-
-\begin_layout Plain Layout
-
-    size = 80
-\end_layout
-
-\begin_layout Plain Layout
-
-    ties.append([pos,color,size])
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-def update():
-\end_layout
-
-\begin_layout Plain Layout
-
-    # not crazy about this, but list comps are complicated
-\end_layout
-
-\begin_layout Plain Layout
-
-    # how to actually do this with list comp is
-\end_layout
-
-\begin_layout Plain Layout
-
-    # ties = [ (pos,color,size-2) for pos,color,size in ties if size > 0
- ]
-\end_layout
-
-\begin_layout Plain Layout
-
-    for i in range(len(ties)-1, -1, -1):
-\end_layout
-
-\begin_layout Plain Layout
-
-        tie = ties[i]
-\end_layout
-
-\begin_layout Plain Layout
-
-        tie[2] -= 2
-\end_layout
-
-\begin_layout Plain Layout
-
-        if tie[2] <= 0:
-\end_layout
-
-\begin_layout Plain Layout
-
-            ties.pop(i)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-pygame.init()
-\end_layout
-
-\begin_layout Plain Layout
-
-screen = pygame.display.set_mode((800,600))
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-ties = []
-\end_layout
-
-\begin_layout Plain Layout
-
-done = False
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-while not done:
-\end_layout
-
-\begin_layout Plain Layout
-
-    for event in pygame.event.get():
-\end_layout
-
-\begin_layout Plain Layout
-
-        if event.type == QUIT:
-\end_layout
-
-\begin_layout Plain Layout
-
-            done = True
-\end_layout
-
-\begin_layout Plain Layout
-
-        elif event.type == KEYDOWN and event.key == K_ESCAPE:
-\end_layout
-
-\begin_layout Plain Layout
-
-            done = True
-\end_layout
-
-\begin_layout Plain Layout
-
-        elif event.type == MOUSEBUTTONDOWN:
-\end_layout
-
-\begin_layout Plain Layout
-
-            create_tie()
-\end_layout
-
-\begin_layout Plain Layout
-
-    update()
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-   # draw
-\end_layout
-
-\begin_layout Plain Layout
-
-    screen.fill((0,0,0))
-\end_layout
-
-\begin_layout Plain Layout
-
-    for pos,color,size in ties:
-\end_layout
-
-\begin_layout Plain Layout
-
-        draw_tie(screen, pos, color, size)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    pygame.display.flip()
-\end_layout
-
-\begin_layout Plain Layout
-
-    pygame.time.wait(50)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-print "ByeBye"
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Functions with return NEEDS EXAMPLES
-\end_layout
-
-\begin_layout Subsection
-modules
-\end_layout
-
-\begin_layout Itemize
-python uses modules instead of libraries
-\end_layout
-
-\begin_layout Itemize
-import math
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-then use parts of it with dot notation
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-math.sin()
-\end_layout
-
-\begin_layout Itemize
-math.sin(math.pi)
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-indents instead of {}
-\end_layout
-
-\begin_layout Itemize
-random
-\end_layout
-
-\begin_layout Itemize
-differences between import and import from
-\end_layout
-
-\begin_layout Subsection
-return
-\end_layout
-
-\begin_layout Itemize
-return statements p.70
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-used to end a function early, it will end when return is seen
-\end_layout
-
-\begin_layout Itemize
-doesn't need to be given any value
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-def ftoc(temp):
-\end_layout
-
-\begin_layout Plain Layout
-
-    cent=temp-32
-\end_layout
-
-\begin_layout Plain Layout
-
-    cent*=5
-\end_layout
-
-\begin_layout Plain Layout
-
-    cent/=9
-\end_layout
-
-\begin_layout Plain Layout
-
-    return cent
-\end_layout
-
-\begin_layout Plain Layout
-
-c=ftoc(95)
-\end_layout
-
-\begin_layout Plain Layout
-
-print "temp in C is ",c 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-multiple return function
-\end_layout
-
-\begin_layout Itemize
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-import Math
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-def quadratic(a,b,c):
-\end_layout
-
-\begin_layout Plain Layout
-
-	x1 = (-b + Math.sqrt(b**2 - 4*a*c)) / (2*a)
-\end_layout
-
-\begin_layout Plain Layout
-
-	x2 = (-b - Math.sqrt(b**2 - 4*a*c)) / (2*a)
-\end_layout
-
-\begin_layout Plain Layout
-
-	return x1, x2
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-out1, out2 = quadratic(1, 2, 1)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-examples
-\end_layout
-
-\begin_layout Standard
-start with bouncer.py
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-def move(x, y):
-\end_layout
-
-\begin_layout Plain Layout
-
-	return x, y
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# update
-\end_layout
-
-\begin_layout Plain Layout
-
-tie_x, tie_y = move(tie_x, tie_y)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-add speed
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-tie_dx, tie_dy = 2, 2
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-def move(x, y, dx, dy):
-\end_layout
-
-\begin_layout Plain Layout
-
-	x += dx
-\end_layout
-
-\begin_layout Plain Layout
-
-	y += dy
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	return x, y
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# update
-\end_layout
-
-\begin_layout Plain Layout
-
-tie_x, tie_y = move(tie_x, tie_y, tie_dx, tie_dy)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-add bounce
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-def move(x, y, dx, dy, size, bounds):
-\end_layout
-
-\begin_layout Plain Layout
-
-	x += dx
-\end_layout
-
-\begin_layout Plain Layout
-
-	y += dy
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	if x < bounds.left or x > bounds.right:
-\end_layout
-
-\begin_layout Plain Layout
-
-		dx = -dx
-\end_layout
-
-\begin_layout Plain Layout
-
-		x += 2 * dx
-\end_layout
-
-\begin_layout Plain Layout
-
-	if y < bounds.top or y > bound.bottom:
-\end_layout
-
-\begin_layout Plain Layout
-
-		dy = -dy
-\end_layout
-
-\begin_layout Plain Layout
-
-		x += 2 * dx
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	return x,y,dx,dy
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-tie_x, tie_y, tie_dx, tie_dy = move(tie_x, tie_y, tie_dx, tie_dy, 40 screen.get_r
-ect())
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Excercise: fix it so it doesn't overlap edge
-\end_layout
-
-\begin_layout Itemize
-change to a list of ties
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-# init
-\end_layout
-
-\begin_layout Plain Layout
-
-ties = [
-\end_layout
-
-\begin_layout Plain Layout
-
-  [400, 300, 2, 2, 40],
-\end_layout
-
-\begin_layout Plain Layout
-
-  [200, 200, -1, 3, 50]
-\end_layout
-
-\begin_layout Plain Layout
-
-]
-\end_layout
-
-\begin_layout Plain Layout
-
-screen_bounds = screen.get_rect()
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# move func
-\end_layout
-
-\begin_layout Plain Layout
-
-def move(tie, bounds):
-\end_layout
-
-\begin_layout Plain Layout
-
-	x, y, dx, dy, size = tie
-\end_layout
-
-\begin_layout Plain Layout
-
-	# ...
-\end_layout
-
-\begin_layout Plain Layout
-
-	return x, y, dx, dy, size
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# draw_tie
-\end_layout
-
-\begin_layout Plain Layout
-
-def draw_tie(surf, tie):
-\end_layout
-
-\begin_layout Plain Layout
-
-	x,y,dx,dy,size = tie
-\end_layout
-
-\begin_layout Plain Layout
-
-	color = 255,0,0
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# update
-\end_layout
-
-\begin_layout Plain Layout
-
-for i in range(len(ties)):
-\end_layout
-
-\begin_layout Plain Layout
-
-	ties[i] = move(ties[i], screen_bounds)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# draw
-\end_layout
-
-\begin_layout Plain Layout
-
-for tie in ties:"
-\end_layout
-
-\begin_layout Plain Layout
-
-	draw_tie(screen, tie)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Excercise: split on bounce
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-def split(tie):
-\end_layout
-
-\begin_layout Plain Layout
-
-	"horiz: whether or not the tie hit the x wall or y"
-\end_layout
-
-\begin_layout Plain Layout
-
-	global ties
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	# code to create a new tie fighter
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Excercise, halve the size of split off ties, remove if too small
-\end_layout
-
-\begin_layout Itemize
-Excercise, add color
-\end_layout
-
-\begin_layout Itemize
-Excercise, spawn on key or periodically
-\end_layout
-
-\begin_layout Section
-Advanced data structures NEEDS EXAMPLES
-\end_layout
-
-\begin_layout Subsection
-multi-dimensional lists (lists in lists)
-\end_layout
-
-\begin_layout Itemize
-lists within lists
-\end_layout
-
-\begin_layout Itemize
-matrix = ["hello", 2.0, 5, [10, 20]]
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-\end_layout
-
-\begin_layout Itemize
-access with matrix[3][1]
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Tuples chapter 12
-\end_layout
-
-\begin_layout Itemize
-immutable
-\end_layout
-
-\begin_layout Itemize
-fast
-\end_layout
-
-\begin_layout Itemize
-point=(1,2)
-\end_layout
-
-\begin_layout Itemize
-color=(255,255,255)
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-talk about colors
-\end_layout
-
-\begin_layout Itemize
-0-255 for each
-\end_layout
-
-\begin_layout Itemize
-explain 24 bit color
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-color=(255,255,255,255)
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-RGBA also exists
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-dictionaries chapter 11
-\end_layout
-
-\begin_layout Itemize
-key value pair
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-map names to data
-\end_layout
-
-\begin_layout Itemize
-order doesn't matter
-\end_layout
-
-\begin_layout Itemize
-used a lot on the web
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-can do stuff like product name to data
-\end_layout
-
-\begin_layout Itemize
-fetching data sent to a server
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-dictionaries allow you to index off something other then numbers
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-way 1
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-eng2sp = {}
-\end_layout
-
-\begin_layout Itemize
-eng2sp[’one’] = ’uno’ 
-\end_layout
-
-\begin_layout Itemize
-eng2sp[’two’] = ’dos’
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-way 2
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-eng2sp = {’one’: ’uno’, ’two’: ’dos’, ’three’: ’tres’}
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-though numbers can still be used
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-num2eng = {1: 
-\begin_inset Quotes eld
-\end_inset
-
-one
-\begin_inset Quotes erd
-\end_inset
-
-, 2: 
-\begin_inset Quotes eld
-\end_inset
-
-two
-\begin_inset Quotes erd
-\end_inset
-
- }
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-or any other python object
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-can still delete elements of dictionaries with del()
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-del eng2sp['one']
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-len() also still works
-\end_layout
-
-\begin_layout Itemize
-dictionaries are mutable
-\end_layout
-
-\begin_layout Itemize
-can return keys and values
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-eng2sp.keys()
-\end_layout
-
-\begin_layout Itemize
-eng2sp.values()
-\end_layout
-
-\begin_layout Itemize
-eng2sp.items()
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-dictionaries alias p.
- 138
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Copy is hardly used correctly.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-to copy:
-\end_layout
-
-\begin_layout Itemize
-copy=eng2sp.copy()
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-people = {'Jonah' : "stupid",
-\end_layout
-
-\begin_layout Plain Layout
-
-       'Alec' : "ugly",
-\end_layout
-
-\begin_layout Plain Layout
-
-       'Jack' : "smelly",
-\end_layout
-
-\begin_layout Plain Layout
-
-       'Paul' : "awesome"}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-name = raw_input("Your Name: ")
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-if name in people:
-\end_layout
-
-\begin_layout Plain Layout
-
-    print "%s is %s!" % (name, people[name])
-\end_layout
-
-\begin_layout Plain Layout
-
-else:
-\end_layout
-
-\begin_layout Plain Layout
-
-    print "I don't know %s." % name
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-NOTE: might want another example
-\end_layout
-
-\begin_layout Subsection
-string Chapter 8 p.
- 71
-\end_layout
-
-\begin_layout Itemize
-split
-\end_layout
-
-\begin_layout Itemize
-strip
-\end_layout
-
-\begin_layout Itemize
-upper and lower
-\end_layout
-
-\begin_layout Itemize
-title and capitalize 
-\end_layout
-
-\begin_layout Itemize
-be sure to show them where to find stuff
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-search 
-\begin_inset Quotes eld
-\end_inset
-
-string python
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-http://docs.python.org/library/string.html
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
- >>> s = 'Monty Python' 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> print s[0:5] 
-\end_layout
-
-\begin_layout Plain Layout
-
-Monty 
-\end_layout
-
-\begin_layout Plain Layout
-
->>> print s[6:12] 
-\end_layout
-
-\begin_layout Plain Layout
-
-Pytho
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-examples
-\end_layout
-
-\begin_layout Section
-Using Objects
-\end_layout
-
-\begin_layout Itemize
-Objects
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-contain data (attributes)
-\end_layout
-
-\begin_layout Itemize
-contain functions that run on data (methods)
-\end_layout
-
-\begin_layout Itemize
-instance (object in use)
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-they are a great way of organizing code
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-they group data with what uses it
-\end_layout
-
-\begin_layout Itemize
-make code cleaner
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-describe using the Penn State example
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-case of beer class
-\end_layout
-
-\begin_layout Itemize
-has attributes (beers in case)
-\end_layout
-
-\begin_layout Itemize
-method (remove beer)
-\end_layout
-
-\begin_layout Itemize
-specific instance (that case of dogfish head)
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-pygame objects
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-we've been using them since pygame has them
-\end_layout
-
-\begin_layout Itemize
-we've been using existing objects
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-surface 
-\end_layout
-
-\begin_layout Itemize
-rect
-\end_layout
-
-\begin_layout Itemize
-clamp
-\end_layout
-
-\begin_layout Itemize
-bouncing ball
-\end_layout
-
-\begin_layout Itemize
-player at mouse
-\end_layout
-
-\begin_layout Itemize
-collision
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Subsection
-examples
-\end_layout
-
-\begin_layout Itemize
-drawing a rectangle
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-#!/usr/bin/env python
-\end_layout
-
-\begin_layout Plain Layout
-
-import pygame
-\end_layout
-
-\begin_layout Plain Layout
-
-from pygame.locals import *
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# globals
-\end_layout
-
-\begin_layout Plain Layout
-
-BACKGROUND = 80, 80, 80
-\end_layout
-
-\begin_layout Plain Layout
-
-SCREEN_SIZE = SCREEN_WIDTH, SCREEN_HEIGHT = 800,600
-\end_layout
-
-\begin_layout Plain Layout
-
-FPS = 30
-\end_layout
-
-\begin_layout Plain Layout
-
-RECT_SIZE = 120,80
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-pygame.init()
-\end_layout
-
-\begin_layout Plain Layout
-
-screen = pygame.display.set_mode(SCREEN_SIZE)
-\end_layout
-
-\begin_layout Plain Layout
-
-clock = pygame.time.Clock()
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-bounds = screen.get_rect()
-\end_layout
-
-\begin_layout Plain Layout
-
-rect = pygame.Rect((0,0), RECT_SIZE)
-\end_layout
-
-\begin_layout Plain Layout
-
-rect.center = bounds.center
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-done = False
-\end_layout
-
-\begin_layout Plain Layout
-
-while not done:
-\end_layout
-
-\begin_layout Plain Layout
-
-    for evt in pygame.event.get():
-\end_layout
-
-\begin_layout Plain Layout
-
-        if evt.type == QUIT:
-\end_layout
-
-\begin_layout Plain Layout
-
-            done = True
-\end_layout
-
-\begin_layout Plain Layout
-
-        elif evt.type == KEYDOWN and evt.key == K_ESCAPE:
-\end_layout
-
-\begin_layout Plain Layout
-
-            done = True
-\end_layout
-
-\begin_layout Plain Layout
-
-    # draw
-\end_layout
-
-\begin_layout Plain Layout
-
-    screen.fill(BACKGROUND)
-\end_layout
-
-\begin_layout Plain Layout
-
-	pygame.draw.rect(screen, (255,0,0), rect)
-\end_layout
-
-\begin_layout Plain Layout
-
-	pygame.draw.rect(screen, (0,0,0), rect, 5)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    # refresh
-\end_layout
-
-\begin_layout Plain Layout
-
-    pygame.display.flip()
-\end_layout
-
-\begin_layout Plain Layout
-
-    clock.tick(FPS)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-print "ByeBye"
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-move with mouse
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-# before loop
-\end_layout
-
-\begin_layout Plain Layout
-
-grabbed = False
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# in event
-\end_layout
-
-\begin_layout Plain Layout
-
-elif evt.type == MOUSEBUTTONDOWN:
-\end_layout
-
-\begin_layout Plain Layout
-
-    grabbed = True
-\end_layout
-
-\begin_layout Plain Layout
-
-elif evt.type == MOUSEBUTTONUP:
-\end_layout
-
-\begin_layout Plain Layout
-
-    grabbed = False
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# update
-\end_layout
-
-\begin_layout Plain Layout
-
-if grabbed:
-\end_layout
-
-\begin_layout Plain Layout
-
-    rect.center = pygame.mouse.get_pos()
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-clamp to window
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-if grabbed:
-\end_layout
-
-\begin_layout Plain Layout
-
-	rect.center = pygame.mouse.get_pos()
-\end_layout
-
-\begin_layout Plain Layout
-
-	rect.clamp_ip(bounds)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-only grab if actually clicked
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-elif evt.type == MOUSEBUTTONDOWN and :
-\end_layout
-
-\begin_layout Plain Layout
-
-	if rect.collidepoint(pygame.mouse.get_pos()):
-\end_layout
-
-\begin_layout Plain Layout
-
-		grabbed = True
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-multiple
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-rects = [ pygame.Rect((0,0), RECT_SIZE),
-\end_layout
-
-\begin_layout Plain Layout
-
-		  pygame.Rect((0,0), RECT_SIZE),
-\end_layout
-
-\begin_layout Plain Layout
-
-		  pygame.Rect((0,0), RECT_SIZE),
-\end_layout
-
-\begin_layout Plain Layout
-
-		  pygame.Rect((0,0), RECT_SIZE) ]
-\end_layout
-
-\begin_layout Plain Layout
-
-rects[0].topleft = bounds.topleft
-\end_layout
-
-\begin_layout Plain Layout
-
-rects[1].topright = bounds.topright
-\end_layout
-
-\begin_layout Plain Layout
-
-rects[2].bottomleft = bounds.bottomleft
-\end_layout
-
-\begin_layout Plain Layout
-
-rects[3].bottomright = bounds.bottomright
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-...snip...
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# input
-\end_layout
-
-\begin_layout Plain Layout
-
-elif evt.type == MOUSEBUTTONDOWN:
-\end_layout
-
-\begin_layout Plain Layout
-
-	pt = pygame.mouse.get_pos()
-\end_layout
-
-\begin_layout Plain Layout
-
-	for rect in rects:
-\end_layout
-
-\begin_layout Plain Layout
-
-		if rect.collidepoint(pt):
-\end_layout
-
-\begin_layout Plain Layout
-
-			grabbed = rect
-\end_layout
-
-\begin_layout Plain Layout
-
-elif evt.type == MOUSEBUTTONUP:
-\end_layout
-
-\begin_layout Plain Layout
-
-	grabbed = None
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# update
-\end_layout
-
-\begin_layout Plain Layout
-
-if grabbed:
-\end_layout
-
-\begin_layout Plain Layout
-
-	grabbed.center = pygame.mouse.get_pos()
-\end_layout
-
-\begin_layout Plain Layout
-
-	grabbed.clamp_ip(bounds)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# draw
-\end_layout
-
-\begin_layout Plain Layout
-
-for rect in rects:
-\end_layout
-
-\begin_layout Plain Layout
-
-	if rect == grabbed:
-\end_layout
-
-\begin_layout Plain Layout
-
-		color = 255,255,255
-\end_layout
-
-\begin_layout Plain Layout
-
-	else:
-\end_layout
-
-\begin_layout Plain Layout
-
-		color = 255,0,0
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	pygame.draw.rect(screen, color, rect)
-\end_layout
-
-\begin_layout Plain Layout
-
-	pygame.draw.rect(screen, (0,0,0), rect, 5)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-intersecting (breaks)
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-# draw
-\end_layout
-
-\begin_layout Plain Layout
-
-if rect == grabbed:
-\end_layout
-
-\begin_layout Plain Layout
-
-	color = 255,255,255
-\end_layout
-
-\begin_layout Plain Layout
-
-elif rect.collidelist(rects) != -1:
-\end_layout
-
-\begin_layout Plain Layout
-
-	color = 0,255,0
-\end_layout
-
-\begin_layout Plain Layout
-
-else:
-\end_layout
-
-\begin_layout Plain Layout
-
-	color = 255,0,0
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-intersecting (works)
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-others = rects[:]
-\end_layout
-
-\begin_layout Plain Layout
-
-others.remove(rect)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-elif rect.collidelist(others) != -1:
-\end_layout
-
-\begin_layout Plain Layout
-
-	color = 0,255,0
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-create our own objects NEEDS WORK
-\end_layout
-
-\begin_layout Itemize
-group data and logic
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-attributes
-\end_layout
-
-\begin_layout Itemize
-methods
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-python allows both chapter 13
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-functions
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-take arguments and don't change the inputs
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-modifiers
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-change the inputs to a function
+A slightly larger example
 \end_layout
 
-\end_deeper
-\end_deeper
 \begin_layout Standard
 \begin_inset listings
 inline false
@@ -18199,6 +8035,15 @@ class Course(object):
 \begin_layout Plain Layout
 
 		self.enrolled = []
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def turnin(self, student, hw):
 \end_layout
 
 \begin_layout Plain Layout
@@ -18301,31 +8146,994 @@ True
 
 \end_layout
 
-\begin_layout Itemize
-copy.copy() 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-only copies the top level and creates aliases below top level
-\end_layout
-
 \end_deeper
-\begin_layout Itemize
-copy.deepcopy()
+\begin_layout Subsection
+Duck Hunt
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-copes all levels of objects
+Basic Game (tiehunt.py)
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/usr/bin/env python
 \end_layout
 
-\end_deeper
-\end_deeper
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import pygame
+\end_layout
+
+\begin_layout Plain Layout
+
+from pygame.locals import *
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+C_BLACK = 0,0,0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Game(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+	title = "Duck Hunt"
+\end_layout
+
+\begin_layout Plain Layout
+
+	size = 800,600
+\end_layout
+
+\begin_layout Plain Layout
+
+	fps = 30
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.screen = pygame.display.set_mode(self.size)
+\end_layout
+
+\begin_layout Plain Layout
+
+		pygame.display.set_caption(self.title)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def run(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		clock = pygame.time.Clock()
+\end_layout
+
+\begin_layout Plain Layout
+
+		done = False
+\end_layout
+
+\begin_layout Plain Layout
+
+		while not done:
+\end_layout
+
+\begin_layout Plain Layout
+
+			# tick
+\end_layout
+
+\begin_layout Plain Layout
+
+			clock.tick(self.fps)
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+			# input
+\end_layout
+
+\begin_layout Plain Layout
+
+			for event in pygame.event.get():
+\end_layout
+
+\begin_layout Plain Layout
+
+				if event.type == QUIT:
+\end_layout
+
+\begin_layout Plain Layout
+
+					done = True
+\end_layout
+
+\begin_layout Plain Layout
+
+				elif event.type == KEYDOWN and event.key == K_ESCAPE:
+\end_layout
+
+\begin_layout Plain Layout
+
+					done = True
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+			# update
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+			# draw
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.screen.fill(C_BLACK)
+\end_layout
+
+\begin_layout Plain Layout
+
+			pygame.display.flip()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if __name__ == "__main__":
+\end_layout
+
+\begin_layout Plain Layout
+
+	pygame.init()
+\end_layout
+
+\begin_layout Plain Layout
+
+	game = Game()
+\end_layout
+
+\begin_layout Plain Layout
+
+	game.run()
+\end_layout
+
+\begin_layout Plain Layout
+
+	print "ByeBye"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+TieFighter class
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+C_RED = 255,0,0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def draw_tie(surf, color, size):
+\end_layout
+
+\begin_layout Plain Layout
+
+	wall = size / 8
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	surf.fill(C_BLACK)
+\end_layout
+
+\begin_layout Plain Layout
+
+	pygame.draw.rect(surf, color, (0, 0, wall, size))
+\end_layout
+
+\begin_layout Plain Layout
+
+	pygame.draw.rect(surf, color, (size-wall, 0, wall, size))
+\end_layout
+
+\begin_layout Plain Layout
+
+	pygame.draw.rect(surf, color, (0, (size-wall)/2, size, wall))
+\end_layout
+
+\begin_layout Plain Layout
+
+	pygame.draw.circle(surf, color, (size/2, size/2), size/4)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class TieFighter(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, x, y, vx, vy, size=40, color=C_RED):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.x = x
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.y = y
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.vx = vx
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.vy = vy
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.size = size
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.color = color
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.image = pygame.Surface((size, size))
+\end_layout
+
+\begin_layout Plain Layout
+
+		draw_tie(self.image, color, size)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.rect = pygame.Rect(x, y, size, size)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def draw(self, surf):
+\end_layout
+
+\begin_layout Plain Layout
+
+		surf.blit(self.image, self.rect)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Game.__init__
+\end_layout
+
+\begin_layout Plain Layout
+
+self.ties = []
+\end_layout
+
+\begin_layout Plain Layout
+
+self.ties.append( TieFighter(200, 200, 3, 3) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# draw
+\end_layout
+
+\begin_layout Plain Layout
+
+for tie in self.ties:
+\end_layout
+
+\begin_layout Plain Layout
+
+	tie.draw(self.screen)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 
-\series bold
-NEED MORE EXAMPLES I THINK...
+TieFighter Update
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# TieFighter.__init__
+\end_layout
+
+\begin_layout Plain Layout
+
+self.bounds = bounds
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def update(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+	self.rect.x += self.vx
+\end_layout
+
+\begin_layout Plain Layout
+
+	self.rect.y += self.vy
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	if self.rect.left < self.bounds.left or self.rect.right > self.bounds.right:
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.vx = -self.vx
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.rect.x += 2 * self.vx
+\end_layout
+
+\begin_layout Plain Layout
+
+	if self.rect.top < self.bounds.top or self.rect.bottom > self.rect.bottom:
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.vy = -self.vy
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.rect.y += 2 * self.vy
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# update
+\end_layout
+
+\begin_layout Plain Layout
+
+for tie in self.ties:
+\end_layout
+
+\begin_layout Plain Layout
+
+	tie.update()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+Spawn
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def spawn(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+	size = 40
+\end_layout
+
+\begin_layout Plain Layout
+
+	x = randrange(self.bounds.width - size)
+\end_layout
+
+\begin_layout Plain Layout
+
+	y = randrange(self.bounds.height - size)
+\end_layout
+
+\begin_layout Plain Layout
+
+	vx = randrange(-5, 6)
+\end_layout
+
+\begin_layout Plain Layout
+
+	vy = randrange(-5, 6)
+\end_layout
+
+\begin_layout Plain Layout
+
+	color = randrange(128,256), randrange(128,256), randrange(128,256)
+\end_layout
+
+\begin_layout Plain Layout
+
+	tie = TieFighter(x, y, vx, vy, self.bounds, size, color)
+\end_layout
+
+\begin_layout Plain Layout
+
+	self.ties.append(tie)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# __init__
+\end_layout
+
+\begin_layout Plain Layout
+
+self.ties = []
+\end_layout
+
+\begin_layout Plain Layout
+
+self.spawn()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+Spawn loop
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# in game settings
+\end_layout
+
+\begin_layout Plain Layout
+
+max_ties = 1000
+\end_layout
+
+\begin_layout Plain Layout
+
+spawn_rate = 15
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# before loop
+\end_layout
+
+\begin_layout Plain Layout
+
+spawn_counter = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# in update
+\end_layout
+
+\begin_layout Plain Layout
+
+if spawn_counter == 0 and len(self.ties) < self.max_ties:
+\end_layout
+
+\begin_layout Plain Layout
+
+    self.spawn()
+\end_layout
+
+\begin_layout Plain Layout
+
+spawn_counter = (spawn_counter + 1) % self.spawn_rate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+Basic explosion
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Explosion(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+	alive = True
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, pos, radius):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.pos = pos
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.radius = radius
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.counter = 2 * radius
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def update(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.counter -= 1
+\end_layout
+
+\begin_layout Plain Layout
+
+		if self.counter <= 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.alive = False
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def draw(self, surf):
+\end_layout
+
+\begin_layout Plain Layout
+
+		pygame.draw.circle(surf, (255,0,0), self.pos, self.radius)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Game.__init__
+\end_layout
+
+\begin_layout Plain Layout
+
+self.xplos = []
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# input
+\end_layout
+
+\begin_layout Plain Layout
+
+elif event.type == MOUSEBUTTONDOWN and event.button == 1:
+\end_layout
+
+\begin_layout Plain Layout
+
+	self.xplos.append( Explosion(pygame.mouse.get_pos(), 40) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# update
+\end_layout
+
+\begin_layout Plain Layout
+
+for xplo in self.xplos:
+\end_layout
+
+\begin_layout Plain Layout
+
+	if xplo.alive:
+\end_layout
+
+\begin_layout Plain Layout
+
+		xplo.update()
+\end_layout
+
+\begin_layout Plain Layout
+
+	else:
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.xplos.remove(xplo)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# draw
+\end_layout
+
+\begin_layout Plain Layout
+
+for xplo in self.xplos:
+\end_layout
+
+\begin_layout Plain Layout
+
+	xplo.draw(self.screen)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+Fancier explosion
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def update(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+	self.counter -= 1
+\end_layout
+
+\begin_layout Plain Layout
+
+	if self.counter <= 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.alive = False
+\end_layout
+
+\begin_layout Plain Layout
+
+	elif self.radius > self.counter:
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.radius = self.counter
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def draw(self, surf):
+\end_layout
+
+\begin_layout Plain Layout
+
+	c = randrange(256)
+\end_layout
+
+\begin_layout Plain Layout
+
+	pygame.draw.circle(surf, (255,c,0), self.pos, self.radius)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+Chained explosions
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def update_rect(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+	side = int(2 * self.radius / math.sqrt(2))
+\end_layout
+
+\begin_layout Plain Layout
+
+	self.rect = pygame.Rect(0,0,side,side)
+\end_layout
+
+\begin_layout Plain Layout
+
+	self.rect.center = self.pos
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def __init__(self, pos, radius):
+\end_layout
+
+\begin_layout Plain Layout
+
+	# ...
+\end_layout
+
+\begin_layout Plain Layout
+
+	self.update_rect()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def update(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+	# ...
+\end_layout
+
+\begin_layout Plain Layout
+
+	self.update_rect()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Game.run  update
+\end_layout
+
+\begin_layout Plain Layout
+
+for tie in self.ties:
+\end_layout
+
+\begin_layout Plain Layout
+
+	for xplo in self.xplos:
+\end_layout
+
+\begin_layout Plain Layout
+
+		if tie.rect.colliderect( xplo.rect ):
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.ties.remove(tie)
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.xplos.append( Explosion(tie.ret.center, 30) )
+\end_layout
+
+\begin_layout Plain Layout
+
+			break
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

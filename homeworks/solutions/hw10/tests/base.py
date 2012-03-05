@@ -41,6 +41,9 @@ def test_for(inp):
 
 
 def not_implemented(fn):
+    if fn is None:
+        return False
+
     source = inspect.getsource(fn).strip()
     source = source.split(":",1)[1].strip()
 

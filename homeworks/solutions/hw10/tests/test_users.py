@@ -1,137 +1,78 @@
 #!/usr/bin/env python
+import os
+import pickle
 
 from base import unittest, not_implemented, test_for
 
-names = [
-    "Alice",
-    "Bob",
-    "Carrel",
-    "Damien",
-    "Everett",
-    "Frank",
-    "George",
-    "Igor",
-    "Jansen",
-    "Karl",
-    "Lola",
-    "Max",
-    "Ned",
-    "Opie",
-    "Paul",
-    "Ralph",
-    "Sally",
-    "Theo",
-    "Uma",
-    "Vera",
-    "Wally",
-    "Xander",
-    "Yolanda",
-    "Zeek"
-]    
+ROOT = os.path.dirname(__file__)
+f = open( os.path.join(ROOT, "users.pkl"), "rb")
+USERS = pickle.load(f)
+f.close()
 
-@test_for("dicts.freq")
-class FreqTest(unittest.TestCase):
+@test_for("users.followers")
+class FollowersTest(unittest.TestCase):
     def setUp(self):
-        self.string = "aaaabbbaaddaacceedxddff"
-        self.string_freq = { "a": 8, "b": 3, "c": 2, "d": 5, "e":2, "f": 2, "x": 1 }
+        self.theo = set(['Ralph'])
+        self.zeek = set(['Xander', 'Max', 'Carol', 'Bob', 'Igor', 'Karl'])
+        self.zeek_jansen = set(['Igor', 'Xander', 'Max', 'Frank', 'Carol', 'Bob', 'Karl'])
 
-        self.array = [1,1,2,5,4,3,6,7,4,2,7,3,2,1,6,1]
-        self.array_freq = { 7:2, 1: 4, 2: 3, 5: 1, 4: 2, 3: 2, 6: 2 }
+    def test_followers_basic(self):
+        "one name"
+        result = set(users.followers(USERS, "Theo"))
+        self.assertSetEqual( self.theo, result)
 
-    def test_freq_type(self):
-        "returns a dict"
-        self.assertIsInstance( dicts.freq([]), dict)
+        result = set(users.followers(USERS, "Zeek"))
+        self.assertSetEqual(self.zeek, result)
 
-    def test_freq_empty(self):
-        "handles empty lists"
-        self.assertEquals( dicts.freq([]), dict())
-
-    def test_freq_array(self):
-        "handles arrays"
-        self.assertDictEqual( dicts.freq(self.array), self.array_freq)
-
-    def test_freq_string(self):
-        "handles strings"
-        self.assertDictEqual( dicts.freq(self.string), self.string_freq)
+    def test_followers_multiple(self):
+        "multiple names"
+        result = set(users.followers(USERS, "Zeek", "Jansen"))
+        self.assertSetEqual(self.zeek_jansen, result)
 
 
-
-@test_for("dicts.score")
-class MovieScoreTest(unittest.TestCase):
-    def test_score_return(self):
-        "score returns nothing"
-        self.assertIsNone( dicts.score("Something", 3) )
-
-    def test_score_modifies(self):
-        "score modifies movies"
-        self.assertIsNone( dicts.movies.get("Mod") )
-        dicts.score("Mod", 3)
-        self.assertIsNotNone( dicts.movies.get("Mod") )
-
-
-
-@test_for("dicts.score")
-@test_for("dicts.avg_score")
-class MovieAvgScoreTest(unittest.TestCase):
-    def test_avg_score_missing(self):
-        "avg_score for missing movie"
-        self.assertIsNone( dicts.avg_score("Missing") )
-
-    def assertScore(self, expected, title, *vals):
-        for v in vals:
-            dicts.score(title, v)
-
-        result = dicts.avg_score(title)
-        movie = dicts.movies.get(title)
-        self.assertEquals( result, expected, "Incorrect average.\nValue of movies[%r]: %r" % (title, movie))
-
-
-    def test_avg_score_single(self):
-        "avg_score calculated"
-
-        self.assertScore(3, "Foo", 3)
-        self.assertScore(4, "Bar", 3, 5)
-        self.assertScore(4.5, "Baz", 4, 5)
-        self.assertScore(14/3.0, "Movie", 4, 5, 5)
-
-
-@test_for("dicts.parse_csv")
-class ParseCSVTest(unittest.TestCase):
+@test_for("users.underage_follows")
+class UnderageFollowsTest(unittest.TestCase):
     def setUp(self):
-        self.csv = """
-            id , name, school , concentration
-            24, Jeff, Hampshire, CS
-            67 ,  Alonzo , UMass  , NS
-            100, Cindy, Hampshire, NS
-            101 , Debra , Amherst , CSI
-        """
+        self.answer = set(['Igor', 'Frank', 'Ned', 'Ralph', 'Alice', 'Yolanda', 'Uma', 'George', 'Wally', 'Opie', 'Everett'])
 
-        self.parsed = [
-            { "id": "24", "name": "Jeff", "school": "Hampshire", "concentration": "CS" },
-            { "id": "67", "name": "Alonzo", "school": "UMass", "concentration": "NS" },
-            { "id": "100", "name": "Cindy", "school": "Hampshire", "concentration": "NS" },
-            { "id": "101", "name": "Debra", "school": "Amherst", "concentration": "CSI" },
-        ]
+    def test_underage_follows(self):
+        "got expected set"
+        result = set(users.underage_follows(USERS))
+        self.assertSetEqual(self.answer, result)
 
-    def test_parse_csv_entries(self):
-        "correct number of entries"
-        result = dicts.parse_csv(self.csv)
-        self.assertEquals(len(result), 4, "expected 4 entries")
+@test_for("users.foaf")
+class FoafTest(unittest.TestCase):
+    def setUp(self):
+        self.carol = set(['Damien'])
+        self.zeek = set(['Lola', 'Igor', 'Xander', 'Max', 'Everett', 'Ralph', 'Alice', 'Vera', 'Frank', 'Wally', 'Jansen', 'Paul', 'Opie', 'Sally', 'Ned', 'Karl'])
 
-    def test_parse_csv_keys(self):
-        "entries have correct keys"
-        result = dicts.parse_csv(self.csv)
+    def test_foaf_type(self):
+        "foaf returns the correct type"
+        result =users.foaf(USERS, "Sally")
+        self.assertIsInstance(users.foaf(USERS, "Sally"), set)
 
-        parsed_keys = self.parsed[0].keys()
-        result_keys = result[0].keys()
+    def test_foaf_exclude_self(self):
+        "foaf doesn't include the user it is being run on"
+        self.assertNotIn("Jansen", users.foaf(USERS, "Jansen"))
+
+
+    def test_foaf_basic(self):
+        "got expected sets"
+        result = users.foaf(USERS, "Carol")
+        self.assertSetEqual(self.carol, result)
         
-        self.assertSetEqual( set(parsed_keys), set(result_keys), "keys don't match")
+        result = users.foaf(USERS, "Zeek")
+        self.assertSetEqual(self.zeek, result)
+
+@test_for("users.age_demographics")
+class AgeDemographicsTest(unittest.TestCase):
+    def setUp(self):
+        self.answer = {8: 21.5, 9: 21.428571428571427, 11: 21.333333333333332, 13: 18.333333333333332, 14: 15.25, 16: 15.4, 18: 18.800000000000001, 19: 15.666666666666666, 20: 14.0, 22: 24.125, 24: 22.199999999999999, 27: 21.199999999999999, 28: 25.399999999999999, 30: 12.666666666666666, 31: 22.833333333333332}
         
-    def test_parse_csv(self):
-        "get correct results"
-        result = dicts.parse_csv(self.csv)
-        for expected, entry in zip(self.parsed, result):
-            self.assertDictEqual( expected, entry, "entry doesn't match")
+    def test_age_demographics(self):
+        "all values are correct"
+        result = users.age_demographics(USERS)
+        self.assertDictEqual(self.answer, result)
 
 if __name__ == "__main__":
     unittest.main()
