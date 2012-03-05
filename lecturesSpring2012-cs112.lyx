@@ -8043,15 +8043,6 @@ class Course(object):
 
 \begin_layout Plain Layout
 
-	def turnin(self, student, hw):
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
 def enroll(student, course):
 \end_layout
 
