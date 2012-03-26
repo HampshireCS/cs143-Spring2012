@@ -160,13 +160,13 @@ Project Management
 -vertical slices
 -<a href="CriticalPathMethodNotes.pdf">CPM</a>
 -more github
-Exceptions and Files 
 <b>Text: Chapter 14 </b> 
 
 SUBJECT:
 HOMEWORK:
 
 SUBJECT:
+Exceptions and Files 
 Plan Review/Work Day
 -attendance is mandatory
 HOMEWORK:
