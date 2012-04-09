@@ -8353,7 +8353,6 @@ if __name__ == "__main__":
 
 \begin_layout Itemize
 TieFighter class
-
 \begin_inset listings
 inline false
 status open
@@ -8540,7 +8539,6 @@ for tie in self.ties:
 \end_layout
 
 \begin_layout Itemize
-
 TieFighter Update
 \begin_inset listings
 inline false
@@ -8638,7 +8636,6 @@ for tie in self.ties:
 \end_layout
 
 \begin_layout Itemize
-
 Spawn
 \begin_inset listings
 inline false
@@ -8714,7 +8711,6 @@ self.spawn()
 \end_layout
 
 \begin_layout Itemize
-
 Spawn loop
 \begin_inset listings
 inline false
@@ -8779,7 +8775,6 @@ spawn_counter = (spawn_counter + 1) % self.spawn_rate
 \end_layout
 
 \begin_layout Itemize
-
 Basic explosion
 \begin_inset listings
 inline false
@@ -8953,7 +8948,6 @@ for xplo in self.xplos:
 \end_layout
 
 \begin_layout Itemize
-
 Fancier explosion
 \begin_inset listings
 inline false
@@ -9014,7 +9008,6 @@ def draw(self, surf):
 \end_layout
 
 \begin_layout Itemize
-
 Chained explosions
 \begin_inset listings
 inline false
@@ -9883,7 +9876,7 @@ looks up documentation
 \end_deeper
 \end_deeper
 \begin_layout Section
-Algorithm Design NEEDS EXAMPLES
+Algorithm Design
 \end_layout
 
 \begin_layout Subsection

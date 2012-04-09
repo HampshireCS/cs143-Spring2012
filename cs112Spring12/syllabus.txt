@@ -182,7 +182,6 @@ Data Structures
 HOMEWORK:
 
 SUBJECT:
-State Machines
 -graphs
 
 SUBJECT:
@@ -195,8 +194,8 @@ Animation and Sound
 HOMEWORK:
 
 SUBJECT:
+State Machines
 Menus
--pgu
 
 SUBJECT:
 HOMEWORK:
@@ -209,7 +208,6 @@ SUBJECT:
 Real World Python
 
 SUBJECT:
-HOMEWORK:
 
 SUBJECT:
 Play Final Games
