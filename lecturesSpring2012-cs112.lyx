@@ -10663,36 +10663,10 @@ build into a graph
 
 \end_deeper
 \end_deeper
-\begin_layout Subsection
-state machines
-\end_layout
-
 \begin_layout Itemize
-show Pacman example
+pacman example from board
 \end_layout
 
-\begin_layout Standard
-\begin_inset Graphics
-	filename Figures/day20-2-Pacman.eps
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-add details of pacman example
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-build pacman
-\end_layout
-
-\end_deeper
 \begin_layout Standard
 \begin_inset listings
 inline false
@@ -10721,6 +10695,24 @@ sprite sheets
 
 \begin_layout Section
 Menus NEEDS WORK
+\end_layout
+
+\begin_layout Subsection
+state machines
+\end_layout
+
+\begin_layout Itemize
+show Pacman example
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Figures/day20-2-Pacman.eps
+	width 100col%
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
