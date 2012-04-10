@@ -10664,9 +10664,71 @@ build into a graph
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-pacman example from board
+pacman example from board (part of the board)
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+maze as it would appear in acutal game
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Graphics
+	filename Figures/day20-2-maze.eps
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+graph created
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Graphics
+	filename Figures/day20-2-graph.eps
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+pairs and distances
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+only need to check between nodes where choices can be made
+\end_layout
+
+\begin_layout Itemize
+BD: BAD-9
+\end_layout
+
+\begin_layout Itemize
+BE: BE-4
+\end_layout
+
+\begin_layout Itemize
+BF: BEF-6
+\end_layout
+
+\begin_layout Itemize
+DE: DE-5
+\end_layout
+
+\begin_layout Itemize
+EF: EF-2
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Standard
 \begin_inset listings
 inline false
