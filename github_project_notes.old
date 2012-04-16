@@ -1,0 +1,89 @@
+Working With Github for Projects
+===================================
+issues https://github.com/blog/831-issues-2-0-the-next-generation
+## Create Repository
+ * go on github
+ * create new repo
+
+## Create Repo on computer
+ * follow github instructions
+
+## Add team members
+ * go to project -> Admin -> Collaborators
+ * Add your team member
+
+## Team members checkout
+ * go to github homepage, look for repo
+ * clone
+
+## Editting Wiki
+ * go to github project, then wiki
+ * edit
+
+Working on Multiple Parts
+=============================
+
+## Github Issues
+
+## Git Branches
+ * git checkout -b branchname
+     * creates branch
+     * same as git branch name, git checkout name
+ * work on thing, do a commit
+ * do "git push origin branchname" to push the branch the first time
+     * after this you can just do git push
+ * note, try not to push broken branches
+
+## listing branches
+ * git branch -a lists your local and the remote branches
+
+## checkout other code
+ * to checkout a remote branch (ie your teammates)
+    * git checkout -b name origin/branchname
+    * NOTE: two people working in the same branch complicates things, after doing a checkout you should push to a new place
+        * ex:
+           * git checkout -b experimental origin/experimental
+           * do something
+           * git add .
+           * git commit -m "blah"
+           * git push origin experimental2
+
+## Merging branches
+ONLY ONE PERSON HAS TO DO THIS
+
+ * do "git fetch origin" to get all the updates from server (if relevant)
+ * git merge branch1 branch2
+ * git merge ship origin/beeper
+    * could just be git merge otherbranch to merge current branch
+
+ * once everything is merged, github will show "0 branches unmerged"
+
+## You can continue working on branches, merging back and forth and back and forth with the working copy
+ * delete local branches
+    * git branch -d name (deletes if merged)
+    * git branch -D name (forces delete either way)
+    * git push origin :name (puts empty branch in name, aka delete)
+
+## most of the time modifying the same file isn't an issue...but...
+ * if you get a conflict, it will tell you which file conflicts and mark it up with:
+<<<<<<<<<< branch
+stuff
+=====
+other class
+>>>>>>>>>> otherbranch
+
+ * you will have to manually go through and fix these issues, deleting what isn't necessary
+ * clean up the files a bit if imports wind up in weird areas and stuff
+ * then, do a git add, commit, push
+
+
+## To turn in slices
+ *  merge the branches you have working back into the "master" branch
+ * fix conflicts
+ * make sure it works
+ * do a commit
+ * create the appropriate tag
+ * do a git push
+ * git push --tags to send the tags to github as well
+
+## Eventually, we will create Downloads, readmes, sitepages, etc

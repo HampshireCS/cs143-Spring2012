@@ -44,13 +44,13 @@ class Kadabra(Abra):
     def get_phrase(self):
         return "Kaaadaaabraaaa!"
 
+
 Animal().speak()
 Dog().speak()
 Cat().speak()
 
 PetDog("Bandit").speak()
 cat = PetCat("Mrs. Pretty")
-cat.says = "..."
 cat.speak()
 
 Abra().speak()

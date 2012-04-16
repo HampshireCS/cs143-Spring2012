@@ -10747,12 +10747,1529 @@ status open
 Animation and Sound NEEDS WORK
 \end_layout
 
-\begin_layout Itemize
-animation
+\begin_layout Subsection
+Image Loading
 \end_layout
 
 \begin_layout Itemize
-sprite sheets
+create file 
+\begin_inset Quotes eld
+\end_inset
+
+resource.py
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+from os.path import abspath, dirname
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ROOT_DIR = dirname( abspath(__file__) ) # gets the folder of the current
+ file "resource.py"
+\end_layout
+
+\begin_layout Plain Layout
+
+DATA_DIR = os.path.join(ROOT_DIR, "data")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+IMG_DIR = os.path.join(DATA_DIR, "images")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# cache images so we don't reload them every time
+\end_layout
+
+\begin_layout Plain Layout
+
+_images = {}
+\end_layout
+
+\begin_layout Plain Layout
+
+def load_image(name):
+\end_layout
+
+\begin_layout Plain Layout
+
+	if name not in _images:
+\end_layout
+
+\begin_layout Plain Layout
+
+		path = os.path.join(IMG_DIR, name + ".bmp")
+\end_layout
+
+\begin_layout Plain Layout
+
+		_images[name] = pygame.image.load(path)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	return _images[name].convert()  # creates a copy of the image each time
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+go into 
+\begin_inset Quotes eld
+\end_inset
+
+level.py
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def __init__(self, size):
+\end_layout
+
+\begin_layout Plain Layout
+
+	self.bounds = Rect((0,0), size)
+\end_layout
+
+\begin_layout Plain Layout
+
+	self.bg_tile = load_image("grass")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def draw_background(self, surf):
+\end_layout
+
+\begin_layout Plain Layout
+
+	tw, th = self.bg_tile.get_size()
+\end_layout
+
+\begin_layout Plain Layout
+
+	sw, sh = surf.get_size()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	for y in range(0, sh, th):
+\end_layout
+
+\begin_layout Plain Layout
+
+		for x in range(0, sw, tw):
+\end_layout
+
+\begin_layout Plain Layout
+
+			surf.blit(self.bg_tile, (x, y))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+There should now be a grass background when you run 
+\begin_inset Quotes eld
+\end_inset
+
+main.py
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+SpriteSheet and Coin Animation
+\end_layout
+
+\begin_layout Itemize
+Spritesheets are a way to combine multiple frames of an animation in one
+ file.
+ Each 
+\begin_inset Quotes eld
+\end_inset
+
+cell
+\begin_inset Quotes erd
+\end_inset
+
+ of the animation is the same size and at a given point of the image
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+subsurfaces
+\begin_inset Quotes erd
+\end_inset
+
+ in pygame are new surfaces the represent a portion of a larger surface.
+ These surfaces access the same data
+\end_layout
+
+\begin_layout Itemize
+colorkey's are which color in an image is drawn as transparent
+\end_layout
+
+\begin_layout Itemize
+create 
+\begin_inset Quotes eld
+\end_inset
+
+spritesheet.py
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+from resource import load_image
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class SpriteSheet(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, image, dimensions, colorkey=-1):
+\end_layout
+
+\begin_layout Plain Layout
+
+		# if given a string, load the image
+\end_layout
+
+\begin_layout Plain Layout
+
+		if type(image) is str:
+\end_layout
+
+\begin_layout Plain Layout
+
+			image = load_image(image)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		# if a colorkey is -1, set it to the color of the topleft corner
+\end_layout
+
+\begin_layout Plain Layout
+
+		if colorkey == -1:
+\end_layout
+
+\begin_layout Plain Layout
+
+			colorkey = image.get_at((0,0))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		# if we have a colorkey, set it
+\end_layout
+
+\begin_layout Plain Layout
+
+		if colorkey:
+\end_layout
+
+\begin_layout Plain Layout
+
+			image.set_colorkey(colorkey)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		# calculate the size of the squares
+\end_layout
+
+\begin_layout Plain Layout
+
+		cols, rows = dimensions
+\end_layout
+
+\begin_layout Plain Layout
+
+		w = self.width = 1.0 * image.get_width() / cols
+\end_layout
+
+\begin_layout Plain Layout
+
+		h = self.height = 1.0 * image.get_height() / rows
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		# build internal array of images
+\end_layout
+
+\begin_layout Plain Layout
+
+		self._images = []
+\end_layout
+
+\begin_layout Plain Layout
+
+		for y in range(rows):
+\end_layout
+
+\begin_layout Plain Layout
+
+			row = []
+\end_layout
+
+\begin_layout Plain Layout
+
+			for x in range(cols):
+\end_layout
+
+\begin_layout Plain Layout
+
+				row.append(image.subsurface((x*w, y*h, w, h))
+\end_layout
+
+\begin_layout Plain Layout
+
+			self._images.append(row)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def get(self, x, y):
+\end_layout
+
+\begin_layout Plain Layout
+
+		return self._images[y][x]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This class gives us access to each cell of a given spritesheet
+\end_layout
+
+\begin_layout Itemize
+we will start with defining 
+\begin_inset Quotes eld
+\end_inset
+
+AnimationFrames
+\begin_inset Quotes erd
+\end_inset
+
+ as a way to store which spritesheet frame happens at which time
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+this is similar to how animated gif's are created
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+create anim.py
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class AnimationFrames(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, frames, loops=-1):
+\end_layout
+
+\begin_layout Plain Layout
+
+		"""
+\end_layout
+
+\begin_layout Plain Layout
+
+		create animation frames from a list of frames
+\end_layout
+
+\begin_layout Plain Layout
+
+		each frame consists of:
+\end_layout
+
+\begin_layout Plain Layout
+
+			[duration, data]
+\end_layout
+
+\begin_layout Plain Layout
+
+		"""
+\end_layout
+
+\begin_layout Plain Layout
+
+		self._times = []
+\end_layout
+
+\begin_layout Plain Layout
+
+		self._data = []
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		total = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+		for t, data in frames:
+\end_layout
+
+\begin_layout Plain Layout
+
+			total += t
+\end_layout
+
+\begin_layout Plain Layout
+
+			self._times.append(total)
+\end_layout
+
+\begin_layout Plain Layout
+
+			self._data.append(data)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.end = total
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.loops = loops
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def get(self, time):
+\end_layout
+
+\begin_layout Plain Layout
+
+		# if inifinite loops or still within loop count, wrap time
+\end_layout
+
+\begin_layout Plain Layout
+
+		if self.loops = -1 or time < self.loops * self.end:
+\end_layout
+
+\begin_layout Plain Layout
+
+			time %= self.end
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\end_layout
+
+\begin_layout Plain Layout
+
+		# if we are past the end, return the last frame
+\end_layout
+
+\begin_layout Plain Layout
+
+		if time > self.end:
+\end_layout
+
+\begin_layout Plain Layout
+
+			return self._data[-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		# otherwise, find the index of the current frame
+\end_layout
+
+\begin_layout Plain Layout
+
+		idx = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+		while self._times[idx] < t:
+\end_layout
+
+\begin_layout Plain Layout
+
+			idx += 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		return self._data[idx]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+now we need an actual 
+\begin_inset Quotes eld
+\end_inset
+
+Animation
+\begin_inset Quotes erd
+\end_inset
+
+ class which links AnimationFrames to SpriteSheets
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Animation(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, spritesheet, frames):
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		if not isinstance(frames, AnimationFrames):
+\end_layout
+
+\begin_layout Plain Layout
+
+			frames = AnimationFrames(frames)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.spritesheet = spritesheet
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.frames = frames
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.time = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.update(0)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def get_frame_data(self, t):
+\end_layout
+
+\begin_layout Plain Layout
+
+		return self.frames.get(t)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def update(self, dt):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.time += dt
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.x, self.y = self.get_frame_data(self.time)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def get_current_frame(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		return self.spritesheet.get(self.x, self.y)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+now, let's start using the animation with coins (coin.py)
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+from anim import Animation, AnimationFrames
+\end_layout
+
+\begin_layout Plain Layout
+
+from spritesheet import SpriteSheet
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# this is to avoid reloading everything per coin
+\end_layout
+
+\begin_layout Plain Layout
+
+COIN_FRAMES = None
+\end_layout
+
+\begin_layout Plain Layout
+
+COIN_SPRITES = None
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class CoinAnimation(Animation):
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		global COIN_FRAMES, COIN_SPRITES
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		if not COIN_SPRITES:
+\end_layout
+
+\begin_layout Plain Layout
+
+			COIN_SPRITES = SpriteSheet("coin", (8, 1))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		if not COIN_FRAMES:
+\end_layout
+
+\begin_layout Plain Layout
+
+			COIN_FRAMES = AnimationFrames([ (25, (i, 0)) for i in range(8) ])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		Animation.__init__(self, COIN_SPRITES, COIN_FRAMES)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Coin(Sprite):
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, loc):
+\end_layout
+
+\begin_layout Plain Layout
+
+		Sprite.__init__(self)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.anim = CoinAnimation()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.image = self.anim.get_current_frame()
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.rect = self.image.get_rect()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.rect.center = loc
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def update(self, dt):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.anim.update(dt)
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.image = self.anim.get_current_frame()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Player Animation
+\end_layout
+
+\begin_layout Standard
+Player animations are slightly more complicated in this game, we will need
+ to worry about the direction they are facing and an 
+\begin_inset Quotes eld
+\end_inset
+
+idle
+\begin_inset Quotes erd
+\end_inset
+
+ animation
+\end_layout
+
+\begin_layout Itemize
+First let's add the PlayerAnimation class
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+from anim import Animation, AnimationFrames
+\end_layout
+
+\begin_layout Plain Layout
+
+from spritesheet import Spritesheet
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class PlayerAnimation(Animation):
+\end_layout
+
+\begin_layout Plain Layout
+
+	# sign of vx,vy versus the row in player sprite images
+\end_layout
+
+\begin_layout Plain Layout
+
+	# this is just known from looking at the images
+\end_layout
+
+\begin_layout Plain Layout
+
+	_rows = {
+\end_layout
+
+\begin_layout Plain Layout
+
+		(-1,-1): 6,
+\end_layout
+
+\begin_layout Plain Layout
+
+		( 0,-1): 2,
+\end_layout
+
+\begin_layout Plain Layout
+
+		( 1,-1): 1,
+\end_layout
+
+\begin_layout Plain Layout
+
+        (-1, 1): 7,
+\end_layout
+
+\begin_layout Plain Layout
+
+		( 0, 1): 3,
+\end_layout
+
+\begin_layout Plain Layout
+
+        ( 1, 1): 4,
+\end_layout
+
+\begin_layout Plain Layout
+
+        (-1, 0): 5,
+\end_layout
+
+\begin_layout Plain Layout
+
+        ( 1, 0): 0
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, player, image, duration):
+\end_layout
+
+\begin_layout Plain Layout
+
+		spritesheet = SpriteSheet(image, (3,8))
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+		frames = AnimationFrames([
+\end_layout
+
+\begin_layout Plain Layout
+
+			[duration, 1],
+\end_layout
+
+\begin_layout Plain Layout
+
+			[duration, 0],
+\end_layout
+
+\begin_layout Plain Layout
+
+			[duration, 2],
+\end_layout
+
+\begin_layout Plain Layout
+
+			[duration, 0]
+\end_layout
+
+\begin_layout Plain Layout
+
+		])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		Animation.__init__(self, spritesheet, frames)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.player = player
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.facing = self._rows[(0, 1)]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\end_layout
+
+\begin_layout Plain Layout
+
+	def idle(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.time = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.y = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def update(self, dt):
+\end_layout
+
+\begin_layout Plain Layout
+
+		if self.player.vx == 0 and self.player.vy == 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.idle()
+\end_layout
+
+\begin_layout Plain Layout
+
+			return
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		# if we aren't idle we need to figure out our animation frame
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.time += dt
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		if self.player.vx != 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+			x = int( self.player.vx / abs(self.player.vx) )
+\end_layout
+
+\begin_layout Plain Layout
+
+		else:
+\end_layout
+
+\begin_layout Plain Layout
+
+			x = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		if self.player.vy != 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+			y = int( self.player.vy / abs(self.player.vy) )
+\end_layout
+
+\begin_layout Plain Layout
+
+		else:
+\end_layout
+
+\begin_layout Plain Layout
+
+			y = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.x = self.get_frame_data(self.time)
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.y = self._rows[(x,y)]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+now modify the Player class
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Player(Sprite):
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		# replace image code with
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.anim = PlayerAnimation(self, "infantry", 60)
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.image = self.anim.get_current_frame()
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.rect = self.image.get_rect()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def update(self, dt):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.anim.update(dt)
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.image = self.anim.get_current_frame()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		# rest of update code
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Music
+\end_layout
+
+\begin_layout Itemize
+modify 
+\begin_inset Quotes eld
+\end_inset
+
+resource.py
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+MUSIC_DIR = os.path.join(DATA_DIR, "music")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def play_song(song, times=-1):
+\end_layout
+
+\begin_layout Plain Layout
+
+	path = os.path.join(MUSIC_DIR, song + ".ogg")
+\end_layout
+
+\begin_layout Plain Layout
+
+	pygame.mixer.music.load(path)
+\end_layout
+
+\begin_layout Plain Layout
+
+	pygame.mixer.music.play(times)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+add the following line to 
+\begin_inset Quotes eld
+\end_inset
+
+level.py
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+from resource import load_image, play_song
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Level(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+	song = "maintheme"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def restart(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		#...skip to end...
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\end_layout
+
+\begin_layout Plain Layout
+
+		play_song(self.song)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Sound
+\end_layout
+
+\begin_layout Standard
+Sounds, like images, should be cached
+\end_layout
+
+\begin_layout Itemize
+modify 
+\begin_inset Quotes eld
+\end_inset
+
+resource.py
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SFX_DIR = os.path.join(DATA_DIR, "sfx")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+_sfx = {}
+\end_layout
+
+\begin_layout Plain Layout
+
+def load_sfx(name):
+\end_layout
+
+\begin_layout Plain Layout
+
+	if name not in _sfx:
+\end_layout
+
+\begin_layout Plain Layout
+
+		path = os.path.join(SFX_DIR, name + ".ogg")
+\end_layout
+
+\begin_layout Plain Layout
+
+		_sfx[name] = pygame.mixer.Sound(path)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	return _sfx[name]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+update 
+\begin_inset Quotes eld
+\end_inset
+
+level.py
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+from resource import load_image, load_sfx, play_song
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Level(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+	coin_sfx = "coin"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, size):
+\end_layout
+
+\begin_layout Plain Layout
+
+		# snip
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.coin_fx = load_sfx(self.coin_sfx)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def update(self, dt):
+\end_layout
+
+\begin_layout Plain Layout
+
+		# snip
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		if spritecollide(self.player, self.coins, True):
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.coin_sfx.stop()   # so we aren't layering coin get sfx
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.coin_sfx.play()
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

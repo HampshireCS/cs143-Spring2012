@@ -44,7 +44,13 @@ def followers(users, *names):
 #          [ "Steve M", "Gerald Q", "Frank L" ]
 def underage_follows(users):
     "find who underage users follow"
-
+    underage = [ n for n in users.keys() if users[n]["age"] <= 12 ]
+    ff = []
+    print underage
+    for name in underage:
+        ff += users[name]["follows"]
+        print ff
+    return set(ff)
 
 
 # 3. foaf 
