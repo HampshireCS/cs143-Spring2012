@@ -11651,7 +11651,7 @@ status open
 
 \begin_layout Plain Layout
 
-from anim import Animation, AnimationFrames
+from anim import Animation
 \end_layout
 
 \begin_layout Plain Layout
@@ -11680,52 +11680,42 @@ class PlayerAnimation(Animation):
 
 \begin_layout Plain Layout
 
-	_rows = {
+	_rows = {( 0, 1): 0,
 \end_layout
 
 \begin_layout Plain Layout
 
-		(-1,-1): 6,
+		     (-1, 0): 1,
 \end_layout
 
 \begin_layout Plain Layout
 
-		( 0,-1): 2,
+		     ( 1, 0): 2,
 \end_layout
 
 \begin_layout Plain Layout
 
-		( 1,-1): 1,
+             ( 0,-1): 3,
 \end_layout
 
 \begin_layout Plain Layout
 
-        (-1, 1): 7,
+		     (-1, 1): 4,
 \end_layout
 
 \begin_layout Plain Layout
 
-		( 0, 1): 3,
+             (-1,-1): 5,
 \end_layout
 
 \begin_layout Plain Layout
 
-        ( 1, 1): 4,
+             ( 1, 1): 6,
 \end_layout
 
 \begin_layout Plain Layout
 
-        (-1, 0): 5,
-\end_layout
-
-\begin_layout Plain Layout
-
-        ( 1, 0): 0
-\end_layout
-
-\begin_layout Plain Layout
-
-	}
+             ( 1,-1): 7 }
 \end_layout
 
 \begin_layout Plain Layout
@@ -11743,6 +11733,20 @@ class PlayerAnimation(Animation):
 
 \begin_layout Plain Layout
 
+		self.player = player
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.y = self._rows[(0, 1)]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
 		spritesheet = SpriteSheet(image, (3,8))
 \end_layout
 
@@ -11753,32 +11757,22 @@ class PlayerAnimation(Animation):
 
 \begin_layout Plain Layout
 
-		frames = AnimationFrames([
+		frames = [(duration, 0), 
 \end_layout
 
 \begin_layout Plain Layout
 
-			[duration, 1],
+                  (duration, 1),
 \end_layout
 
 \begin_layout Plain Layout
 
-			[duration, 0],
+			      (duration, 2),
 \end_layout
 
 \begin_layout Plain Layout
 
-			[duration, 2],
-\end_layout
-
-\begin_layout Plain Layout
-
-			[duration, 0]
-\end_layout
-
-\begin_layout Plain Layout
-
-		])
+				  (duration, 1) ]
 \end_layout
 
 \begin_layout Plain Layout
@@ -11792,36 +11786,11 @@ class PlayerAnimation(Animation):
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.player = player
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.facing = self._rows[(0, 1)]
-\end_layout
-
-\begin_layout Plain Layout
-
 		
 \end_layout
 
 \begin_layout Plain Layout
 
-	def idle(self):
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.time = 0
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.y = 0
 \end_layout
 
 \begin_layout Plain Layout
@@ -11835,17 +11804,7 @@ class PlayerAnimation(Animation):
 
 \begin_layout Plain Layout
 
-		if self.player.vx == 0 and self.player.vy == 0:
-\end_layout
-
-\begin_layout Plain Layout
-
-			self.idle()
-\end_layout
-
-\begin_layout Plain Layout
-
-			return
+		vx, vy = self.player.vx, self.player.vy
 \end_layout
 
 \begin_layout Plain Layout
@@ -11854,36 +11813,17 @@ class PlayerAnimation(Animation):
 
 \begin_layout Plain Layout
 
-		# if we aren't idle we need to figure out our animation frame
+		# calculate the direction facing
 \end_layout
 
 \begin_layout Plain Layout
 
-		self.time += dt
+		try: vx /= abs(vx)
 \end_layout
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-		if self.player.vx != 0:
-\end_layout
-
-\begin_layout Plain Layout
-
-			x = int( self.player.vx / abs(self.player.vx) )
-\end_layout
-
-\begin_layout Plain Layout
-
-		else:
-\end_layout
-
-\begin_layout Plain Layout
-
-			x = 0
+		except: vx = 0
 \end_layout
 
 \begin_layout Plain Layout
@@ -11892,12 +11832,36 @@ class PlayerAnimation(Animation):
 
 \begin_layout Plain Layout
 
-		if self.player.vy != 0:
+		try: vy /= abs(vy)
 \end_layout
 
 \begin_layout Plain Layout
 
-			y = int( self.player.vy / abs(self.player.vy) )
+		except: vy = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		# figure out the row (which way facing)
+\end_layout
+
+\begin_layout Plain Layout
+
+		if vx == 0 and vy == 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.time = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.x = 1
 \end_layout
 
 \begin_layout Plain Layout
@@ -11907,21 +11871,17 @@ class PlayerAnimation(Animation):
 
 \begin_layout Plain Layout
 
-			y = 0
+			self.time += dt
 \end_layout
 
 \begin_layout Plain Layout
 
+			self.x = self.get_frame_data(self.time)
 \end_layout
 
 \begin_layout Plain Layout
 
-		self.x = self.get_frame_data(self.time)
-\end_layout
-
-\begin_layout Plain Layout
-
-		self.y = self._rows[(x,y)]
+			self.y = self._rows[(vx, vy)]
 \end_layout
 
 \end_inset
@@ -11952,7 +11912,7 @@ class Player(Sprite):
 
 \begin_layout Plain Layout
 
-		self.anim = PlayerAnimation(self, "infantry", 60)
+		self.anim = PlayerAnimation(self, "mario", 60)
 \end_layout
 
 \begin_layout Plain Layout
@@ -12280,14 +12240,194 @@ Menus NEEDS WORK
 state machines
 \end_layout
 
+\begin_layout Standard
+State machines are a way to perform different logic based on the 
+\begin_inset Quotes eld
+\end_inset
+
+state
+\begin_inset Quotes erd
+\end_inset
+
+ your program is in
+\end_layout
+
 \begin_layout Itemize
-show Pacman example
+cats can be sleeping, awake, and alert and will react differently to the
+ world depending
 \end_layout
 
 \begin_layout Standard
-\begin_inset Graphics
-	filename Figures/day20-2-Pacman.eps
-	width 100col%
+The big advantage of using formal 
+\begin_inset Quotes eld
+\end_inset
+
+states
+\begin_inset Quotes erd
+\end_inset
+
+ instead of just if statements
+\end_layout
+
+\begin_layout Itemize
+it makes your code easier to read 
+\end_layout
+
+\begin_layout Itemize
+it is easier to add new states
+\end_layout
+
+\begin_layout Itemize
+it is easier to transition between things
+\end_layout
+
+\begin_layout Subsubsection
+Converting 
+\begin_inset Quotes eld
+\end_inset
+
+Game
+\begin_inset Quotes erd
+\end_inset
+
+ to 
+\begin_inset Quotes eld
+\end_inset
+
+Application
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+copy 
+\begin_inset Quotes eld
+\end_inset
+
+game.py
+\begin_inset Quotes erd
+\end_inset
+
+ to 
+\begin_inset Quotes eld
+\end_inset
+
+app.py
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we are removing all the game specific stuff
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+import pygame
+\end_layout
+
+\begin_layout Plain Layout
+
+from pygame.locals import *
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Application(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.screen = pygame.display.get_surface()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def quit(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.done = True
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def run(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.done = False
+\end_layout
+
+\begin_layout Plain Layout
+
+		while not self.done:
+\end_layout
+
+\begin_layout Plain Layout
+
+			for event in pygame.event.get():
+\end_layout
+
+\begin_layout Plain Layout
+
+				if event.type == QUIT:
+\end_layout
+
+\begin_layout Plain Layout
+
+					self.quit():
+\end_layout
+
+\begin_layout Plain Layout
+
+				# other input
+\end_layout
+
+\begin_layout Plain Layout
+
+			# update
+\end_layout
+
+\begin_layout Plain Layout
+
+			# draw
+\end_layout
+
+\begin_layout Plain Layout
+
+			pygame.display.flip()		
+\end_layout
 
 \end_inset
 
@@ -12295,7 +12435,861 @@ show Pacman example
 \end_layout
 
 \begin_layout Itemize
-pgu libraries
+Now, what gets updated, handling of input, and drawing are state specific
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+these states are things like 
+\begin_inset Quotes eld
+\end_inset
+
+in game
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+paused
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+menu
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+we need to outline the stages of a state
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class ApplicationState(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, app):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.app = app
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.setup()
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	# called when state is created for the first time
+\end_layout
+
+\begin_layout Plain Layout
+
+	def setup(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		pass
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# called when the state is resumed (not created)
+\end_layout
+
+\begin_layout Plain Layout
+
+	def resume(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		pass
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# handle input events
+\end_layout
+
+\begin_layout Plain Layout
+
+	def handle_event(self, event):
+\end_layout
+
+\begin_layout Plain Layout
+
+		pass
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	def update(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		pass
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def draw(self, screen):
+\end_layout
+
+\begin_layout Plain Layout
+
+		pass
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+setup Application to take advantage of states
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+import inspect
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Application(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self, state):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.screen = pygame.display.get_surface()
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.set_state(state)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# snip
+\end_layout
+
+\begin_layout Plain Layout
+
+	def set_state(self, state):
+\end_layout
+
+\begin_layout Plain Layout
+
+		# if state is a class, initialize it
+\end_layout
+
+\begin_layout Plain Layout
+
+		if inspect.isclass(state):
+\end_layout
+
+\begin_layout Plain Layout
+
+			state = state(self)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		state.resume()
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.state = state
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def run(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.done = False
+\end_layout
+
+\begin_layout Plain Layout
+
+		while not self.done:
+\end_layout
+
+\begin_layout Plain Layout
+
+			for event in pygame.event.get():
+\end_layout
+
+\begin_layout Plain Layout
+
+				if event.type == QUIT:
+\end_layout
+
+\begin_layout Plain Layout
+
+					self.quit()
+\end_layout
+
+\begin_layout Plain Layout
+
+				else:
+\end_layout
+
+\begin_layout Plain Layout
+
+					self.state.handle_event(event)
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.state.update()
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.state.draw(self.screen)
+\end_layout
+
+\begin_layout Plain Layout
+
+			pygame.display.flip()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Next, open 
+\begin_inset Quotes eld
+\end_inset
+
+game.py
+\begin_inset Quotes erd
+\end_inset
+
+ and rework the main game class to fit in this new structure
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+from app import ApplicationState
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Game(ApplicationState):
+\end_layout
+
+\begin_layout Plain Layout
+
+	fps = 60
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def setup(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.level = Level(self.app.screen.get_size())
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.level.restart()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# clock is recreated on resume so time "stood still"
+\end_layout
+
+\begin_layout Plain Layout
+
+	# since the game was paused
+\end_layout
+
+\begin_layout Plain Layout
+
+	def resume(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.clock = pygame.time.Clock()
+\end_layout
+
+\begin_layout Plain Layout
+
+		pygame.mixer.music.unpause()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def update(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		dt = self.clock.tick(self.fps)
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.level.update(dt)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def draw(self, screen):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.level.draw(screen)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+finally, modify your main file to use this new framework
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+from app import Application
+\end_layout
+
+\begin_layout Plain Layout
+
+from game import Game
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def main():
+\end_layout
+
+\begin_layout Plain Layout
+
+	# initialize pygame
+\end_layout
+
+\begin_layout Plain Layout
+
+	pygame.init()
+\end_layout
+
+\begin_layout Plain Layout
+
+	pygame.display.set_mode((800, 800))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	app = Application(Game)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	try:
+\end_layout
+
+\begin_layout Plain Layout
+
+		app.run()
+\end_layout
+
+\begin_layout Plain Layout
+
+	except KeyboardInterrupt:
+\end_layout
+
+\begin_layout Plain Layout
+
+		app.quit()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Transitioning between states
+\end_layout
+
+\begin_layout Standard
+Now that there is a a way to create new states, the obvious thing is to
+ make menu states
+\end_layout
+
+\begin_layout Itemize
+edit game.py and add a new MainMenu classes
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class MainMenu(ApplicationState):
+\end_layout
+
+\begin_layout Plain Layout
+
+	fg_color = 255,255,255
+\end_layout
+
+\begin_layout Plain Layout
+
+	bg_color = 0,0,0
+\end_layout
+
+\begin_layout Plain Layout
+
+	flash_rate = 500
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def setup(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		font = pygame.font.Font(None, 80)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		font.set_bold(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.title = font.render("Super Coin Get", True, self.fg_color, self.bg_color)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		font.set_bold(False)
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.set_italic(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.inst = font.render("Press <SPACE> to Start", True, self.fg_color, self.bg_col
+or)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def resume(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.clock = pygame.time.Clock()
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.time = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def handle_event(self, event):
+\end_layout
+
+\begin_layout Plain Layout
+
+		if event.type == KEYDOWN and event.key == K_ESCAPE:
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.app.quit()
+\end_layout
+
+\begin_layout Plain Layout
+
+		elif event.type == KEYDOWN and event.key == K_SPACE:
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.app.set_state(Game)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def update(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.time += self.clock.tick()
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.time %= 2 * self.flash_rate
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.draw_inst = self.time < self.flash_rate
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def draw(self, screen):
+\end_layout
+
+\begin_layout Plain Layout
+
+		bounds = screen.get_rect()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		screen.fill(self.bg_color)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		rect = self.title.get_rect()
+\end_layout
+
+\begin_layout Plain Layout
+
+		rect.center = bounds.centerx, bounds.centery - bounds.height / 4
+\end_layout
+
+\begin_layout Plain Layout
+
+		screen.blit(self.title, rect)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		if self.draw_inst:
+\end_layout
+
+\begin_layout Plain Layout
+
+			rect = self.title.get_rect()
+\end_layout
+
+\begin_layout Plain Layout
+
+			rect.center = bounds.centerx, bounds.centery - bounds.height / 4
+\end_layout
+
+\begin_layout Plain Layout
+
+			screen.blit(self.title, rect)		
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+modify main.py to start with the MainMenu
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+from game import MainMenu
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+app = Application(MainMenu)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now let's add a pausemenu (note, the pause menu's handle_event and the Game's
+ handle_event would be good inclass excercises)
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class PauseMenu(ApplicationState):
+\end_layout
+
+\begin_layout Plain Layout
+
+	def resume(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.game = self.app.state
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\end_layout
+
+\begin_layout Plain Layout
+
+		screen = pygame.display.get_surface()
+\end_layout
+
+\begin_layout Plain Layout
+
+		frame = screen.convert_alpha()
+\end_layout
+
+\begin_layout Plain Layout
+
+		frame.fill((0,0,0,160))
+\end_layout
+
+\begin_layout Plain Layout
+
+		screen.blit(frame, (0,0))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def handle_event(self, event):
+\end_layout
+
+\begin_layout Plain Layout
+
+		if event.type == KEYDOWN and event.key == K_q:
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.app.set_state(MainMenu)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		elif event.type == KEYDOWN and (event.key == K_SPACE or event.key == K_ESCAPE):
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.app.set_state(self.game)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+and connect it to the game class
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Game(ApplicationState):
+\end_layout
+
+\begin_layout Plain Layout
+
+	def handle_event(self, event):
+\end_layout
+
+\begin_layout Plain Layout
+
+		if event.type == KEYDOWN and event.key == K_ESCAPE:
+\end_layout
+
+\begin_layout Plain Layout
+
+			self.app.set_state(PauseMenu)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
