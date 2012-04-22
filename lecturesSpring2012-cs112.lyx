@@ -13296,29 +13296,1424 @@ class Game(ApplicationState):
 Real World Python NEEDS WORK
 \end_layout
 
-\begin_layout Itemize
-show them how to find libraries
+\begin_layout Standard
+Python is a scripting language with a TON of libraries.
+ This let's you use python to do almost anythin
 \end_layout
 
 \begin_layout Itemize
-VIRTICAL SLICE DUE
-\end_layout
-
-\begin_layout Itemize
-the example is a deathfest character generator
-\end_layout
-
-\begin_layout Itemize
-building command line programs
-\end_layout
-
-\begin_layout Itemize
-GUI
+libraries for:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-show them how they can build real stand along programs
+scanning RSS feeds
+\end_layout
+
+\begin_layout Itemize
+checking email
+\end_layout
+
+\begin_layout Itemize
+advanced math/stats
+\end_layout
+
+\begin_layout Itemize
+LibreOffice (openoffice) uses python in it's spreadsheets and macros and
+ more
+\end_layout
+
+\begin_layout Itemize
+creating websites
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Many people have commented on this:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+open up a python interpreter and type 
+\begin_inset Quotes eld
+\end_inset
+
+import antigravity
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+http://xkcd.com/353/
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Real World Problem
+\end_layout
+
+\begin_layout Standard
+One thing that happens (at least for Alec) on a nearly weekly basis is needing
+ LOTS of information off of a website.
+ This is 
+\begin_inset Quotes eld
+\end_inset
+
+web scraping
+\begin_inset Quotes erd
+\end_inset
+
+, scraping information off of the web (duh).
+ This can be used to do things like watch auctions, download webcomics automatic
+ally, and more.
+\end_layout
+
+\begin_layout Standard
+The problem we will solve is finding everyone's name and email from the
+ hampshire directory
+\end_layout
+
+\begin_layout Subsubsection
+How do we get started solving this
+\end_layout
+
+\begin_layout Enumerate
+Look at the site and start pseudocoding
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+go to http://directory.hampshire.edu
+\end_layout
+
+\begin_layout Enumerate
+notice under search 
+\begin_inset Quotes eld
+\end_inset
+
+blank to search all
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+point out there are multiple pages
+\end_layout
+
+\begin_layout Enumerate
+pseudocode
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/usr/bin/env python
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# page = first page
+\end_layout
+
+\begin_layout Plain Layout
+
+# while page exists:
+\end_layout
+
+\begin_layout Plain Layout
+
+    # process page
+\end_layout
+
+\begin_layout Plain Layout
+
+    # grab next page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Next, find the libraries to help
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+google web scrapping with python (click stacked overflow link)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+there are a LOT of different options, we know/have picked BeautifulSoup
+\end_layout
+
+\begin_layout Enumerate
+normally you look at a bunch of options and pick which one looks good
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+download and install BeautifulSoup
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+sudo easy_install BeautifulSoup
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+make sure it's installed (it is on lab machines)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Get started with the code (you should run the code after each block)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+copy example code from stacked overflw (comment out)
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/usr/bin/env python
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# page = first page 
+\end_layout
+
+\begin_layout Plain Layout
+
+# while page exists: 
+\end_layout
+
+\begin_layout Plain Layout
+
+   # process page 
+\end_layout
+
+\begin_layout Plain Layout
+
+   # grab next page 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+""" import urllib2 
+\end_layout
+
+\begin_layout Plain Layout
+
+from BeautifulSoup import BeautifulSoup
+\end_layout
+
+\begin_layout Plain Layout
+
+soup = BeautifulSoup(urllib2.urlopen('http://www.timeanddate.com/worldclock/astrono
+my.html?n=78').read())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for row in soup('table', {'class' : 'spad'})[0].tbody('tr'):   tds = row('td')
+   print tds[0].string, tds[1].string   # will print date and sunrise """
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+move import lines out of comments
+\end_layout
+
+\begin_layout Enumerate
+make a rough function that opens a url and returns a 
+\begin_inset Quotes eld
+\end_inset
+
+soup
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+this function will take the 
+\begin_inset Quotes eld
+\end_inset
+
+next links
+\begin_inset Quotes erd
+\end_inset
+
+ on the page
+\end_layout
+
+\begin_layout Enumerate
+open firebug and look at the next link to see what kind of url you'll get
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+relative links, so our function should take relative
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+break apart steps of stackedoverflow code to define this function
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+soup = line needs to be multiple lines
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+current code (running should not crash):
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/usr/bin/env python
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import urllib2
+\end_layout
+
+\begin_layout Plain Layout
+
+from BeautifulSoup import BeautifulSoup
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DOMAIN = "http://www.hampshire.edu"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def open_soup(url):
+\end_layout
+
+\begin_layout Plain Layout
+
+    page = urllib2.urlopen(DOMAIN + url)
+\end_layout
+
+\begin_layout Plain Layout
+
+    return BeautifulSoup(page.read())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+soup = open_soup("/directory/results.php")
+\end_layout
+
+\begin_layout Plain Layout
+
+# while page exists:
+\end_layout
+
+\begin_layout Plain Layout
+
+    # process page
+\end_layout
+
+\begin_layout Plain Layout
+
+    # grab next page
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+"""
+\end_layout
+
+\begin_layout Plain Layout
+
+for row in soup('table', {'class' : 'spad'})[0].tbody('tr'):
+\end_layout
+
+\begin_layout Plain Layout
+
+  tds = row('td')
+\end_layout
+
+\begin_layout Plain Layout
+
+  print tds[0].string, tds[1].string
+\end_layout
+
+\begin_layout Plain Layout
+
+  # will print date and sunrise
+\end_layout
+
+\begin_layout Plain Layout
+
+"""
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Work on grabbing EVERY page
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+the 
+\begin_inset Quotes eld
+\end_inset
+
+find
+\begin_inset Quotes erd
+\end_inset
+
+ function of BeautifulSoup can take almost anthing in an HTML tag to search
+ by, class, id, etc
+\end_layout
+
+\begin_layout Enumerate
+let's test the find function
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def next_page(soup):
+\end_layout
+
+\begin_layout Plain Layout
+
+	tag = soup.find(text="NEXT")
+\end_layout
+
+\begin_layout Plain Layout
+
+	return tag.get("href")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+soup = open_soup("/directory/results.php")
+\end_layout
+
+\begin_layout Plain Layout
+
+print next_page(soup)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Error, NavigableString....
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+must not be a link, must be the actual text
+\end_layout
+
+\begin_layout Enumerate
+try returning parent instead
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def next_page(soup):
+\end_layout
+
+\begin_layout Plain Layout
+
+	tag = soup.find(text="NEXT").parent
+\end_layout
+
+\begin_layout Plain Layout
+
+	return tag.get("href")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+soup = open_soup("/directory/results.php")
+\end_layout
+
+\begin_layout Plain Layout
+
+print next_page(soup)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+works, now the loop can be built (set soup to None if there is no more pages)
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+soup = open_soup("/directory/results.php")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+while True:  
+\end_layout
+
+\begin_layout Plain Layout
+
+	# process page
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# grab next page
+\end_layout
+
+\begin_layout Plain Layout
+
+	url = next_page(soup)
+\end_layout
+
+\begin_layout Plain Layout
+
+	print url
+\end_layout
+
+\begin_layout Plain Layout
+
+	soup = open_soup(url)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Error, concating 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+seems that if there is no NEXT page, href is None
+\end_layout
+
+\begin_layout Enumerate
+easy tweak to our code
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+soup = open_soup("/directory/results.php")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+while soup is not None:  
+\end_layout
+
+\begin_layout Plain Layout
+
+	# process page
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# grab next page
+\end_layout
+
+\begin_layout Plain Layout
+
+	url = next_page(soup)
+\end_layout
+
+\begin_layout Plain Layout
+
+	print url
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	if url is not None:
+\end_layout
+
+\begin_layout Plain Layout
+
+		soup = open_soup(url)
+\end_layout
+
+\begin_layout Plain Layout
+
+	else:
+\end_layout
+
+\begin_layout Plain Layout
+
+		soup = None
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+code doesn't crash, we can move on
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Scraping the information from the page
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+go back to firebug
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+there is a lot of junk pages so we can skip ahead to page 10 or so
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+easiest way to identify people is that people have email addresses
+\end_layout
+
+\begin_layout Enumerate
+look at link for email
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+mailto.php?email=xxxx
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+BeautifulSoup can scan that with regular expressions
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+don't worry about understanding it exactly
+\end_layout
+
+\begin_layout Enumerate
+change top of file
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+import re
+\end_layout
+
+\begin_layout Plain Layout
+
+import urllib2
+\end_layout
+
+\begin_layout Plain Layout
+
+from BeautifulSoup import BeautifulSoup
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DOMAIN = "http://www.hampshire.edu"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+mailhref = re.compile(r"^mailto
+\backslash
+.php
+\backslash
+?email=(.*)$")
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+^ = start of line
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+.
+ 
+\backslash
+? = normal "?" escaped
+\end_layout
+
+\begin_layout Standard
+(.*) = grab ANYTHING and as much as there is
+\end_layout
+
+\begin_layout Standard
+$ = end of line
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+let's try just printing every person
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+while soup is not None:  
+\end_layout
+
+\begin_layout Plain Layout
+
+	# process page
+\end_layout
+
+\begin_layout Plain Layout
+
+	for mail_a in soup.findAll("a", href=mailhref):
+\end_layout
+
+\begin_layout Plain Layout
+
+		href = mail_a.get("href")
+\end_layout
+
+\begin_layout Plain Layout
+
+		user = mailhref.findall(href)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		print user
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# grab next page
+\end_layout
+
+\begin_layout Plain Layout
+
+	url = next_page(soup)
+\end_layout
+
+\begin_layout Plain Layout
+
+	if url is not None:
+\end_layout
+
+\begin_layout Plain Layout
+
+		soup = open_soup(url)
+\end_layout
+
+\begin_layout Plain Layout
+
+	else:
+\end_layout
+
+\begin_layout Plain Layout
+
+		soup = None
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+NOTE, the first findAll has a capital A and the second doesn't
+\end_layout
+
+\begin_layout Enumerate
+the 
+\begin_inset Quotes eld
+\end_inset
+
+re
+\begin_inset Quotes erd
+\end_inset
+
+ lib uses all lower case
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+BeautifulSoup
+\begin_inset Quotes erd
+\end_inset
+
+ uses camel case
+\end_layout
+
+\begin_layout Enumerate
+THIS gets really annoying which is why it's nice if you use the python standards
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+you may want to run this with 
+\begin_inset Quotes eld
+\end_inset
+
+ | less
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+user is coming out as a list, so grab the first item
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+user = mailhref.findall(href)[0]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Finding the rest of the information
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+email
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+for mail_a in soup.findAll("a", href=mailhref):
+\end_layout
+
+\begin_layout Plain Layout
+
+		href = mail_a.get("href")
+\end_layout
+
+\begin_layout Plain Layout
+
+		user = mailhref.findall(href)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		email = user + "@hampshire.edu"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+name
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+look at the page
+\end_layout
+
+\begin_layout Enumerate
+the 
+\begin_inset Quotes eld
+\end_inset
+
+td
+\begin_inset Quotes erd
+\end_inset
+
+ that contains the link, the name is in the first font tag
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+td = mail_a.parent
+\end_layout
+
+\begin_layout Plain Layout
+
+fullname = td.find("font").string
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+This regular expression just works for splitting names (optional)
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# at top of page
+\end_layout
+
+\begin_layout Plain Layout
+
+namechunks = 
+\end_layout
+
+\begin_layout Plain Layout
+
+ re.compile(r"^(.*), (.*?) ?([A-Z])?
+\backslash
+.?$")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# after fullname
+\end_layout
+
+\begin_layout Plain Layout
+
+last, first, mi = namechunks.findall(fullname)[0]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+role (staff/student/etc(
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+role is in the first 
+\begin_inset Quotes eld
+\end_inset
+
+td
+\begin_inset Quotes erd
+\end_inset
+
+ of the row
+\end_layout
+
+\begin_layout Enumerate
+then find the first 
+\begin_inset Quotes eld
+\end_inset
+
+td
+\begin_inset Quotes erd
+\end_inset
+
+ of the row
+\end_layout
+
+\begin_layout Enumerate
+in that cell, find the first tag with text in it
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+tr = td.parent
+\end_layout
+
+\begin_layout Plain Layout
+
+role = tr.find("td").find(text=True).string
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+What to do with this info?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+we could create a 
+\begin_inset Quotes eld
+\end_inset
+
+Person
+\begin_inset Quotes erd
+\end_inset
+
+ object which stores all this data so we can manipulate it
+\end_layout
+
+\begin_layout Enumerate
+we could filter by role
+\end_layout
+
+\begin_layout Enumerate
+we can store all this information for later
+\end_layout
+
+\begin_layout Enumerate
+we could create a mailing list
+\end_layout
+
+\begin_layout Enumerate
+printing it as a single 
+\begin_inset Quotes eld
+\end_inset
+
+mailing list
+\begin_inset Quotes erd
+\end_inset
+
+ for students is pretty easy
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/usr/bin/env python
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import re
+\end_layout
+
+\begin_layout Plain Layout
+
+import urllib2
+\end_layout
+
+\begin_layout Plain Layout
+
+from BeautifulSoup import BeautifulSoup
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DOMAIN = "http://www.hampshire.edu"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+mailhref = re.compile(r"^mailto
+\backslash
+.php
+\backslash
+?email=(.*)$")
+\end_layout
+
+\begin_layout Plain Layout
+
+namechunks = re.compile(r"^(.*), (.*?)(?: ([A-Z])
+\backslash
+.)?$")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def open_soup(url):
+\end_layout
+
+\begin_layout Plain Layout
+
+    page = urllib2.urlopen(DOMAIN + url)
+\end_layout
+
+\begin_layout Plain Layout
+
+    return BeautifulSoup(page.read())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def next_page(soup):
+\end_layout
+
+\begin_layout Plain Layout
+
+    return soup.find(text="NEXT").parent.get("href")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+soup = open_soup("/directory/results.php")
+\end_layout
+
+\begin_layout Plain Layout
+
+nxt = next_page(soup)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+while soup is not None:
+\end_layout
+
+\begin_layout Plain Layout
+
+    # process page
+\end_layout
+
+\begin_layout Plain Layout
+
+    for mail_a in soup.findAll("a", href=mailhref):
+\end_layout
+
+\begin_layout Plain Layout
+
+        href = mail_a.get("href")
+\end_layout
+
+\begin_layout Plain Layout
+
+        user = mailhref.findall(href)[0]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        email = user + "@hampshire.edu"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        td = mail_a.parent
+\end_layout
+
+\begin_layout Plain Layout
+
+        fullname = td.find("font").string
+\end_layout
+
+\begin_layout Plain Layout
+
+        last, first, mi = namechunks.findall(fullname)[0]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        tr = td.parent
+\end_layout
+
+\begin_layout Plain Layout
+
+        role = tr.find("td").find(text=True).string
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        if role.lower() == "student":
+\end_layout
+
+\begin_layout Plain Layout
+
+            print first, last, "<"+email+">,"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # grab next page
+\end_layout
+
+\begin_layout Plain Layout
+
+    url = next_page(soup)
+\end_layout
+
+\begin_layout Plain Layout
+
+    if url is not None:
+\end_layout
+
+\begin_layout Plain Layout
+
+        soup = open_soup(url)
+\end_layout
+
+\begin_layout Plain Layout
+
+    else:
+\end_layout
+
+\begin_layout Plain Layout
+
+        soup = None
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Thanks to unix's do one thing well mentality, it is easy to save this as
+ a file
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ python scraper.py > emails.txt
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
