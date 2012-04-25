@@ -14718,19 +14718,622 @@ $ python scraper.py > emails.txt
 
 \end_deeper
 \begin_layout Section
-Real World Python NEEDS WORK
+Real World Python
 \end_layout
 
 \begin_layout Itemize
-shift the deathfest character stuff to the web
+The other day we looked at finding new libraries to solve problems
 \end_layout
 
 \begin_layout Itemize
-mention web scraping
+Python itself comes with libraries for a ton of things you do regularly
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we will use ones to parse a JSON file, prompt for passwords, send emails,
+ and get info from the command line
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Insult Generator
+\end_layout
+
+\begin_layout Standard
+We need to make an insult generator which makes a sort of 
+\begin_inset Quotes eld
+\end_inset
+
+madlib
+\begin_inset Quotes erd
+\end_inset
+
+ insult.
+ To make it easier to update, we are going to store the words in an external
+ file so the words can change without changing the program
+\end_layout
+
+\begin_layout Subsubsection
+Words
 \end_layout
 
 \begin_layout Itemize
-life hacking
+JSON (javascript objects) is a file standard to store data.
+ 
+\end_layout
+
+\begin_layout Itemize
+They are just like python dictionaries and arrays
+\end_layout
+
+\begin_layout Itemize
+create 
+\begin_inset Quotes eld
+\end_inset
+
+words.json
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	"adv": ["totally", "completely", ...],
+\end_layout
+
+\begin_layout Plain Layout
+
+	"adj1": ["gross", "vapid", ...],
+\end_layout
+
+\begin_layout Plain Layout
+
+	"adj2": ["boring", "annoying", ...],
+\end_layout
+
+\begin_layout Plain Layout
+
+	"noun": ["nerd", "bonehead", ...]
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+create 
+\begin_inset Quotes eld
+\end_inset
+
+insult.py
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/usr/bin/env python
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import json
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if __name__ == "__main__":
+\end_layout
+
+\begin_layout Plain Layout
+
+	# load words
+\end_layout
+
+\begin_layout Plain Layout
+
+	f = open("words.json")
+\end_layout
+
+\begin_layout Plain Layout
+
+	allwords = json.load(f)
+\end_layout
+
+\begin_layout Plain Layout
+
+	f.close()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	print allwords
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+now that the words have loaded, time to generate an insult
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/usr/bin/env python
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from random import choice
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import json
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def madlib(phrase, words):
+\end_layout
+
+\begin_layout Plain Layout
+
+	picks = {}
+\end_layout
+
+\begin_layout Plain Layout
+
+	for key in words:
+\end_layout
+
+\begin_layout Plain Layout
+
+		picks[key] = choice(words[key])
+\end_layout
+
+\begin_layout Plain Layout
+
+	return phrase.format(**picks)  # unpacks picks into keyword arguments
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if __name__ == "__main__":
+\end_layout
+
+\begin_layout Plain Layout
+
+	# load words
+\end_layout
+
+\begin_layout Plain Layout
+
+	f = open("words.json")
+\end_layout
+
+\begin_layout Plain Layout
+
+	allwords = json.load(f)
+\end_layout
+
+\begin_layout Plain Layout
+
+	f.close()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# create insult
+\end_layout
+
+\begin_layout Plain Layout
+
+	insult = madlib("You're a {adv} {adj1}, {adj2} {noun}!", allwords)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	print insult
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Sharing the insult
+\end_layout
+
+\begin_layout Standard
+There is no point insulting ourselves, we should share the love!
+\end_layout
+
+\begin_layout Itemize
+python send email http://docs.python.org/library/email-examples.html
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+from getpass import getpass
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import smtplib
+\end_layout
+
+\begin_layout Plain Layout
+
+from email.mime.text import MIMEText
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM_ADDRESS = "example@hampshire.edu"
+\end_layout
+
+\begin_layout Plain Layout
+
+SMTP_SERVER = "smtp.hampshire.edu", 587
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def send_email(to, subject, body):
+\end_layout
+
+\begin_layout Plain Layout
+
+	msg = MIMEText(body)
+\end_layout
+
+\begin_layout Plain Layout
+
+	msg["Subject"] = subject
+\end_layout
+
+\begin_layout Plain Layout
+
+	msg["From"] = FROM_ADDRESS
+\end_layout
+
+\begin_layout Plain Layout
+
+	msg["To"] = to
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	passwd = getpass(FROM_ADDRESS + " password: ")
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	server = smtplib.SMTP(*SMTP_SERVER) # unpacks SMTP_SERVER into arguments
+\end_layout
+
+\begin_layout Plain Layout
+
+	server.ehlo()	# say hello to server
+\end_layout
+
+\begin_layout Plain Layout
+
+	server.starttls()	# setup security
+\end_layout
+
+\begin_layout Plain Layout
+
+	server.login(FROM_ADDRESS, passwd)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	server.sendmail(FROM_ADDRESS, [to], msg.as_string())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	server.close()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if __name__ == "__main__":
+\end_layout
+
+\begin_layout Plain Layout
+
+	# load words
+\end_layout
+
+\begin_layout Plain Layout
+
+	f = open("words.json")
+\end_layout
+
+\begin_layout Plain Layout
+
+	allwords = json.load(f)
+\end_layout
+
+\begin_layout Plain Layout
+
+	f.close()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# create insult
+\end_layout
+
+\begin_layout Plain Layout
+
+	insult = madlib("You're a {adv} {adj1}, {adj2} {noun}!", allwords)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# send message
+\end_layout
+
+\begin_layout Plain Layout
+
+	send_email("example@hampshire.edu","Feedback",insult)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Taking command line arguments
+\end_layout
+
+\begin_layout Itemize
+why hardcode who you are sending the email to? We could prompt for it, but
+ why not just make it an argument
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+import sys
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if __name__ == "__main__":
+\end_layout
+
+\begin_layout Plain Layout
+
+	# argv = program name and arguments
+\end_layout
+
+\begin_layout Plain Layout
+
+	if len(sys.argv) != 2:
+\end_layout
+
+\begin_layout Plain Layout
+
+		print "Usage: ", sys.argv[0], "emailaddress"
+\end_layout
+
+\begin_layout Plain Layout
+
+		sys.exit()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	address = sys.argv[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# load words
+\end_layout
+
+\begin_layout Plain Layout
+
+	f = open("words.json")
+\end_layout
+
+\begin_layout Plain Layout
+
+	allwords = json.load(f)
+\end_layout
+
+\begin_layout Plain Layout
+
+	f.close()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# create insult
+\end_layout
+
+\begin_layout Plain Layout
+
+	insult = madlib("You're a {adv} {adj1}, {adj2} {noun}!", allwords)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# send message
+\end_layout
+
+\begin_layout Plain Layout
+
+	send_email(address,"Feedback",insult)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Next step
+\end_layout
+
+\begin_layout Standard
+You can easily make this script a command on the actual command line so
+ you just use 
+\begin_inset Quotes eld
+\end_inset
+
+$insult example@hampshire.edu
+\begin_inset Quotes erd
+\end_inset
+
+ and it will send the email
 \end_layout
 
 \begin_layout Section

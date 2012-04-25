@@ -43,10 +43,3 @@ while soup is not None:
     else:
         soup = None
 
-"""
-for row in soup('table', {'class' : 'spad'})[0].tbody('tr'):
-  tds = row('td')
-  print tds[0].string, tds[1].string
-  # will print date and sunrise
-"""
-
